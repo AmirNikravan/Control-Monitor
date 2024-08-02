@@ -6,12 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>646</width>
-    <height>480</height>
+    <width>579</width>
+    <height>572</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>درفش</string>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(191, 191, 191);</string>
@@ -40,7 +40,14 @@ background-color: rgb(60, 60, 60);
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_3">
         <item>
-         <widget class="AnalogGaugeWidget" name="widget" native="true"/>
+         <widget class="AnalogGaugeWidget" name="widget" native="true">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>183</height>
+           </size>
+          </property>
+         </widget>
         </item>
         <item>
          <widget class="QGroupBox" name="groupBox">
@@ -269,7 +276,7 @@ background-color: rgb(60, 60, 60);
            <item>
             <layout class="QHBoxLayout" name="horizontalLayout_4">
              <item>
-              <widget class="QToolButton" name="toolButton">
+              <widget class="QToolButton" name="toolButton_increase">
                <property name="minimumSize">
                 <size>
                  <width>125</width>
@@ -290,7 +297,7 @@ background-color: rgb(60, 60, 60);
               </widget>
              </item>
              <item>
-              <widget class="QToolButton" name="toolButton_2">
+              <widget class="QToolButton" name="toolButton_decrease">
                <property name="minimumSize">
                 <size>
                  <width>125</width>
@@ -324,7 +331,7 @@ background-color: rgb(60, 60, 60);
            <item>
             <layout class="QHBoxLayout" name="horizontalLayout_3">
              <item>
-              <widget class="QToolButton" name="toolButton_3">
+              <widget class="QToolButton" name="toolButton_start">
                <property name="minimumSize">
                 <size>
                  <width>100</width>
@@ -345,7 +352,7 @@ background-color: rgb(60, 60, 60);
               </widget>
              </item>
              <item>
-              <widget class="QToolButton" name="toolButton_4">
+              <widget class="QToolButton" name="toolButton_stop">
                <property name="minimumSize">
                 <size>
                  <width>100</width>
@@ -382,7 +389,7 @@ background-color: rgb(60, 60, 60);
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>646</width>
+     <width>579</width>
      <height>18</height>
     </rect>
    </property>

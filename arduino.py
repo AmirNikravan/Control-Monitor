@@ -1,8 +1,6 @@
 import serial
 from PySide6.QtWidgets import *
 import threading
-
-
 class ArduinoHandler:
     def __init__(self, port, baud_rate=9600):
         self.port = port
@@ -13,11 +11,9 @@ class ArduinoHandler:
     def connect(self):
         try:
             self.serial_port = serial.Serial(self.port, self.baud_rate)
-            QMessageBox.warning(
-                self, "هشدار", f"برنامه توسط پورت {self.serial_port} به آردوینو متصل شد"
-            )
+            print(f"Connected to Arduino on {self.port}")
         except serial.SerialException as e:
-            QMessageBox.warning(self, "error", f"Error connecting to Arduino: {e}")
+            print(f"Error connecting to Arduino: {e}")
 
     def send_data(self, data):
         if self.serial_port and self.serial_port.is_open:

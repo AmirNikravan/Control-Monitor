@@ -25,7 +25,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(646, 480)
+        MainWindow.resize(579, 572)
         MainWindow.setStyleSheet(u"background-color: rgb(191, 191, 191);")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
@@ -49,6 +49,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
         self.widget = AnalogGaugeWidget(self.speed)
         self.widget.setObjectName(u"widget")
+        self.widget.setMinimumSize(QSize(0, 183))
 
         self.verticalLayout_3.addWidget(self.widget)
 
@@ -142,19 +143,19 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_4 = QHBoxLayout()
         self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
-        self.toolButton = QToolButton(self.groupBox)
-        self.toolButton.setObjectName(u"toolButton")
-        self.toolButton.setMinimumSize(QSize(125, 50))
-        self.toolButton.setFont(font)
+        self.toolButton_increase = QToolButton(self.groupBox)
+        self.toolButton_increase.setObjectName(u"toolButton_increase")
+        self.toolButton_increase.setMinimumSize(QSize(125, 50))
+        self.toolButton_increase.setFont(font)
 
-        self.horizontalLayout_4.addWidget(self.toolButton)
+        self.horizontalLayout_4.addWidget(self.toolButton_increase)
 
-        self.toolButton_2 = QToolButton(self.groupBox)
-        self.toolButton_2.setObjectName(u"toolButton_2")
-        self.toolButton_2.setMinimumSize(QSize(125, 50))
-        self.toolButton_2.setFont(font)
+        self.toolButton_decrease = QToolButton(self.groupBox)
+        self.toolButton_decrease.setObjectName(u"toolButton_decrease")
+        self.toolButton_decrease.setMinimumSize(QSize(125, 50))
+        self.toolButton_decrease.setFont(font)
 
-        self.horizontalLayout_4.addWidget(self.toolButton_2)
+        self.horizontalLayout_4.addWidget(self.toolButton_decrease)
 
 
         self.verticalLayout_2.addLayout(self.horizontalLayout_4)
@@ -168,19 +169,19 @@ class Ui_MainWindow(object):
         self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
         self.horizontalLayout_3 = QHBoxLayout()
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
-        self.toolButton_3 = QToolButton(self.groupBox_2)
-        self.toolButton_3.setObjectName(u"toolButton_3")
-        self.toolButton_3.setMinimumSize(QSize(100, 50))
-        self.toolButton_3.setFont(font)
+        self.toolButton_start = QToolButton(self.groupBox_2)
+        self.toolButton_start.setObjectName(u"toolButton_start")
+        self.toolButton_start.setMinimumSize(QSize(100, 50))
+        self.toolButton_start.setFont(font)
 
-        self.horizontalLayout_3.addWidget(self.toolButton_3)
+        self.horizontalLayout_3.addWidget(self.toolButton_start)
 
-        self.toolButton_4 = QToolButton(self.groupBox_2)
-        self.toolButton_4.setObjectName(u"toolButton_4")
-        self.toolButton_4.setMinimumSize(QSize(100, 50))
-        self.toolButton_4.setFont(font)
+        self.toolButton_stop = QToolButton(self.groupBox_2)
+        self.toolButton_stop.setObjectName(u"toolButton_stop")
+        self.toolButton_stop.setMinimumSize(QSize(100, 50))
+        self.toolButton_stop.setFont(font)
 
-        self.horizontalLayout_3.addWidget(self.toolButton_4)
+        self.horizontalLayout_3.addWidget(self.toolButton_stop)
 
 
         self.horizontalLayout_5.addLayout(self.horizontalLayout_3)
@@ -198,7 +199,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 646, 18))
+        self.menubar.setGeometry(QRect(0, 0, 579, 18))
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
@@ -213,7 +214,7 @@ class Ui_MainWindow(object):
     # setupUi
 
     def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
+        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"\u062f\u0631\u0641\u0634", None))
         self.groupBox.setTitle(QCoreApplication.translate("MainWindow", u"Speed", None))
         self.toolButton_speed1.setText(QCoreApplication.translate("MainWindow", u"1", None))
         self.toolButton_speed2.setText(QCoreApplication.translate("MainWindow", u"2", None))
@@ -225,10 +226,10 @@ class Ui_MainWindow(object):
         self.toolButton_speed8.setText(QCoreApplication.translate("MainWindow", u"8", None))
         self.toolButton_speed9.setText(QCoreApplication.translate("MainWindow", u"9", None))
         self.toolButton_speed10.setText(QCoreApplication.translate("MainWindow", u"10", None))
-        self.toolButton.setText(QCoreApplication.translate("MainWindow", u"Increase Speed", None))
-        self.toolButton_2.setText(QCoreApplication.translate("MainWindow", u"Decrease Speed", None))
+        self.toolButton_increase.setText(QCoreApplication.translate("MainWindow", u"Increase Speed", None))
+        self.toolButton_decrease.setText(QCoreApplication.translate("MainWindow", u"Decrease Speed", None))
         self.groupBox_2.setTitle(QCoreApplication.translate("MainWindow", u"Start", None))
-        self.toolButton_3.setText(QCoreApplication.translate("MainWindow", u"Start", None))
-        self.toolButton_4.setText(QCoreApplication.translate("MainWindow", u"Stop", None))
+        self.toolButton_start.setText(QCoreApplication.translate("MainWindow", u"Start", None))
+        self.toolButton_stop.setText(QCoreApplication.translate("MainWindow", u"Stop", None))
     # retranslateUi
 
