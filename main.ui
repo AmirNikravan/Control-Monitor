@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>579</width>
-    <height>572</height>
+    <width>615</width>
+    <height>597</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -40,14 +40,62 @@ background-color: rgb(60, 60, 60);
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_3">
         <item>
-         <widget class="AnalogGaugeWidget" name="widget" native="true">
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>183</height>
-           </size>
-          </property>
-         </widget>
+         <layout class="QHBoxLayout" name="horizontalLayout_6">
+          <item>
+           <widget class="QListWidget" name="listWidget">
+            <property name="maximumSize">
+             <size>
+              <width>168</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(254, 243, 255);</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="AnalogGaugeWidget" name="widget" native="true">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>183</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label">
+            <property name="minimumSize">
+             <size>
+              <width>90</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>90</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>IRANSansXFaNum</family>
+              <pointsize>14</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(249, 239, 177);
+border-radius : 5px;</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </item>
         <item>
          <widget class="QGroupBox" name="groupBox">
@@ -352,6 +400,30 @@ background-color: rgb(60, 60, 60);
               </widget>
              </item>
              <item>
+              <widget class="QToolButton" name="toolButton_emgstop">
+               <property name="minimumSize">
+                <size>
+                 <width>99</width>
+                 <height>50</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>IRANSansXFaNum</family>
+                 <pointsize>12</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(255, 1, 5);</string>
+               </property>
+               <property name="text">
+                <string>EMG STOP</string>
+               </property>
+              </widget>
+             </item>
+             <item>
               <widget class="QToolButton" name="toolButton_stop">
                <property name="minimumSize">
                 <size>
@@ -389,7 +461,7 @@ background-color: rgb(60, 60, 60);
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>579</width>
+     <width>615</width>
      <height>18</height>
     </rect>
    </property>

@@ -20,28 +20,33 @@ void set_speed(int delay_high, int delay_low){
   
   // current_speed = initial_speed + val*step;
   // Serial.println(current_speed);
-  // analogWrite(pwm_pin,current_speed);
+  // analogWrite(pwm_pin,current_speed)
 }
 void speed(){
-  digitalWrite(pwm_pin,HIGH);
-  delay(current_high);
-  digitalWrite(pwm_pin,LOW);
-  delay(current_low);
   Serial.println("speed");
+  Serial.println(current_speed);
+  analogWrite(pwm_pin,current_speed);
+  // delay(current_high);
+  // digitalWrite(pwm_pin,LOW);
+  // delay(current_low);
 
 }
 void decrease_speed(){
   // current_speed -= step;
   // analogWrite(pwm_pin,current_speed);
   // Serial.println(current_speed);
-    current_low -=1;
+    current_speed -=10;
+        Serial.println("ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\nddddddddddddddddddddddddddddddddddddddddddddddddddddddd\ndddddddddddddddddddddddddddddddddddddddd\ndddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n");
+
+    Serial.println(current_speed);
     // speed();
 }
 void increase_speed(){
   // current_speed += step;
   // analogWrite(pwm_pin,current_speed);
   // Serial.println(current_speed);
-  current_high +=1;
+  current_speed +=10;
+  Serial.println(current_speed);
   // speed();
 }
 // void speed0(){
@@ -63,11 +68,13 @@ void start(){
   //   delay(10);
   // }
   Serial.println("started");
-  for (int i = 0;i < 200;i++  ){
-    digitalWrite(pwm_pin,HIGH);
-    delay(current_high);
-    digitalWrite(pwm_pin,LOW);
-  }
+  current_speed = 150;
+  analogWrite(pwm_pin,current_speed);
+  // for (int i = 0;i < 200;i++  ){
+  //   digitalWrite(pwm_pin,HIGH);
+  //   delay(current_high);
+  //   digitalWrite(pwm_pin,LOW);
+  // }
     // delay(current_low);
     // if(Serial.available())
     //   {
