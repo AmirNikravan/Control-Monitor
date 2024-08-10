@@ -6,18 +6,36 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>615</width>
-    <height>597</height>
+    <width>724</width>
+    <height>574</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>درفش</string>
   </property>
+  <property name="windowOpacity">
+   <double>1.000000000000000</double>
+  </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(191, 191, 191);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QVBoxLayout" name="verticalLayout">
+   <layout class="QHBoxLayout" name="horizontalLayout_7">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
     <item>
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="styleSheet">
@@ -26,7 +44,7 @@
       <property name="currentIndex">
        <number>0</number>
       </property>
-      <widget class="QWidget" name="speed">
+      <widget class="QWidget" name="testbed">
        <property name="styleSheet">
         <string notr="true">QToolButton{
 background-color: rgb(91, 122, 208);
@@ -41,11 +59,14 @@ background-color: rgb(60, 60, 60);
        <layout class="QVBoxLayout" name="verticalLayout_3">
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout_6">
+          <property name="spacing">
+           <number>0</number>
+          </property>
           <item>
            <widget class="QListWidget" name="listWidget">
             <property name="maximumSize">
              <size>
-              <width>168</width>
+              <width>200</width>
               <height>16777215</height>
              </size>
             </property>
@@ -58,7 +79,7 @@ background-color: rgb(60, 60, 60);
            <widget class="AnalogGaugeWidget" name="widget" native="true">
             <property name="minimumSize">
              <size>
-              <width>0</width>
+              <width>320</width>
               <height>183</height>
              </size>
             </property>
@@ -454,6 +475,19 @@ border-radius : 5px;</string>
       <widget class="QWidget" name="page_2"/>
      </widget>
     </item>
+    <item>
+     <widget class="QWidget" name="widget_2" native="true">
+      <property name="minimumSize">
+       <size>
+        <width>56</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(190, 233, 255);</string>
+      </property>
+     </widget>
+    </item>
    </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -461,7 +495,7 @@ border-radius : 5px;</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>615</width>
+     <width>724</width>
      <height>18</height>
     </rect>
    </property>
