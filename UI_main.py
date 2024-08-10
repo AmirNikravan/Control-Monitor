@@ -296,9 +296,335 @@ class Ui_MainWindow(object):
         self.verticalLayout_6.addWidget(self.groupBox_2)
 
         self.stackedWidget.addWidget(self.testbed)
-        self.page_2 = QWidget()
-        self.page_2.setObjectName(u"page_2")
-        self.stackedWidget.addWidget(self.page_2)
+        self.temperature = QWidget()
+        self.temperature.setObjectName(u"temperature")
+        self.verticalLayout_20 = QVBoxLayout(self.temperature)
+        self.verticalLayout_20.setObjectName(u"verticalLayout_20")
+        self.label_5 = QLabel(self.temperature)
+        self.label_5.setObjectName(u"label_5")
+        self.label_5.setMinimumSize(QSize(0, 12))
+        self.label_5.setMaximumSize(QSize(16777215, 28))
+        font4 = QFont()
+        font4.setFamilies([u"IRANSansXFaNum"])
+        font4.setPointSize(14)
+        font4.setBold(True)
+        self.label_5.setFont(font4)
+
+        self.verticalLayout_20.addWidget(self.label_5)
+
+        self.horizontalLayout_9 = QHBoxLayout()
+        self.horizontalLayout_9.setObjectName(u"horizontalLayout_9")
+        self.verticalLayout_7 = QVBoxLayout()
+        self.verticalLayout_7.setObjectName(u"verticalLayout_7")
+        self.exhuast_bank_a_temp_gauge = AnalogGaugeWidget(self.temperature)
+        self.exhuast_bank_a_temp_gauge.setObjectName(u"exhuast_bank_a_temp_gauge")
+
+        self.verticalLayout_7.addWidget(self.exhuast_bank_a_temp_gauge)
+
+        self.label_6 = QLabel(self.temperature)
+        self.label_6.setObjectName(u"label_6")
+        self.label_6.setMaximumSize(QSize(16777215, 19))
+        font5 = QFont()
+        font5.setFamilies([u"IRANSansXFaNum"])
+        font5.setPointSize(10)
+        font5.setBold(True)
+        self.label_6.setFont(font5)
+        self.label_6.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_7.addWidget(self.label_6)
+
+
+        self.horizontalLayout_9.addLayout(self.verticalLayout_7)
+
+        self.verticalLayout_11 = QVBoxLayout()
+        self.verticalLayout_11.setObjectName(u"verticalLayout_11")
+        self.exhuast_bank_b_temp_gauge = AnalogGaugeWidget(self.temperature)
+        self.exhuast_bank_b_temp_gauge.setObjectName(u"exhuast_bank_b_temp_gauge")
+
+        self.verticalLayout_11.addWidget(self.exhuast_bank_b_temp_gauge)
+
+        self.exhuast_bank_b_gauge = QLabel(self.temperature)
+        self.exhuast_bank_b_gauge.setObjectName(u"exhuast_bank_b_gauge")
+        self.exhuast_bank_b_gauge.setMaximumSize(QSize(16777215, 19))
+        self.exhuast_bank_b_gauge.setFont(font5)
+        self.exhuast_bank_b_gauge.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_11.addWidget(self.exhuast_bank_b_gauge)
+
+
+        self.horizontalLayout_9.addLayout(self.verticalLayout_11)
+
+        self.verticalLayout_12 = QVBoxLayout()
+        self.verticalLayout_12.setObjectName(u"verticalLayout_12")
+        self.airboost_bank_a_temp_gauge = AnalogGaugeWidget(self.temperature)
+        self.airboost_bank_a_temp_gauge.setObjectName(u"airboost_bank_a_temp_gauge")
+
+        self.verticalLayout_12.addWidget(self.airboost_bank_a_temp_gauge)
+
+        self.label_11 = QLabel(self.temperature)
+        self.label_11.setObjectName(u"label_11")
+        self.label_11.setMaximumSize(QSize(16777215, 19))
+        self.label_11.setFont(font5)
+        self.label_11.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_12.addWidget(self.label_11)
+
+
+        self.horizontalLayout_9.addLayout(self.verticalLayout_12)
+
+
+        self.verticalLayout_20.addLayout(self.horizontalLayout_9)
+
+        self.horizontalLayout_10 = QHBoxLayout()
+        self.horizontalLayout_10.setObjectName(u"horizontalLayout_10")
+        self.verticalLayout_13 = QVBoxLayout()
+        self.verticalLayout_13.setObjectName(u"verticalLayout_13")
+        self.airboost_bank_b_temp_gauge = AnalogGaugeWidget(self.temperature)
+        self.airboost_bank_b_temp_gauge.setObjectName(u"airboost_bank_b_temp_gauge")
+
+        self.verticalLayout_13.addWidget(self.airboost_bank_b_temp_gauge)
+
+        self.label_12 = QLabel(self.temperature)
+        self.label_12.setObjectName(u"label_12")
+        self.label_12.setMaximumSize(QSize(16777215, 19))
+        self.label_12.setFont(font5)
+        self.label_12.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_13.addWidget(self.label_12)
+
+
+        self.horizontalLayout_10.addLayout(self.verticalLayout_13)
+
+        self.verticalLayout_14 = QVBoxLayout()
+        self.verticalLayout_14.setObjectName(u"verticalLayout_14")
+        self.oil_temp_gauge = AnalogGaugeWidget(self.temperature)
+        self.oil_temp_gauge.setObjectName(u"oil_temp_gauge")
+
+        self.verticalLayout_14.addWidget(self.oil_temp_gauge)
+
+        self.label_10 = QLabel(self.temperature)
+        self.label_10.setObjectName(u"label_10")
+        self.label_10.setMaximumSize(QSize(16777215, 19))
+        self.label_10.setFont(font5)
+        self.label_10.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_14.addWidget(self.label_10)
+
+
+        self.horizontalLayout_10.addLayout(self.verticalLayout_14)
+
+        self.verticalLayout_16 = QVBoxLayout()
+        self.verticalLayout_16.setObjectName(u"verticalLayout_16")
+        self.oil_ntc_temp_gauge = AnalogGaugeWidget(self.temperature)
+        self.oil_ntc_temp_gauge.setObjectName(u"oil_ntc_temp_gauge")
+
+        self.verticalLayout_16.addWidget(self.oil_ntc_temp_gauge)
+
+        self.label_15 = QLabel(self.temperature)
+        self.label_15.setObjectName(u"label_15")
+        self.label_15.setMaximumSize(QSize(16777215, 19))
+        self.label_15.setFont(font5)
+        self.label_15.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_16.addWidget(self.label_15)
+
+
+        self.horizontalLayout_10.addLayout(self.verticalLayout_16)
+
+
+        self.verticalLayout_20.addLayout(self.horizontalLayout_10)
+
+        self.horizontalLayout_11 = QHBoxLayout()
+        self.horizontalLayout_11.setObjectName(u"horizontalLayout_11")
+        self.verticalLayout_17 = QVBoxLayout()
+        self.verticalLayout_17.setObjectName(u"verticalLayout_17")
+        self.freshwater_afterthermo_temp_gauge = AnalogGaugeWidget(self.temperature)
+        self.freshwater_afterthermo_temp_gauge.setObjectName(u"freshwater_afterthermo_temp_gauge")
+
+        self.verticalLayout_17.addWidget(self.freshwater_afterthermo_temp_gauge)
+
+        self.label_16 = QLabel(self.temperature)
+        self.label_16.setObjectName(u"label_16")
+        self.label_16.setMaximumSize(QSize(16777215, 19))
+        self.label_16.setFont(font5)
+        self.label_16.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_17.addWidget(self.label_16)
+
+
+        self.horizontalLayout_11.addLayout(self.verticalLayout_17)
+
+        self.verticalLayout_18 = QVBoxLayout()
+        self.verticalLayout_18.setObjectName(u"verticalLayout_18")
+        self.freshwater_beforethermo_temp_gauge = AnalogGaugeWidget(self.temperature)
+        self.freshwater_beforethermo_temp_gauge.setObjectName(u"freshwater_beforethermo_temp_gauge")
+
+        self.verticalLayout_18.addWidget(self.freshwater_beforethermo_temp_gauge)
+
+        self.label_17 = QLabel(self.temperature)
+        self.label_17.setObjectName(u"label_17")
+        self.label_17.setMaximumSize(QSize(16777215, 19))
+        self.label_17.setFont(font5)
+        self.label_17.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_18.addWidget(self.label_17)
+
+
+        self.horizontalLayout_11.addLayout(self.verticalLayout_18)
+
+        self.verticalLayout_19 = QVBoxLayout()
+        self.verticalLayout_19.setObjectName(u"verticalLayout_19")
+        self.sea_water_temp_gauge = AnalogGaugeWidget(self.temperature)
+        self.sea_water_temp_gauge.setObjectName(u"sea_water_temp_gauge")
+
+        self.verticalLayout_19.addWidget(self.sea_water_temp_gauge)
+
+        self.label_18 = QLabel(self.temperature)
+        self.label_18.setObjectName(u"label_18")
+        self.label_18.setMaximumSize(QSize(16777215, 19))
+        self.label_18.setFont(font5)
+        self.label_18.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_19.addWidget(self.label_18)
+
+
+        self.horizontalLayout_11.addLayout(self.verticalLayout_19)
+
+
+        self.verticalLayout_20.addLayout(self.horizontalLayout_11)
+
+        self.stackedWidget.addWidget(self.temperature)
+        self.pressure = QWidget()
+        self.pressure.setObjectName(u"pressure")
+        self.verticalLayout_26 = QVBoxLayout(self.pressure)
+        self.verticalLayout_26.setObjectName(u"verticalLayout_26")
+        self.label_13 = QLabel(self.pressure)
+        self.label_13.setObjectName(u"label_13")
+        self.label_13.setMaximumSize(QSize(16777215, 28))
+        self.label_13.setFont(font4)
+
+        self.verticalLayout_26.addWidget(self.label_13)
+
+        self.horizontalLayout_12 = QHBoxLayout()
+        self.horizontalLayout_12.setObjectName(u"horizontalLayout_12")
+        self.verticalLayout_21 = QVBoxLayout()
+        self.verticalLayout_21.setObjectName(u"verticalLayout_21")
+        self.oil_pressure_gauge = AnalogGaugeWidget(self.pressure)
+        self.oil_pressure_gauge.setObjectName(u"oil_pressure_gauge")
+        self.oil_pressure_gauge.setMaximumSize(QSize(16777215, 220))
+
+        self.verticalLayout_21.addWidget(self.oil_pressure_gauge)
+
+        self.label_19 = QLabel(self.pressure)
+        self.label_19.setObjectName(u"label_19")
+        self.label_19.setMaximumSize(QSize(16777215, 19))
+        self.label_19.setFont(font5)
+        self.label_19.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_21.addWidget(self.label_19)
+
+
+        self.horizontalLayout_12.addLayout(self.verticalLayout_21)
+
+        self.verticalLayout_22 = QVBoxLayout()
+        self.verticalLayout_22.setObjectName(u"verticalLayout_22")
+        self.oil_switch_pressure_gauge = AnalogGaugeWidget(self.pressure)
+        self.oil_switch_pressure_gauge.setObjectName(u"oil_switch_pressure_gauge")
+        self.oil_switch_pressure_gauge.setMaximumSize(QSize(16777215, 220))
+
+        self.verticalLayout_22.addWidget(self.oil_switch_pressure_gauge)
+
+        self.label_20 = QLabel(self.pressure)
+        self.label_20.setObjectName(u"label_20")
+        self.label_20.setMaximumSize(QSize(16777215, 19))
+        self.label_20.setFont(font5)
+        self.label_20.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_22.addWidget(self.label_20)
+
+
+        self.horizontalLayout_12.addLayout(self.verticalLayout_22)
+
+        self.verticalLayout_23 = QVBoxLayout()
+        self.verticalLayout_23.setObjectName(u"verticalLayout_23")
+        self.airboost_pressure_gauge = AnalogGaugeWidget(self.pressure)
+        self.airboost_pressure_gauge.setObjectName(u"airboost_pressure_gauge")
+        self.airboost_pressure_gauge.setMaximumSize(QSize(16777215, 220))
+
+        self.verticalLayout_23.addWidget(self.airboost_pressure_gauge)
+
+        self.label_21 = QLabel(self.pressure)
+        self.label_21.setObjectName(u"label_21")
+        self.label_21.setMaximumSize(QSize(16777215, 19))
+        self.label_21.setFont(font5)
+        self.label_21.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_23.addWidget(self.label_21)
+
+
+        self.horizontalLayout_12.addLayout(self.verticalLayout_23)
+
+
+        self.verticalLayout_26.addLayout(self.horizontalLayout_12)
+
+        self.horizontalLayout_13 = QHBoxLayout()
+        self.horizontalLayout_13.setObjectName(u"horizontalLayout_13")
+        self.horizontalSpacer_2 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_13.addItem(self.horizontalSpacer_2)
+
+        self.verticalLayout_25 = QVBoxLayout()
+        self.verticalLayout_25.setObjectName(u"verticalLayout_25")
+        self.sea_water_pressure_gauge = AnalogGaugeWidget(self.pressure)
+        self.sea_water_pressure_gauge.setObjectName(u"sea_water_pressure_gauge")
+        self.sea_water_pressure_gauge.setMinimumSize(QSize(196, 0))
+        self.sea_water_pressure_gauge.setMaximumSize(QSize(16777215, 220))
+
+        self.verticalLayout_25.addWidget(self.sea_water_pressure_gauge)
+
+        self.label_23 = QLabel(self.pressure)
+        self.label_23.setObjectName(u"label_23")
+        self.label_23.setMaximumSize(QSize(16777215, 19))
+        self.label_23.setFont(font5)
+        self.label_23.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_25.addWidget(self.label_23)
+
+
+        self.horizontalLayout_13.addLayout(self.verticalLayout_25)
+
+        self.horizontalSpacer_4 = QSpacerItem(82, 20, QSizePolicy.Policy.Maximum, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_13.addItem(self.horizontalSpacer_4)
+
+        self.verticalLayout_24 = QVBoxLayout()
+        self.verticalLayout_24.setObjectName(u"verticalLayout_24")
+        self.fuel_pressure_gauge = AnalogGaugeWidget(self.pressure)
+        self.fuel_pressure_gauge.setObjectName(u"fuel_pressure_gauge")
+        self.fuel_pressure_gauge.setMinimumSize(QSize(196, 0))
+        self.fuel_pressure_gauge.setMaximumSize(QSize(16777215, 220))
+
+        self.verticalLayout_24.addWidget(self.fuel_pressure_gauge)
+
+        self.label_22 = QLabel(self.pressure)
+        self.label_22.setObjectName(u"label_22")
+        self.label_22.setMaximumSize(QSize(16777215, 19))
+        self.label_22.setFont(font5)
+        self.label_22.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_24.addWidget(self.label_22)
+
+
+        self.horizontalLayout_13.addLayout(self.verticalLayout_24)
+
+        self.horizontalSpacer_3 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_13.addItem(self.horizontalSpacer_3)
+
+
+        self.verticalLayout_26.addLayout(self.horizontalLayout_13)
+
+        self.stackedWidget.addWidget(self.pressure)
 
         self.verticalLayout.addWidget(self.stackedWidget)
 
@@ -322,16 +648,12 @@ class Ui_MainWindow(object):
         self.verticalLayout_4 = QVBoxLayout(self.widget_2)
         self.verticalLayout_4.setSpacing(0)
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
-        self.verticalLayout_4.setContentsMargins(10, 0, 0, 0)
+        self.verticalLayout_4.setContentsMargins(2, 0, 0, 0)
         self.toolButton_testbed = QToolButton(self.widget_2)
         self.toolButton_testbed.setObjectName(u"toolButton_testbed")
         self.toolButton_testbed.setMinimumSize(QSize(75, 25))
         self.toolButton_testbed.setMaximumSize(QSize(60, 25))
-        font4 = QFont()
-        font4.setFamilies([u"IRANSansXFaNum"])
-        font4.setPointSize(10)
-        font4.setBold(True)
-        self.toolButton_testbed.setFont(font4)
+        self.toolButton_testbed.setFont(font5)
 
         self.verticalLayout_4.addWidget(self.toolButton_testbed)
 
@@ -339,7 +661,7 @@ class Ui_MainWindow(object):
         self.toolButton_temperature.setObjectName(u"toolButton_temperature")
         self.toolButton_temperature.setMinimumSize(QSize(75, 25))
         self.toolButton_temperature.setMaximumSize(QSize(60, 25))
-        self.toolButton_temperature.setFont(font4)
+        self.toolButton_temperature.setFont(font5)
 
         self.verticalLayout_4.addWidget(self.toolButton_temperature)
 
@@ -347,7 +669,7 @@ class Ui_MainWindow(object):
         self.toolButton_pressure.setObjectName(u"toolButton_pressure")
         self.toolButton_pressure.setMinimumSize(QSize(75, 25))
         self.toolButton_pressure.setMaximumSize(QSize(60, 25))
-        self.toolButton_pressure.setFont(font4)
+        self.toolButton_pressure.setFont(font5)
 
         self.verticalLayout_4.addWidget(self.toolButton_pressure)
 
@@ -355,9 +677,16 @@ class Ui_MainWindow(object):
         self.toolButton_keys.setObjectName(u"toolButton_keys")
         self.toolButton_keys.setMinimumSize(QSize(75, 25))
         self.toolButton_keys.setMaximumSize(QSize(60, 25))
-        self.toolButton_keys.setFont(font4)
+        self.toolButton_keys.setFont(font5)
 
         self.verticalLayout_4.addWidget(self.toolButton_keys)
+
+        self.toolButton = QToolButton(self.widget_2)
+        self.toolButton.setObjectName(u"toolButton")
+        self.toolButton.setMinimumSize(QSize(75, 25))
+        self.toolButton.setFont(font5)
+
+        self.verticalLayout_4.addWidget(self.toolButton)
 
 
         self.horizontalLayout_7.addWidget(self.widget_2)
@@ -373,7 +702,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(1)
+        self.stackedWidget.setCurrentIndex(2)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -403,9 +732,26 @@ class Ui_MainWindow(object):
         self.toolButton_emgstop.setText(QCoreApplication.translate("MainWindow", u"EMG STOP", None))
         self.toolButton_stop.setText(QCoreApplication.translate("MainWindow", u"Stop", None))
         self.toolButton_reset.setText(QCoreApplication.translate("MainWindow", u"Reset", None))
+        self.label_5.setText(QCoreApplication.translate("MainWindow", u"\u0633\u0646\u0633\u0648\u0631 \u0647\u0627\u06cc \u062f\u0645\u0627", None))
+        self.label_6.setText(QCoreApplication.translate("MainWindow", u"Exhuast Bank B", None))
+        self.exhuast_bank_b_gauge.setText(QCoreApplication.translate("MainWindow", u"Exhuast Bank A", None))
+        self.label_11.setText(QCoreApplication.translate("MainWindow", u"Air Boost Bank A", None))
+        self.label_12.setText(QCoreApplication.translate("MainWindow", u"Air Boost Bank B", None))
+        self.label_10.setText(QCoreApplication.translate("MainWindow", u"Oil", None))
+        self.label_15.setText(QCoreApplication.translate("MainWindow", u"Oil NTC", None))
+        self.label_16.setText(QCoreApplication.translate("MainWindow", u"Fresh Water after Thermostat", None))
+        self.label_17.setText(QCoreApplication.translate("MainWindow", u"Fresh Water before Thermostat", None))
+        self.label_18.setText(QCoreApplication.translate("MainWindow", u"Sea Water", None))
+        self.label_13.setText(QCoreApplication.translate("MainWindow", u"\u0633\u0646\u0633\u0648\u0631 \u0641\u0634\u0627\u0631", None))
+        self.label_19.setText(QCoreApplication.translate("MainWindow", u"Oil", None))
+        self.label_20.setText(QCoreApplication.translate("MainWindow", u"Oil Switch", None))
+        self.label_21.setText(QCoreApplication.translate("MainWindow", u"Air Boost", None))
+        self.label_23.setText(QCoreApplication.translate("MainWindow", u"Sea Water", None))
+        self.label_22.setText(QCoreApplication.translate("MainWindow", u"Fuel Pressure", None))
         self.toolButton_testbed.setText(QCoreApplication.translate("MainWindow", u"test bed", None))
-        self.toolButton_temperature.setText(QCoreApplication.translate("MainWindow", u"temperature", None))
-        self.toolButton_pressure.setText(QCoreApplication.translate("MainWindow", u"Pressure", None))
-        self.toolButton_keys.setText(QCoreApplication.translate("MainWindow", u"keys", None))
+        self.toolButton_temperature.setText(QCoreApplication.translate("MainWindow", u"\u062f\u0645\u0627", None))
+        self.toolButton_pressure.setText(QCoreApplication.translate("MainWindow", u"\u0641\u0634\u0627\u0631", None))
+        self.toolButton_keys.setText(QCoreApplication.translate("MainWindow", u"\u06a9\u0644\u06cc\u062f\u0647\u0627", None))
+        self.toolButton.setText(QCoreApplication.translate("MainWindow", u"\u0633\u0627\u06cc\u0631", None))
     # retranslateUi
 

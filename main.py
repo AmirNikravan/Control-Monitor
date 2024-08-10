@@ -5,7 +5,7 @@ import sys
 from arduino import ArduinoHandler
 from PySide6.QtCore import Signal
 import time
-
+from thread import *
 
 class App(QMainWindow):
     update_ui_signal = Signal(float)
@@ -56,24 +56,46 @@ class App(QMainWindow):
         self.ui.toolButton_start.clicked.connect(lambda: self.handle_button_click("st"))
         self.ui.toolButton_stop.clicked.connect(lambda: self.handle_button_click("sp"))
         self.ui.toolButton_emgstop.clicked.connect(
-            lambda: self.handle_button_click("re")
+            lambda: self.handle_button_click("mg")
         )
-        self.ui.toolButton_testbed.clicked.connect(self.change_page('testbed'))
-        self.ui.toolButton_temperature.clicked.connect(self.change_page('temperature'))
-        #design
+        self.ui.toolButton_reset.clicked.connect(lambda: self.handle_button_click("re"))
+        #change page
+        self.ui.toolButton_testbed.clicked.connect(lambda: self.change_page("testbed"))
+        self.ui.toolButton_temperature.clicked.connect(
+            lambda: self.change_page("temperature")
+        )
+        self.ui.toolButton_pressure.clicked.connect(lambda:self.change_page("pressure"))
+        # design
+        self.ui.stackedWidget.setCurrentIndex(0)
         self.design_gauges()
         # Connect the signal to the slot
         self.arduino.data_received.connect(self.update_data_label)
-    def change_page(self,page):
-        if page== 'testbed':
+        #thread
+        self.worker = Worker()
+        self.start()
+        self.worker.values.connect(self.update)
+    def update(self,val):
+        self.ui.airboost_bank_a_temp_gauge.value = val[0]
+        self.ui.airboost_bank_a_temp_gauge.repaint()
+    def start(self):
+        self.worker.start()
+    def closeEvent(self,event):
+        self.worker.stop()
+        self.worker.wait()
+        event.accept()
+    def change_page(self, page):
+
+        if page == "testbed":
             self.ui.stackedWidget.setCurrentIndex(0)
-        elif page == 'temperature':
+        elif page == "temperature":
             self.ui.stackedWidget.setCurrentIndex(1)
+        elif page == "pressure":
+            self.ui.stackedWidget.setCurrentIndex(2)
     def handle_button_click(self, code):
         if code == "st":
             self.ui.label_2.setText("روشن")
         if code == "sp" or code == "mg":
-            self.ui.label.setText("خاموش")
+            self.ui.label_2.setText("خاموش")
         # Prepare the string to send based on the button index
         self.arduino.send_data(code)
 

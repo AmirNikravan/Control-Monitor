@@ -102,7 +102,7 @@
          <string notr="true">background-color: rgb(224, 224, 224);</string>
         </property>
         <property name="currentIndex">
-         <number>1</number>
+         <number>2</number>
         </property>
         <widget class="QWidget" name="testbed">
          <property name="styleSheet">
@@ -602,7 +602,605 @@ background-color: rgb(60, 60, 60);
           </item>
          </layout>
         </widget>
-        <widget class="QWidget" name="page_2"/>
+        <widget class="QWidget" name="temperature">
+         <layout class="QVBoxLayout" name="verticalLayout_20">
+          <item>
+           <widget class="QLabel" name="label_5">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>12</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>28</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>IRANSansXFaNum</family>
+              <pointsize>14</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>سنسور های دما</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_9">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_7">
+              <item>
+               <widget class="AnalogGaugeWidget" name="exhuast_bank_a_temp_gauge" native="true"/>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_6">
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>19</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>IRANSansXFaNum</family>
+                  <pointsize>10</pointsize>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Exhuast Bank B</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_11">
+              <item>
+               <widget class="AnalogGaugeWidget" name="exhuast_bank_b_temp_gauge" native="true"/>
+              </item>
+              <item>
+               <widget class="QLabel" name="exhuast_bank_b_gauge">
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>19</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>IRANSansXFaNum</family>
+                  <pointsize>10</pointsize>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Exhuast Bank A</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_12">
+              <item>
+               <widget class="AnalogGaugeWidget" name="airboost_bank_a_temp_gauge" native="true"/>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_11">
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>19</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>IRANSansXFaNum</family>
+                  <pointsize>10</pointsize>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Air Boost Bank A</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_10">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_13">
+              <item>
+               <widget class="AnalogGaugeWidget" name="airboost_bank_b_temp_gauge" native="true"/>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_12">
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>19</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>IRANSansXFaNum</family>
+                  <pointsize>10</pointsize>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Air Boost Bank B</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_14">
+              <item>
+               <widget class="AnalogGaugeWidget" name="oil_temp_gauge" native="true"/>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_10">
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>19</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>IRANSansXFaNum</family>
+                  <pointsize>10</pointsize>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Oil</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_16">
+              <item>
+               <widget class="AnalogGaugeWidget" name="oil_ntc_temp_gauge" native="true"/>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_15">
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>19</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>IRANSansXFaNum</family>
+                  <pointsize>10</pointsize>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Oil NTC</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_11">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_17">
+              <item>
+               <widget class="AnalogGaugeWidget" name="freshwater_afterthermo_temp_gauge" native="true"/>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_16">
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>19</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>IRANSansXFaNum</family>
+                  <pointsize>10</pointsize>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Fresh Water after Thermostat</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_18">
+              <item>
+               <widget class="AnalogGaugeWidget" name="freshwater_beforethermo_temp_gauge" native="true"/>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_17">
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>19</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>IRANSansXFaNum</family>
+                  <pointsize>10</pointsize>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Fresh Water before Thermostat</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_19">
+              <item>
+               <widget class="AnalogGaugeWidget" name="sea_water_temp_gauge" native="true"/>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_18">
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>19</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>IRANSansXFaNum</family>
+                  <pointsize>10</pointsize>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Sea Water</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="pressure">
+         <layout class="QVBoxLayout" name="verticalLayout_26">
+          <item>
+           <widget class="QLabel" name="label_13">
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>28</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>IRANSansXFaNum</family>
+              <pointsize>14</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>سنسور فشار</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_12">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_21">
+              <item>
+               <widget class="AnalogGaugeWidget" name="oil_pressure_gauge" native="true">
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>220</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_19">
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>19</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>IRANSansXFaNum</family>
+                  <pointsize>10</pointsize>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Oil</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_22">
+              <item>
+               <widget class="AnalogGaugeWidget" name="oil_switch_pressure_gauge" native="true">
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>220</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_20">
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>19</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>IRANSansXFaNum</family>
+                  <pointsize>10</pointsize>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Oil Switch</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_23">
+              <item>
+               <widget class="AnalogGaugeWidget" name="airboost_pressure_gauge" native="true">
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>220</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_21">
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>19</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>IRANSansXFaNum</family>
+                  <pointsize>10</pointsize>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Air Boost</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_13">
+            <item>
+             <spacer name="horizontalSpacer_2">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_25">
+              <item>
+               <widget class="AnalogGaugeWidget" name="sea_water_pressure_gauge" native="true">
+                <property name="minimumSize">
+                 <size>
+                  <width>196</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>220</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_23">
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>19</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>IRANSansXFaNum</family>
+                  <pointsize>10</pointsize>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Sea Water</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_4">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeType">
+               <enum>QSizePolicy::Maximum</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>82</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_24">
+              <item>
+               <widget class="AnalogGaugeWidget" name="fuel_pressure_gauge" native="true">
+                <property name="minimumSize">
+                 <size>
+                  <width>196</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>220</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_22">
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>19</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>IRANSansXFaNum</family>
+                  <pointsize>10</pointsize>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Fuel Pressure</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_3">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
        </widget>
       </item>
      </layout>
@@ -633,7 +1231,7 @@ background-color: rgb(60, 60, 60);
         <number>0</number>
        </property>
        <property name="leftMargin">
-        <number>10</number>
+        <number>2</number>
        </property>
        <property name="topMargin">
         <number>0</number>
@@ -694,7 +1292,7 @@ background-color: rgb(60, 60, 60);
           </font>
          </property>
          <property name="text">
-          <string>temperature</string>
+          <string>دما</string>
          </property>
         </widget>
        </item>
@@ -721,7 +1319,7 @@ background-color: rgb(60, 60, 60);
           </font>
          </property>
          <property name="text">
-          <string>Pressure</string>
+          <string>فشار</string>
          </property>
         </widget>
        </item>
@@ -748,7 +1346,28 @@ background-color: rgb(60, 60, 60);
           </font>
          </property>
          <property name="text">
-          <string>keys</string>
+          <string>کلیدها</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="toolButton">
+         <property name="minimumSize">
+          <size>
+           <width>75</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>IRANSansXFaNum</family>
+           <pointsize>10</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>سایر</string>
          </property>
         </widget>
        </item>
