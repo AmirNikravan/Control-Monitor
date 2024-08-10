@@ -16,9 +16,9 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QGroupBox, QHBoxLayout, QLabel,
-    QListWidget, QListWidgetItem, QMainWindow, QMenuBar,
-    QSizePolicy, QStackedWidget, QStatusBar, QToolButton,
-    QVBoxLayout, QWidget)
+    QMainWindow, QMenuBar, QSizePolicy, QSpacerItem,
+    QStackedWidget, QStatusBar, QToolButton, QVBoxLayout,
+    QWidget)
 
 from AnalogGaugeWidget import AnalogGaugeWidget
 
@@ -26,18 +26,56 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(615, 597)
+        MainWindow.resize(697, 607)
+        MainWindow.setWindowOpacity(1.000000000000000)
         MainWindow.setStyleSheet(u"background-color: rgb(191, 191, 191);")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
-        self.verticalLayout = QVBoxLayout(self.centralwidget)
+        self.horizontalLayout_7 = QHBoxLayout(self.centralwidget)
+        self.horizontalLayout_7.setSpacing(0)
+        self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
+        self.horizontalLayout_7.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout = QVBoxLayout()
         self.verticalLayout.setObjectName(u"verticalLayout")
+        self.widget = QWidget(self.centralwidget)
+        self.widget.setObjectName(u"widget")
+        self.widget.setMinimumSize(QSize(0, 39))
+        self.widget.setStyleSheet(u"background-color: rgb(241, 242, 243);")
+        self.horizontalLayout_8 = QHBoxLayout(self.widget)
+        self.horizontalLayout_8.setObjectName(u"horizontalLayout_8")
+        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_8.addItem(self.horizontalSpacer)
+
+        self.label_2 = QLabel(self.widget)
+        self.label_2.setObjectName(u"label_2")
+        font = QFont()
+        font.setFamilies([u"IRANSansXFaNum"])
+        font.setPointSize(11)
+        font.setBold(True)
+        self.label_2.setFont(font)
+
+        self.horizontalLayout_8.addWidget(self.label_2)
+
+        self.label = QLabel(self.widget)
+        self.label.setObjectName(u"label")
+        font1 = QFont()
+        font1.setFamilies([u"IRANSansXFaNum"])
+        font1.setPointSize(12)
+        font1.setBold(True)
+        self.label.setFont(font1)
+
+        self.horizontalLayout_8.addWidget(self.label)
+
+
+        self.verticalLayout.addWidget(self.widget)
+
         self.stackedWidget = QStackedWidget(self.centralwidget)
         self.stackedWidget.setObjectName(u"stackedWidget")
         self.stackedWidget.setStyleSheet(u"background-color: rgb(224, 224, 224);")
-        self.speed = QWidget()
-        self.speed.setObjectName(u"speed")
-        self.speed.setStyleSheet(u"QToolButton{\n"
+        self.testbed = QWidget()
+        self.testbed.setObjectName(u"testbed")
+        self.testbed.setStyleSheet(u"QToolButton{\n"
 "background-color: rgb(91, 122, 208);\n"
 "border-radius :5px;\n"
 "}\n"
@@ -46,42 +84,70 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "")
-        self.verticalLayout_3 = QVBoxLayout(self.speed)
-        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
+        self.verticalLayout_6 = QVBoxLayout(self.testbed)
+        self.verticalLayout_6.setObjectName(u"verticalLayout_6")
         self.horizontalLayout_6 = QHBoxLayout()
         self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
-        self.listWidget = QListWidget(self.speed)
-        self.listWidget.setObjectName(u"listWidget")
-        self.listWidget.setMaximumSize(QSize(168, 16777215))
-        self.listWidget.setStyleSheet(u"background-color: rgb(254, 243, 255);")
+        self.verticalLayout_5 = QVBoxLayout()
+        self.verticalLayout_5.setObjectName(u"verticalLayout_5")
+        self.rpm_gauge = AnalogGaugeWidget(self.testbed)
+        self.rpm_gauge.setObjectName(u"rpm_gauge")
+        self.rpm_gauge.setMinimumSize(QSize(300, 183))
 
-        self.horizontalLayout_6.addWidget(self.listWidget)
+        self.verticalLayout_5.addWidget(self.rpm_gauge)
 
-        self.widget = AnalogGaugeWidget(self.speed)
-        self.widget.setObjectName(u"widget")
-        self.widget.setMinimumSize(QSize(0, 183))
+        self.label_4 = QLabel(self.testbed)
+        self.label_4.setObjectName(u"label_4")
+        sizePolicy = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.label_4.sizePolicy().hasHeightForWidth())
+        self.label_4.setSizePolicy(sizePolicy)
+        self.label_4.setMaximumSize(QSize(16777215, 22))
+        font2 = QFont()
+        font2.setFamilies([u"IRANSansXV Light"])
+        font2.setPointSize(10)
+        self.label_4.setFont(font2)
+        self.label_4.setAlignment(Qt.AlignCenter)
 
-        self.horizontalLayout_6.addWidget(self.widget)
-
-        self.label = QLabel(self.speed)
-        self.label.setObjectName(u"label")
-        self.label.setMinimumSize(QSize(90, 40))
-        self.label.setMaximumSize(QSize(90, 40))
-        font = QFont()
-        font.setFamilies([u"IRANSansXFaNum"])
-        font.setPointSize(14)
-        font.setBold(True)
-        self.label.setFont(font)
-        self.label.setStyleSheet(u"background-color: rgb(249, 239, 177);\n"
-"border-radius : 5px;")
-
-        self.horizontalLayout_6.addWidget(self.label)
+        self.verticalLayout_5.addWidget(self.label_4)
 
 
-        self.verticalLayout_3.addLayout(self.horizontalLayout_6)
+        self.horizontalLayout_6.addLayout(self.verticalLayout_5)
 
-        self.groupBox = QGroupBox(self.speed)
+        self.verticalLayout_3 = QVBoxLayout()
+        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
+        self.speed_gauge = AnalogGaugeWidget(self.testbed)
+        self.speed_gauge.setObjectName(u"speed_gauge")
+        self.speed_gauge.setMinimumSize(QSize(300, 183))
+
+        self.verticalLayout_3.addWidget(self.speed_gauge)
+
+        self.label_3 = QLabel(self.testbed)
+        self.label_3.setObjectName(u"label_3")
+        sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
+        sizePolicy1.setHorizontalStretch(0)
+        sizePolicy1.setVerticalStretch(1)
+        sizePolicy1.setHeightForWidth(self.label_3.sizePolicy().hasHeightForWidth())
+        self.label_3.setSizePolicy(sizePolicy1)
+        self.label_3.setMaximumSize(QSize(16777215, 22))
+        font3 = QFont()
+        font3.setFamilies([u"IRANSansXV Light"])
+        font3.setPointSize(11)
+        self.label_3.setFont(font3)
+        self.label_3.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_3.addWidget(self.label_3)
+
+
+        self.horizontalLayout_6.addLayout(self.verticalLayout_3)
+
+
+        self.verticalLayout_6.addLayout(self.horizontalLayout_6)
+
+        self.groupBox = QGroupBox(self.testbed)
         self.groupBox.setObjectName(u"groupBox")
+        self.groupBox.setFont(font1)
         self.verticalLayout_2 = QVBoxLayout(self.groupBox)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.horizontalLayout = QHBoxLayout()
@@ -89,10 +155,6 @@ class Ui_MainWindow(object):
         self.toolButton_speed1 = QToolButton(self.groupBox)
         self.toolButton_speed1.setObjectName(u"toolButton_speed1")
         self.toolButton_speed1.setMinimumSize(QSize(75, 75))
-        font1 = QFont()
-        font1.setFamilies([u"IRANSansXFaNum"])
-        font1.setPointSize(12)
-        font1.setBold(True)
         self.toolButton_speed1.setFont(font1)
 
         self.horizontalLayout.addWidget(self.toolButton_speed1)
@@ -188,10 +250,11 @@ class Ui_MainWindow(object):
         self.verticalLayout_2.addLayout(self.horizontalLayout_4)
 
 
-        self.verticalLayout_3.addWidget(self.groupBox)
+        self.verticalLayout_6.addWidget(self.groupBox)
 
-        self.groupBox_2 = QGroupBox(self.speed)
+        self.groupBox_2 = QGroupBox(self.testbed)
         self.groupBox_2.setObjectName(u"groupBox_2")
+        self.groupBox_2.setFont(font1)
         self.horizontalLayout_5 = QHBoxLayout(self.groupBox_2)
         self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
         self.horizontalLayout_3 = QHBoxLayout()
@@ -218,23 +281,90 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_3.addWidget(self.toolButton_stop)
 
+        self.toolButton_reset = QToolButton(self.groupBox_2)
+        self.toolButton_reset.setObjectName(u"toolButton_reset")
+        self.toolButton_reset.setMinimumSize(QSize(100, 50))
+        self.toolButton_reset.setFont(font1)
+
+        self.horizontalLayout_3.addWidget(self.toolButton_reset)
+
 
         self.horizontalLayout_5.addLayout(self.horizontalLayout_3)
 
 
-        self.verticalLayout_3.addWidget(self.groupBox_2)
+        self.verticalLayout_6.addWidget(self.groupBox_2)
 
-        self.stackedWidget.addWidget(self.speed)
+        self.stackedWidget.addWidget(self.testbed)
         self.page_2 = QWidget()
         self.page_2.setObjectName(u"page_2")
         self.stackedWidget.addWidget(self.page_2)
 
         self.verticalLayout.addWidget(self.stackedWidget)
 
+
+        self.horizontalLayout_7.addLayout(self.verticalLayout)
+
+        self.widget_2 = QWidget(self.centralwidget)
+        self.widget_2.setObjectName(u"widget_2")
+        self.widget_2.setMinimumSize(QSize(80, 0))
+        self.widget_2.setStyleSheet(u"QWidget{background-color: rgb(110, 140, 204);}\n"
+"QToolButton{\n"
+"background-color: rgb(255, 182, 93);\n"
+"\n"
+"border-radius :5px;\n"
+"}\n"
+"QToolButton:hover{\n"
+"background-color: rgb(60, 60, 60);\n"
+"}\n"
+"\n"
+"")
+        self.verticalLayout_4 = QVBoxLayout(self.widget_2)
+        self.verticalLayout_4.setSpacing(0)
+        self.verticalLayout_4.setObjectName(u"verticalLayout_4")
+        self.verticalLayout_4.setContentsMargins(10, 0, 0, 0)
+        self.toolButton = QToolButton(self.widget_2)
+        self.toolButton.setObjectName(u"toolButton")
+        self.toolButton.setMinimumSize(QSize(75, 25))
+        self.toolButton.setMaximumSize(QSize(60, 25))
+        font4 = QFont()
+        font4.setFamilies([u"IRANSansXFaNum"])
+        font4.setPointSize(10)
+        font4.setBold(True)
+        self.toolButton.setFont(font4)
+
+        self.verticalLayout_4.addWidget(self.toolButton)
+
+        self.toolButton_2 = QToolButton(self.widget_2)
+        self.toolButton_2.setObjectName(u"toolButton_2")
+        self.toolButton_2.setMinimumSize(QSize(75, 25))
+        self.toolButton_2.setMaximumSize(QSize(60, 25))
+        self.toolButton_2.setFont(font4)
+
+        self.verticalLayout_4.addWidget(self.toolButton_2)
+
+        self.toolButton_3 = QToolButton(self.widget_2)
+        self.toolButton_3.setObjectName(u"toolButton_3")
+        self.toolButton_3.setMinimumSize(QSize(75, 25))
+        self.toolButton_3.setMaximumSize(QSize(60, 25))
+        self.toolButton_3.setFont(font4)
+
+        self.verticalLayout_4.addWidget(self.toolButton_3)
+
+        self.toolButton_4 = QToolButton(self.widget_2)
+        self.toolButton_4.setObjectName(u"toolButton_4")
+        self.toolButton_4.setMinimumSize(QSize(75, 25))
+        self.toolButton_4.setMaximumSize(QSize(60, 25))
+        self.toolButton_4.setFont(font4)
+
+        self.verticalLayout_4.addWidget(self.toolButton_4)
+
+
+        self.horizontalLayout_7.addWidget(self.widget_2)
+
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 615, 18))
+        self.menubar.setGeometry(QRect(0, 0, 697, 18))
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
@@ -250,7 +380,10 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"\u062f\u0631\u0641\u0634", None))
-        self.label.setText("")
+        self.label_2.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0627\u0645\u0648\u0634", None))
+        self.label.setText(QCoreApplication.translate("MainWindow", u" \u0648\u0636\u0639\u06cc\u062a \u0645\u0648\u062a\u0648\u0631 :", None))
+        self.label_4.setText(QCoreApplication.translate("MainWindow", u"\u062f\u0648\u0631 \u0645\u0648\u062a\u0648\u0631", None))
+        self.label_3.setText(QCoreApplication.translate("MainWindow", u"\u0633\u0631\u0639\u062a", None))
         self.groupBox.setTitle(QCoreApplication.translate("MainWindow", u"Speed", None))
         self.toolButton_speed1.setText(QCoreApplication.translate("MainWindow", u"1", None))
         self.toolButton_speed2.setText(QCoreApplication.translate("MainWindow", u"2", None))
@@ -268,5 +401,10 @@ class Ui_MainWindow(object):
         self.toolButton_start.setText(QCoreApplication.translate("MainWindow", u"Start", None))
         self.toolButton_emgstop.setText(QCoreApplication.translate("MainWindow", u"EMG STOP", None))
         self.toolButton_stop.setText(QCoreApplication.translate("MainWindow", u"Stop", None))
+        self.toolButton_reset.setText(QCoreApplication.translate("MainWindow", u"Reset", None))
+        self.toolButton.setText(QCoreApplication.translate("MainWindow", u"test bed", None))
+        self.toolButton_2.setText(QCoreApplication.translate("MainWindow", u"temperature", None))
+        self.toolButton_3.setText(QCoreApplication.translate("MainWindow", u"Pressure", None))
+        self.toolButton_4.setText(QCoreApplication.translate("MainWindow", u"keys", None))
     # retranslateUi
 
