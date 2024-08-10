@@ -86,6 +86,7 @@ class Ui_MainWindow(object):
 "")
         self.verticalLayout_6 = QVBoxLayout(self.testbed)
         self.verticalLayout_6.setObjectName(u"verticalLayout_6")
+        self.verticalLayout_6.setContentsMargins(6, 6, -1, -1)
         self.horizontalLayout_6 = QHBoxLayout()
         self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
         self.verticalLayout_5 = QVBoxLayout()
@@ -322,41 +323,41 @@ class Ui_MainWindow(object):
         self.verticalLayout_4.setSpacing(0)
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
         self.verticalLayout_4.setContentsMargins(10, 0, 0, 0)
-        self.toolButton = QToolButton(self.widget_2)
-        self.toolButton.setObjectName(u"toolButton")
-        self.toolButton.setMinimumSize(QSize(75, 25))
-        self.toolButton.setMaximumSize(QSize(60, 25))
+        self.toolButton_testbed = QToolButton(self.widget_2)
+        self.toolButton_testbed.setObjectName(u"toolButton_testbed")
+        self.toolButton_testbed.setMinimumSize(QSize(75, 25))
+        self.toolButton_testbed.setMaximumSize(QSize(60, 25))
         font4 = QFont()
         font4.setFamilies([u"IRANSansXFaNum"])
         font4.setPointSize(10)
         font4.setBold(True)
-        self.toolButton.setFont(font4)
+        self.toolButton_testbed.setFont(font4)
 
-        self.verticalLayout_4.addWidget(self.toolButton)
+        self.verticalLayout_4.addWidget(self.toolButton_testbed)
 
-        self.toolButton_2 = QToolButton(self.widget_2)
-        self.toolButton_2.setObjectName(u"toolButton_2")
-        self.toolButton_2.setMinimumSize(QSize(75, 25))
-        self.toolButton_2.setMaximumSize(QSize(60, 25))
-        self.toolButton_2.setFont(font4)
+        self.toolButton_temperature = QToolButton(self.widget_2)
+        self.toolButton_temperature.setObjectName(u"toolButton_temperature")
+        self.toolButton_temperature.setMinimumSize(QSize(75, 25))
+        self.toolButton_temperature.setMaximumSize(QSize(60, 25))
+        self.toolButton_temperature.setFont(font4)
 
-        self.verticalLayout_4.addWidget(self.toolButton_2)
+        self.verticalLayout_4.addWidget(self.toolButton_temperature)
 
-        self.toolButton_3 = QToolButton(self.widget_2)
-        self.toolButton_3.setObjectName(u"toolButton_3")
-        self.toolButton_3.setMinimumSize(QSize(75, 25))
-        self.toolButton_3.setMaximumSize(QSize(60, 25))
-        self.toolButton_3.setFont(font4)
+        self.toolButton_pressure = QToolButton(self.widget_2)
+        self.toolButton_pressure.setObjectName(u"toolButton_pressure")
+        self.toolButton_pressure.setMinimumSize(QSize(75, 25))
+        self.toolButton_pressure.setMaximumSize(QSize(60, 25))
+        self.toolButton_pressure.setFont(font4)
 
-        self.verticalLayout_4.addWidget(self.toolButton_3)
+        self.verticalLayout_4.addWidget(self.toolButton_pressure)
 
-        self.toolButton_4 = QToolButton(self.widget_2)
-        self.toolButton_4.setObjectName(u"toolButton_4")
-        self.toolButton_4.setMinimumSize(QSize(75, 25))
-        self.toolButton_4.setMaximumSize(QSize(60, 25))
-        self.toolButton_4.setFont(font4)
+        self.toolButton_keys = QToolButton(self.widget_2)
+        self.toolButton_keys.setObjectName(u"toolButton_keys")
+        self.toolButton_keys.setMinimumSize(QSize(75, 25))
+        self.toolButton_keys.setMaximumSize(QSize(60, 25))
+        self.toolButton_keys.setFont(font4)
 
-        self.verticalLayout_4.addWidget(self.toolButton_4)
+        self.verticalLayout_4.addWidget(self.toolButton_keys)
 
 
         self.horizontalLayout_7.addWidget(self.widget_2)
@@ -372,7 +373,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -402,9 +403,9 @@ class Ui_MainWindow(object):
         self.toolButton_emgstop.setText(QCoreApplication.translate("MainWindow", u"EMG STOP", None))
         self.toolButton_stop.setText(QCoreApplication.translate("MainWindow", u"Stop", None))
         self.toolButton_reset.setText(QCoreApplication.translate("MainWindow", u"Reset", None))
-        self.toolButton.setText(QCoreApplication.translate("MainWindow", u"test bed", None))
-        self.toolButton_2.setText(QCoreApplication.translate("MainWindow", u"temperature", None))
-        self.toolButton_3.setText(QCoreApplication.translate("MainWindow", u"Pressure", None))
-        self.toolButton_4.setText(QCoreApplication.translate("MainWindow", u"keys", None))
+        self.toolButton_testbed.setText(QCoreApplication.translate("MainWindow", u"test bed", None))
+        self.toolButton_temperature.setText(QCoreApplication.translate("MainWindow", u"temperature", None))
+        self.toolButton_pressure.setText(QCoreApplication.translate("MainWindow", u"Pressure", None))
+        self.toolButton_keys.setText(QCoreApplication.translate("MainWindow", u"keys", None))
     # retranslateUi
 

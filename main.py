@@ -58,15 +58,22 @@ class App(QMainWindow):
         self.ui.toolButton_emgstop.clicked.connect(
             lambda: self.handle_button_click("re")
         )
+        self.ui.toolButton_testbed.clicked.connect(self.change_page('testbed'))
+        self.ui.toolButton_temperature.clicked.connect(self.change_page('temperature'))
+        #design
         self.design_gauges()
         # Connect the signal to the slot
         self.arduino.data_received.connect(self.update_data_label)
-
+    def change_page(self,page):
+        if page== 'testbed':
+            self.ui.stackedWidget.setCurrentIndex(0)
+        elif page == 'temperature':
+            self.ui.stackedWidget.setCurrentIndex(1)
     def handle_button_click(self, code):
         if code == "st":
-            self.ui.label.setText("STARTED")
-        if code == "sp":
-            self.ui.label.setText("stop")
+            self.ui.label_2.setText("روشن")
+        if code == "sp" or code == "mg":
+            self.ui.label.setText("خاموش")
         # Prepare the string to send based on the button index
         self.arduino.send_data(code)
 
