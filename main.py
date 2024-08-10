@@ -14,7 +14,7 @@ class App(QMainWindow):
         super().__init__(parent)
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-        self.arduino = ArduinoHandler("COM4", self.ui.speed_gauge)
+        self.arduino = ArduinoHandler("COM4")
         self.ui.widget.setMouseTracking(False)
         # Buttons
         self.ui.toolButton_speed1.clicked.connect(
@@ -71,7 +71,7 @@ class App(QMainWindow):
         # Connect the signal to the slot
         self.arduino.data_received.connect(self.update_data_label)
         #thread
-        self.worker = Worker()
+        self.worker = WorkerGauge()
         self.start()
         self.worker.values.connect(self.update)
     def update(self,val):
@@ -79,10 +79,13 @@ class App(QMainWindow):
         self.ui.airboost_bank_a_temp_gauge.repaint()
     def start(self):
         self.worker.start()
-    def closeEvent(self,event):
+    def closeEvent(self, event):
+        # Close the serial port when the application is closed
         self.worker.stop()
         self.worker.wait()
+        self.arduino.close()
         event.accept()
+
     def change_page(self, page):
 
         if page == "testbed":
@@ -120,10 +123,6 @@ class App(QMainWindow):
             # self.ui.listWidget.addItem(f"Ignoring non-numeric data: {data}")
             print(f"Ignoring non-numeric data: {data}")
 
-    def closeEvent(self, event):
-        # Close the serial port when the application is closed
-        self.arduino.close()
-        event.accept()
 
     def design_gauges(self):
 
