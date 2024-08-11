@@ -6,9 +6,9 @@ import time
 class WorkerGauge(QThread):
     values = Signal(list)
 
-    def __init__(self):
+    def __init__(self,):
         super().__init__()
-        self.val = []
+        # self.val = value
         self.running = True  # To control the loop
 
     def run(self):
@@ -19,13 +19,14 @@ class WorkerGauge(QThread):
             print(self.val[0])
             self.values.emit(self.val)
             time.sleep(1)  # Delay for 1 second
-
+    def get_data(self,data):
+        print(data)
     def stop(self):
         self.running = False  # Stop the loop when needed
 
 
 class WorkerArduino(QThread):
-    data_recieved = Signal(str)
+    data_received = Signal(dict)
 
     def __init__(self, arduino_handler):
         super().__init__()

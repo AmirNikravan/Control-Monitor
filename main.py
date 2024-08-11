@@ -6,16 +6,24 @@ from arduino import ArduinoHandler
 from PySide6.QtCore import Signal
 import time
 from thread import *
+from data import *
+
 
 class App(QMainWindow):
-    update_ui_signal = Signal(float)
 
     def __init__(self, parent=None):
         super().__init__(parent)
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.arduino = ArduinoHandler("COM4")
-        self.ui.widget.setMouseTracking(False)
+        self.worker_gauge = WorkerGauge()
+        self.worker_arduino = WorkerArduino(self.arduino)
+        self.data_processor = DataProcess(
+            self.worker_arduino, self.worker_gauge, self.ui
+        )
+        self.worker_gauge.start()
+        self.worker_arduino.start()
+        # self.ui.widget.setMouseTracking(False)
         # Buttons
         self.ui.toolButton_speed1.clicked.connect(
             lambda: self.handle_button_click("s1")
@@ -59,32 +67,30 @@ class App(QMainWindow):
             lambda: self.handle_button_click("mg")
         )
         self.ui.toolButton_reset.clicked.connect(lambda: self.handle_button_click("re"))
-        #change page
+        # change page
         self.ui.toolButton_testbed.clicked.connect(lambda: self.change_page("testbed"))
         self.ui.toolButton_temperature.clicked.connect(
             lambda: self.change_page("temperature")
         )
-        self.ui.toolButton_pressure.clicked.connect(lambda:self.change_page("pressure"))
+        self.ui.toolButton_pressure.clicked.connect(
+            lambda: self.change_page("pressure")
+        )
         # design
         self.ui.stackedWidget.setCurrentIndex(0)
         self.design_gauges()
         # Connect the signal to the slot
-        self.arduino.data_received.connect(self.update_data_label)
-        #thread
-        self.worker = WorkerGauge()
-        self.start()
-        self.worker.values.connect(self.update)
-    def update(self,val):
+        # thread
+
+
+
+    def update_arduino_data(self, data):
+        # Handle incoming data from Arduino
+        print(f"Data received from Arduino: {data}")
+
+    def update_gauge(self, val):
         self.ui.airboost_bank_a_temp_gauge.value = val[0]
         self.ui.airboost_bank_a_temp_gauge.repaint()
-    def start(self):
-        self.worker.start()
-    def closeEvent(self, event):
-        # Close the serial port when the application is closed
-        self.worker.stop()
-        self.worker.wait()
-        self.arduino.close()
-        event.accept()
+
 
     def change_page(self, page):
 
@@ -94,13 +100,10 @@ class App(QMainWindow):
             self.ui.stackedWidget.setCurrentIndex(1)
         elif page == "pressure":
             self.ui.stackedWidget.setCurrentIndex(2)
-    def handle_button_click(self, code):
-        if code == "st":
-            self.ui.label_2.setText("روشن")
-        if code == "sp" or code == "mg":
-            self.ui.label_2.setText("خاموش")
-        # Prepare the string to send based on the button index
-        self.arduino.send_data(code)
+
+    def handle_button_click(self, command):
+        # Send commands to Arduino
+        self.arduino._send(command)
 
     def update_data_label(self, data):
         # print(f"Raw data received: '{data}'")
@@ -122,7 +125,6 @@ class App(QMainWindow):
         except ValueError:
             # self.ui.listWidget.addItem(f"Ignoring non-numeric data: {data}")
             print(f"Ignoring non-numeric data: {data}")
-
 
     def design_gauges(self):
 

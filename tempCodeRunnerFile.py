@@ -1,2 +1,1 @@
-
-        self.ui.toolButton_testbed.clicked.connect(lambda: self.change_page("testbed"))
+data_received.connect(self.update_arduino_data)
