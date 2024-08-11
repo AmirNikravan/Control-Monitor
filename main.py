@@ -18,11 +18,10 @@ class App(QMainWindow):
         self.arduino = ArduinoHandler("COM4")
         self.worker_gauge = WorkerGauge()
         self.worker_arduino = WorkerArduino(self.arduino)
-        self.data_processor = DataProcess(
-            self.worker_arduino, self.worker_gauge, self.ui
-        )
-        self.worker_gauge.start()
-        self.worker_arduino.start()
+        # self.data_processor = DataProcess(
+        #     self.worker_arduino, self.worker_gauge, self.ui
+        # )
+
         # self.ui.widget.setMouseTracking(False)
         # Buttons
         self.ui.toolButton_speed1.clicked.connect(
@@ -80,8 +79,12 @@ class App(QMainWindow):
         self.design_gauges()
         # Connect the signal to the slot
         # thread
+        # self.worker_arduino.data_received.connect(self.worker_gauge.get_data)
+        # self.worker_gauge.start()
+        self.worker_arduino.data_received.connect(self.worker_gauge.handle_data_received)
 
-
+        self.worker_arduino.start()
+        self.worker_gauge.start()
 
     def update_arduino_data(self, data):
         # Handle incoming data from Arduino

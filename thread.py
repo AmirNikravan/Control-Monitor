@@ -6,27 +6,36 @@ import time
 class WorkerGauge(QThread):
     values = Signal(list)
 
-    def __init__(self,):
+    def __init__(self,ui):
         super().__init__()
-        # self.val = value
-        self.running = True  # To control the loop
+        self.val = []
+        self.running = True
+        self.data = None  # متغیر برای ذخیره داده‌های دریافتی
 
     def run(self):
-        while self.running:  # Infinite loop for generating random numbers
-            self.val.clear()
-            for _ in range(10):
-                self.val.append(random.randint(0, 1000))
-            print(self.val[0])
-            self.values.emit(self.val)
-            time.sleep(1)  # Delay for 1 second
-    def get_data(self,data):
-        print(data)
+        while self.running:
+            # بررسی و استفاده از داده‌های ذخیره شده
+            if self.data is not None:
+                print(f"Processing data: {self.data}")
+                # پردازش داده‌ها و به‌روزرسانی مقادیر
+                # برای مثال، به‌روزرسانی مقادیر شاخص‌ها
+                self.val = [int(self.data)]  # تبدیل داده به لیست برای مثال
+                self.values.emit(self.val)
+                self.data = None  # بعد از پردازش داده، آن را پاک کنید
+            else:
+                # داده‌ای برای پردازش وجود ندارد
+                print("No data to process.")
+            time.sleep(1)
+
+    def handle_data_received(self, data):
+        # دریافت داده‌ها از WorkerArduino و ذخیره آن
+        print(f"Data received: {data}")
+        self.data = data  # ذخیره داده برای پردازش در تابع run
+
     def stop(self):
-        self.running = False  # Stop the loop when needed
-
-
+        self.running = False
 class WorkerArduino(QThread):
-    data_received = Signal(dict)
+    data_received = Signal(int)
 
     def __init__(self, arduino_handler):
         super().__init__()
@@ -36,11 +45,12 @@ class WorkerArduino(QThread):
     def run(self):
         while self.running:
             try:
-                if self.arduino_handler.serial_port.in_waiting > 0:
-                    data = self.arduino_handler.serial_port.readline().decode().strip()
-                    self.data_received.emit(data)
+                # if self.arduino_handler.serial_port.in_waiting > 0:
+                #     data = self.arduino_handler.serial_port.readline().decode().strip()
+                self.data_received.emit(random.randint(0,1000))
             except Exception as e:
-                print(f"Error reading from Arduino: {e}")
+                # print(f"Error reading from Arduino: {e}")
+                pass
             time.sleep(0.1)
 
     def stop(self):
