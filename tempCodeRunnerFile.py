@@ -1,1 +1,3 @@
-data_received.connect(self.update_arduino_data)
+
+        # Send commands to Arduino
+        self.arduino._send(command)

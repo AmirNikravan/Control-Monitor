@@ -4,9 +4,9 @@ import time
 
 
 class WorkerGauge(QThread):
-    values = Signal(list)
+    values = Signal(int)
 
-    def __init__(self,ui):
+    def __init__(self):
         super().__init__()
         self.val = []
         self.running = True
@@ -14,33 +14,20 @@ class WorkerGauge(QThread):
 
     def run(self):
         while self.running:
-            # بررسی و استفاده از داده‌های ذخیره شده
-            if self.data is not None:
-                print(f"Processing data: {self.data}")
-                # پردازش داده‌ها و به‌روزرسانی مقادیر
-                # برای مثال، به‌روزرسانی مقادیر شاخص‌ها
-                self.val = [int(self.data)]  # تبدیل داده به لیست برای مثال
-                self.values.emit(self.val)
-                self.data = None  # بعد از پردازش داده، آن را پاک کنید
-            else:
-                # داده‌ای برای پردازش وجود ندارد
-                print("No data to process.")
-            time.sleep(1)
-
-    def handle_data_received(self, data):
-        # دریافت داده‌ها از WorkerArduino و ذخیره آن
-        print(f"Data received: {data}")
-        self.data = data  # ذخیره داده برای پردازش در تابع run
-
+            for i in range (25):
+                self.values.emit(i)
+                QThread.sleep(1.5)
     def stop(self):
         self.running = False
+        
+        
 class WorkerArduino(QThread):
     data_received = Signal(int)
 
-    def __init__(self, arduino_handler):
+    def __init__(self, ):
         super().__init__()
         self.running = True
-        self.arduino_handler = arduino_handler
+        # self.arduino_handler = arduino_handler
 
     def run(self):
         while self.running:
@@ -51,7 +38,7 @@ class WorkerArduino(QThread):
             except Exception as e:
                 # print(f"Error reading from Arduino: {e}")
                 pass
-            time.sleep(0.1)
+            time.sleep(0.5)
 
     def stop(self):
         self.running = False

@@ -7,7 +7,7 @@ from PySide6.QtCore import Signal
 import time
 from thread import *
 from data import *
-
+from processor import *
 
 class App(QMainWindow):
 
@@ -15,9 +15,8 @@ class App(QMainWindow):
         super().__init__(parent)
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-        self.arduino = ArduinoHandler("COM4")
-        self.worker_gauge = WorkerGauge()
-        self.worker_arduino = WorkerArduino(self.arduino)
+        # self.arduino = None
+
         # self.data_processor = DataProcess(
         #     self.worker_arduino, self.worker_gauge, self.ui
         # )
@@ -79,20 +78,29 @@ class App(QMainWindow):
         self.design_gauges()
         # Connect the signal to the slot
         # thread
-        # self.worker_arduino.data_received.connect(self.worker_gauge.get_data)
-        # self.worker_gauge.start()
-        self.worker_arduino.data_received.connect(self.worker_gauge.handle_data_received)
-
+        self.worker = WorkerGauge()
+        self.worker.values.connect(self.update_gauge)
+        self.worker.start()
+        self.worker_arduino = WorkerArduino()
+        self.worker_dataprocess = DataProcess()
+        self.worker_gauge = Gauge(self.ui)
+        
+        # Connect signals and slots
+        self.worker_arduino.data_received.connect(self.worker_dataprocess.get_data)
+        self.worker_dataprocess.data_gauge.connect(self.worker_gauge.process_data)
+        
         self.worker_arduino.start()
+        self.worker_dataprocess.start()
         self.worker_gauge.start()
-
-    def update_arduino_data(self, data):
-        # Handle incoming data from Arduino
-        print(f"Data received from Arduino: {data}")
+    # def update_arduino_data(self, data):
+    #     # Handle incoming data from Arduino
+    #     print(f"Data received from Arduino: {data}")
 
     def update_gauge(self, val):
-        self.ui.airboost_bank_a_temp_gauge.value = val[0]
-        self.ui.airboost_bank_a_temp_gauge.repaint()
+        self.ui.speed_gauge.value = val
+        # self.ui.airboost_bank_a_temp_gauge.neede
+        self.ui.speed_gauge.setGaugeTheme(val)
+        self.ui.speed_gauge.repaint()
 
 
     def change_page(self, page):
@@ -139,6 +147,16 @@ class App(QMainWindow):
         self.ui.rpm_gauge.setGaugeTheme(6)
         self.ui.rpm_gauge.setMouseTracking(False)
         self.ui.rpm_gauge.units = "RPM"
+        self.ui.airboost_bank_a_temp_gauge.setMouseTracking(False)
+        self.ui.exhuast_bank_b_temp_gauge.setMouseTracking(False)
+        self.ui.exhuast_bank_a_temp_gauge.setMouseTracking(False)
+        self.ui.oil_ntc_temp_gauge.setMouseTracking(False)
+        self.ui.oil_temp_gauge.setMouseTracking(False)
+        self.ui.airboost_bank_b_temp_gauge.setMouseTracking(False)
+        self.ui.sea_water_temp_gauge.setMouseTracking(False)
+        self.ui.freshwater_beforethermo_temp_gauge.setMouseTracking(False)
+        self.ui.freshwater_afterthermo_temp_gauge.setMouseTracking(False)
+        
         # print(i)\
         # time.sleep(1)
         # self.ui.speed_gauge.repaint()
