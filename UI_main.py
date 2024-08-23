@@ -795,7 +795,7 @@ class Ui_MainWindow(object):
         self.lamp_increase.setStyleSheet(u"    QLabel {\n"
 "\n"
 "\n"
-"	background-color: rgb(255, 0, 0);\n"
+"	background-color: red;\n"
 "                border-style: outset;\n"
 "                border-width: 1px;\n"
 "                border-radius: 30px;\n"
@@ -822,7 +822,7 @@ class Ui_MainWindow(object):
         self.lamp_decrease.setStyleSheet(u"    QLabel {\n"
 "\n"
 "\n"
-"	background-color: rgb(255, 0, 0);\n"
+"	background-color: red;\n"
 "                border-style: outset;\n"
 "                border-width: 1px;\n"
 "                border-radius: 30px;\n"
@@ -849,7 +849,7 @@ class Ui_MainWindow(object):
         self.lamp_start.setStyleSheet(u"    QLabel {\n"
 "\n"
 "\n"
-"	background-color: rgb(255, 0, 0);\n"
+"	background-color: red;\n"
 "                border-style: outset;\n"
 "                border-width: 1px;\n"
 "                border-radius: 30px;\n"
@@ -876,7 +876,7 @@ class Ui_MainWindow(object):
         self.lamp_emgstop.setStyleSheet(u"    QLabel {\n"
 "\n"
 "\n"
-"	background-color: rgb(255, 0, 0);\n"
+"	background-color: red;\n"
 "                border-style: outset;\n"
 "                border-width: 1px;\n"
 "                border-radius: 30px;\n"
@@ -903,7 +903,7 @@ class Ui_MainWindow(object):
         self.lamp_stop.setStyleSheet(u"    QLabel {\n"
 "\n"
 "\n"
-"	background-color: rgb(255, 0, 0);\n"
+"	background-color: red;\n"
 "                border-style: outset;\n"
 "                border-width: 1px;\n"
 "                border-radius: 30px;\n"
@@ -942,7 +942,10 @@ class Ui_MainWindow(object):
 "                border-style: outset;\n"
 "\n"
 "                border-radius: 30px;\n"
-"        }")
+"        }\n"
+"QToolButton:hover{\n"
+"background-color: rgb(204, 174, 255);\n"
+"}")
 
         self.verticalLayout_8.addWidget(self.increase_key)
 
@@ -971,7 +974,10 @@ class Ui_MainWindow(object):
 "                border-style: outset;\n"
 "\n"
 "                border-radius: 30px;\n"
-"        }")
+"        }\n"
+"QToolButton:hover{\n"
+"background-color: rgb(204, 174, 255);\n"
+"}")
 
         self.verticalLayout_9.addWidget(self.decrease_key)
 
@@ -1000,7 +1006,10 @@ class Ui_MainWindow(object):
 "                border-style: outset;\n"
 "\n"
 "                border-radius: 30px;\n"
-"        }")
+"        }\n"
+"QToolButton:hover{\n"
+"background-color: rgb(204, 174, 255);\n"
+"}")
 
         self.verticalLayout_10.addWidget(self.start_key)
 
@@ -1029,7 +1038,10 @@ class Ui_MainWindow(object):
 "                border-style: outset;\n"
 "\n"
 "                border-radius: 30px;\n"
-"        }")
+"        }\n"
+"QToolButton:hover{\n"
+"background-color: rgb(204, 174, 255);\n"
+"}")
 
         self.verticalLayout_15.addWidget(self.emgstop_key)
 
@@ -1058,7 +1070,10 @@ class Ui_MainWindow(object):
 "                border-style: outset;\n"
 "\n"
 "                border-radius: 30px;\n"
-"        }")
+"        }\n"
+"QToolButton:hover{\n"
+"background-color: rgb(204, 174, 255);\n"
+"}")
 
         self.verticalLayout_37.addWidget(self.stop_key)
 

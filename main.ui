@@ -1813,7 +1813,10 @@ background-color: rgb(60, 60, 60);
                 border-style: outset;
 
                 border-radius: 30px;
-        }</string>
+        }
+QToolButton:hover{
+background-color: rgb(204, 174, 255);
+}</string>
                 </property>
                 <property name="text">
                  <string/>
@@ -1866,7 +1869,10 @@ background-color: rgb(60, 60, 60);
                 border-style: outset;
 
                 border-radius: 30px;
-        }</string>
+        }
+QToolButton:hover{
+background-color: rgb(204, 174, 255);
+}</string>
                 </property>
                 <property name="text">
                  <string/>
@@ -1919,7 +1925,10 @@ background-color: rgb(60, 60, 60);
                 border-style: outset;
 
                 border-radius: 30px;
-        }</string>
+        }
+QToolButton:hover{
+background-color: rgb(204, 174, 255);
+}</string>
                 </property>
                 <property name="text">
                  <string/>
@@ -1972,7 +1981,10 @@ background-color: rgb(60, 60, 60);
                 border-style: outset;
 
                 border-radius: 30px;
-        }</string>
+        }
+QToolButton:hover{
+background-color: rgb(204, 174, 255);
+}</string>
                 </property>
                 <property name="text">
                  <string/>
@@ -2025,7 +2037,10 @@ background-color: rgb(60, 60, 60);
                 border-style: outset;
 
                 border-radius: 30px;
-        }</string>
+        }
+QToolButton:hover{
+background-color: rgb(204, 174, 255);
+}</string>
                 </property>
                 <property name="text">
                  <string/>
