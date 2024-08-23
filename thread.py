@@ -28,15 +28,23 @@ class WorkerData(QThread):
                     # print(f"dataaaaaaaa {self.data['t']}")
                     self.temp_gauges(self.data["t"])
                     # print(self.data["l"])
-                    self.keys(self.data["l"])
+                    self.lamps(self.data["l"])
+                    self.keys(self.data['k'])
                     # self.pressure_gauges(self.data['p'])
                     # pass
 
                 time.sleep(0.8)
         except Exception as e:
             print(f"error{e}")
-
-    def keys(self, val):
+    def keys(self,val):
+        print(val)
+        self.ui.stop_key.setEnabled(not val['k1'])
+        self.ui.start_key.setEnabled(not val['k2'])
+        self.ui.increase_key.setEnabled(not val['k3'])
+        self.ui.decrease_key.setEnabled(not val['k4'])
+        self.ui.emgstop_key.setEnabled(not val['k5'])
+        
+    def lamps(self, val):
         """
         lamps numbers:
         l1 = stop
