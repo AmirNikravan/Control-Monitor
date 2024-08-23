@@ -24,12 +24,25 @@ class WorkerData(QThread):
                 if self.data:
                     # print(f"dataaaaaaaa {self.data['t']}")
                     self.temp_gauges(self.data['t'])
+                    print(self.data['l'])
                     # self.pressure_gauges(self.data['p'])
                     pass
 
                 time.sleep(0.8)
         except Exception as e:
             print(f"error{e}")
+    def keys(self,val):
+        """
+        lamps numbers:
+        l1 = stop
+        l2 = start
+        l3 = inc
+        l4 = dec       
+        l5 = emg
+        """
+        #check lamp status:
+        
+        pass
     def temp_gauges(self,val):
         # print(val)
         if val is not None:
