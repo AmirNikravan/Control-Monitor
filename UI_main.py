@@ -72,7 +72,7 @@ class Ui_MainWindow(object):
 
         self.stackedWidget = QStackedWidget(self.centralwidget)
         self.stackedWidget.setObjectName(u"stackedWidget")
-        self.stackedWidget.setStyleSheet(u"background-color: rgb(121, 121, 121);")
+        self.stackedWidget.setStyleSheet(u"")
         self.testbed = QWidget()
         self.testbed.setObjectName(u"testbed")
         self.testbed.setStyleSheet(u"QToolButton{\n"
@@ -776,6 +776,299 @@ class Ui_MainWindow(object):
         self.verticalLayout_26.addLayout(self.horizontalLayout_13)
 
         self.stackedWidget.addWidget(self.pressure)
+        self.keys = QWidget()
+        self.keys.setObjectName(u"keys")
+        self.label_7 = QLabel(self.keys)
+        self.label_7.setObjectName(u"label_7")
+        self.label_7.setGeometry(QRect(560, 10, 61, 20))
+        self.widget1 = QWidget(self.keys)
+        self.widget1.setObjectName(u"widget1")
+        self.widget1.setGeometry(QRect(30, 30, 591, 111))
+        self.horizontalLayout_15 = QHBoxLayout(self.widget1)
+        self.horizontalLayout_15.setObjectName(u"horizontalLayout_15")
+        self.horizontalLayout_15.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_32 = QVBoxLayout()
+        self.verticalLayout_32.setObjectName(u"verticalLayout_32")
+        self.lamp_increase = QLabel(self.widget1)
+        self.lamp_increase.setObjectName(u"lamp_increase")
+        self.lamp_increase.setMinimumSize(QSize(62, 0))
+        self.lamp_increase.setStyleSheet(u"    QLabel {\n"
+"\n"
+"	background-color: rgb(117, 117, 117);\n"
+"                border-style: outset;\n"
+"                border-width: 1px;\n"
+"                border-radius: 30px;\n"
+"        }")
+
+        self.verticalLayout_32.addWidget(self.lamp_increase)
+
+        self.label_32 = QLabel(self.widget1)
+        self.label_32.setObjectName(u"label_32")
+        self.label_32.setMaximumSize(QSize(83, 13))
+        self.label_32.setFont(font4)
+        self.label_32.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_32.addWidget(self.label_32)
+
+
+        self.horizontalLayout_15.addLayout(self.verticalLayout_32)
+
+        self.verticalLayout_33 = QVBoxLayout()
+        self.verticalLayout_33.setObjectName(u"verticalLayout_33")
+        self.lamp_decrease = QLabel(self.widget1)
+        self.lamp_decrease.setObjectName(u"lamp_decrease")
+        self.lamp_decrease.setMinimumSize(QSize(62, 0))
+        self.lamp_decrease.setStyleSheet(u"    QLabel {\n"
+"\n"
+"	background-color: rgb(117, 117, 117);\n"
+"                border-style: outset;\n"
+"                border-width: 1px;\n"
+"                border-radius: 30px;\n"
+"        }")
+
+        self.verticalLayout_33.addWidget(self.lamp_decrease)
+
+        self.label_34 = QLabel(self.widget1)
+        self.label_34.setObjectName(u"label_34")
+        self.label_34.setMaximumSize(QSize(83, 13))
+        self.label_34.setFont(font4)
+        self.label_34.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_33.addWidget(self.label_34)
+
+
+        self.horizontalLayout_15.addLayout(self.verticalLayout_33)
+
+        self.verticalLayout_34 = QVBoxLayout()
+        self.verticalLayout_34.setObjectName(u"verticalLayout_34")
+        self.lamp_start = QLabel(self.widget1)
+        self.lamp_start.setObjectName(u"lamp_start")
+        self.lamp_start.setMinimumSize(QSize(62, 0))
+        self.lamp_start.setStyleSheet(u"    QLabel {\n"
+"\n"
+"	background-color: rgb(117, 117, 117);\n"
+"                border-style: outset;\n"
+"                border-width: 1px;\n"
+"                border-radius: 30px;\n"
+"        }")
+
+        self.verticalLayout_34.addWidget(self.lamp_start)
+
+        self.label_35 = QLabel(self.widget1)
+        self.label_35.setObjectName(u"label_35")
+        self.label_35.setMaximumSize(QSize(83, 13))
+        self.label_35.setFont(font4)
+        self.label_35.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_34.addWidget(self.label_35)
+
+
+        self.horizontalLayout_15.addLayout(self.verticalLayout_34)
+
+        self.verticalLayout_35 = QVBoxLayout()
+        self.verticalLayout_35.setObjectName(u"verticalLayout_35")
+        self.lamp_emgstop = QLabel(self.widget1)
+        self.lamp_emgstop.setObjectName(u"lamp_emgstop")
+        self.lamp_emgstop.setMinimumSize(QSize(62, 0))
+        self.lamp_emgstop.setStyleSheet(u"    QLabel {\n"
+"\n"
+"	background-color: rgb(117, 117, 117);\n"
+"                border-style: outset;\n"
+"                border-width: 1px;\n"
+"                border-radius: 30px;\n"
+"        }")
+
+        self.verticalLayout_35.addWidget(self.lamp_emgstop)
+
+        self.label_36 = QLabel(self.widget1)
+        self.label_36.setObjectName(u"label_36")
+        self.label_36.setMaximumSize(QSize(83, 13))
+        self.label_36.setFont(font4)
+        self.label_36.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_35.addWidget(self.label_36)
+
+
+        self.horizontalLayout_15.addLayout(self.verticalLayout_35)
+
+        self.verticalLayout_36 = QVBoxLayout()
+        self.verticalLayout_36.setObjectName(u"verticalLayout_36")
+        self.lamp_stop = QLabel(self.widget1)
+        self.lamp_stop.setObjectName(u"lamp_stop")
+        self.lamp_stop.setMinimumSize(QSize(62, 0))
+        self.lamp_stop.setStyleSheet(u"    QLabel {\n"
+"\n"
+"	background-color: rgb(117, 117, 117);\n"
+"                border-style: outset;\n"
+"                border-width: 1px;\n"
+"                border-radius: 30px;\n"
+"        }")
+
+        self.verticalLayout_36.addWidget(self.lamp_stop)
+
+        self.label_37 = QLabel(self.widget1)
+        self.label_37.setObjectName(u"label_37")
+        self.label_37.setMaximumSize(QSize(83, 13))
+        self.label_37.setFont(font4)
+        self.label_37.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_36.addWidget(self.label_37)
+
+
+        self.horizontalLayout_15.addLayout(self.verticalLayout_36)
+
+        self.widget2 = QWidget(self.keys)
+        self.widget2.setObjectName(u"widget2")
+        self.widget2.setGeometry(QRect(30, 230, 601, 125))
+        self.horizontalLayout_16 = QHBoxLayout(self.widget2)
+        self.horizontalLayout_16.setObjectName(u"horizontalLayout_16")
+        self.horizontalLayout_16.setContentsMargins(0, 0, 0, 0)
+        self.widget_3 = QWidget(self.widget2)
+        self.widget_3.setObjectName(u"widget_3")
+        self.verticalLayout_8 = QVBoxLayout(self.widget_3)
+        self.verticalLayout_8.setObjectName(u"verticalLayout_8")
+        self.increase_key = QToolButton(self.widget_3)
+        self.increase_key.setObjectName(u"increase_key")
+        self.increase_key.setMinimumSize(QSize(66, 60))
+        self.increase_key.setStyleSheet(u"    QToolButton\n"
+" {\n"
+"\n"
+"	background-color: rgb(117, 117, 117);\n"
+"                border-style: outset;\n"
+"\n"
+"                border-radius: 30px;\n"
+"        }")
+
+        self.verticalLayout_8.addWidget(self.increase_key)
+
+        self.label_8 = QLabel(self.widget_3)
+        self.label_8.setObjectName(u"label_8")
+        self.label_8.setMaximumSize(QSize(16777215, 12))
+        self.label_8.setFont(font6)
+        self.label_8.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_8.addWidget(self.label_8)
+
+
+        self.horizontalLayout_16.addWidget(self.widget_3)
+
+        self.widget_4 = QWidget(self.widget2)
+        self.widget_4.setObjectName(u"widget_4")
+        self.verticalLayout_9 = QVBoxLayout(self.widget_4)
+        self.verticalLayout_9.setObjectName(u"verticalLayout_9")
+        self.decrease_key = QToolButton(self.widget_4)
+        self.decrease_key.setObjectName(u"decrease_key")
+        self.decrease_key.setMinimumSize(QSize(66, 60))
+        self.decrease_key.setStyleSheet(u"    QToolButton\n"
+" {\n"
+"\n"
+"	background-color: rgb(117, 117, 117);\n"
+"                border-style: outset;\n"
+"\n"
+"                border-radius: 30px;\n"
+"        }")
+
+        self.verticalLayout_9.addWidget(self.decrease_key)
+
+        self.label_9 = QLabel(self.widget_4)
+        self.label_9.setObjectName(u"label_9")
+        self.label_9.setMaximumSize(QSize(16777215, 12))
+        self.label_9.setFont(font6)
+        self.label_9.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_9.addWidget(self.label_9)
+
+
+        self.horizontalLayout_16.addWidget(self.widget_4)
+
+        self.widget_5 = QWidget(self.widget2)
+        self.widget_5.setObjectName(u"widget_5")
+        self.verticalLayout_10 = QVBoxLayout(self.widget_5)
+        self.verticalLayout_10.setObjectName(u"verticalLayout_10")
+        self.start_key = QToolButton(self.widget_5)
+        self.start_key.setObjectName(u"start_key")
+        self.start_key.setMinimumSize(QSize(66, 60))
+        self.start_key.setStyleSheet(u"    QToolButton\n"
+" {\n"
+"\n"
+"	background-color: rgb(117, 117, 117);\n"
+"                border-style: outset;\n"
+"\n"
+"                border-radius: 30px;\n"
+"        }")
+
+        self.verticalLayout_10.addWidget(self.start_key)
+
+        self.label_14 = QLabel(self.widget_5)
+        self.label_14.setObjectName(u"label_14")
+        self.label_14.setMaximumSize(QSize(16777215, 12))
+        self.label_14.setFont(font6)
+        self.label_14.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_10.addWidget(self.label_14)
+
+
+        self.horizontalLayout_16.addWidget(self.widget_5)
+
+        self.widget_6 = QWidget(self.widget2)
+        self.widget_6.setObjectName(u"widget_6")
+        self.verticalLayout_15 = QVBoxLayout(self.widget_6)
+        self.verticalLayout_15.setObjectName(u"verticalLayout_15")
+        self.emgstop_key = QToolButton(self.widget_6)
+        self.emgstop_key.setObjectName(u"emgstop_key")
+        self.emgstop_key.setMinimumSize(QSize(66, 60))
+        self.emgstop_key.setStyleSheet(u"    QToolButton\n"
+" {\n"
+"\n"
+"	background-color: rgb(117, 117, 117);\n"
+"                border-style: outset;\n"
+"\n"
+"                border-radius: 30px;\n"
+"        }")
+
+        self.verticalLayout_15.addWidget(self.emgstop_key)
+
+        self.label_24 = QLabel(self.widget_6)
+        self.label_24.setObjectName(u"label_24")
+        self.label_24.setMaximumSize(QSize(16777215, 12))
+        self.label_24.setFont(font6)
+        self.label_24.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_15.addWidget(self.label_24)
+
+
+        self.horizontalLayout_16.addWidget(self.widget_6)
+
+        self.widget_7 = QWidget(self.widget2)
+        self.widget_7.setObjectName(u"widget_7")
+        self.verticalLayout_37 = QVBoxLayout(self.widget_7)
+        self.verticalLayout_37.setObjectName(u"verticalLayout_37")
+        self.stop_key = QToolButton(self.widget_7)
+        self.stop_key.setObjectName(u"stop_key")
+        self.stop_key.setMinimumSize(QSize(66, 60))
+        self.stop_key.setStyleSheet(u"    QToolButton\n"
+" {\n"
+"\n"
+"	background-color: rgb(117, 117, 117);\n"
+"                border-style: outset;\n"
+"\n"
+"                border-radius: 30px;\n"
+"        }")
+
+        self.verticalLayout_37.addWidget(self.stop_key)
+
+        self.label_26 = QLabel(self.widget_7)
+        self.label_26.setObjectName(u"label_26")
+        self.label_26.setMaximumSize(QSize(16777215, 12))
+        self.label_26.setFont(font6)
+        self.label_26.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_37.addWidget(self.label_26)
+
+
+        self.horizontalLayout_16.addWidget(self.widget_7)
+
+        self.stackedWidget.addWidget(self.keys)
 
         self.verticalLayout.addWidget(self.stackedWidget)
 
@@ -853,7 +1146,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(1)
+        self.stackedWidget.setCurrentIndex(3)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -910,6 +1203,27 @@ class Ui_MainWindow(object):
         self.label_21.setText(QCoreApplication.translate("MainWindow", u"Air Boost", None))
         self.label_23.setText(QCoreApplication.translate("MainWindow", u"Sea Water", None))
         self.label_22.setText(QCoreApplication.translate("MainWindow", u"Fuel Pressure", None))
+        self.label_7.setText(QCoreApplication.translate("MainWindow", u"\u06a9\u0644\u06cc\u062f \u0647\u0627", None))
+        self.lamp_increase.setText("")
+        self.label_32.setText(QCoreApplication.translate("MainWindow", u"Increase", None))
+        self.lamp_decrease.setText("")
+        self.label_34.setText(QCoreApplication.translate("MainWindow", u"Decrease", None))
+        self.lamp_start.setText("")
+        self.label_35.setText(QCoreApplication.translate("MainWindow", u"Start", None))
+        self.lamp_emgstop.setText("")
+        self.label_36.setText(QCoreApplication.translate("MainWindow", u"EMG Stop", None))
+        self.lamp_stop.setText("")
+        self.label_37.setText(QCoreApplication.translate("MainWindow", u"Stop", None))
+        self.increase_key.setText("")
+        self.label_8.setText(QCoreApplication.translate("MainWindow", u"increase", None))
+        self.decrease_key.setText("")
+        self.label_9.setText(QCoreApplication.translate("MainWindow", u"Decrease", None))
+        self.start_key.setText("")
+        self.label_14.setText(QCoreApplication.translate("MainWindow", u"Start", None))
+        self.emgstop_key.setText("")
+        self.label_24.setText(QCoreApplication.translate("MainWindow", u"EMG Stop", None))
+        self.stop_key.setText("")
+        self.label_26.setText(QCoreApplication.translate("MainWindow", u"Stop", None))
         self.toolButton_testbed.setText(QCoreApplication.translate("MainWindow", u"test bed", None))
         self.toolButton_temperature.setText(QCoreApplication.translate("MainWindow", u"\u062f\u0645\u0627", None))
         self.toolButton_pressure.setText(QCoreApplication.translate("MainWindow", u"\u0641\u0634\u0627\u0631", None))

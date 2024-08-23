@@ -23,9 +23,14 @@ class ArduinoHandler(QObject):
 
     def _send(self, data):
         try:
-            self.serial_port.write(data.encode())
+            if data == None:
+                data = '3'
+                self.serial_port.write(data)
+                print(f"Sent: {data}")
+            else:
+                self.serial_port.write(data.encode())
             # self.list.addItem(f"Sent: {data.strip()}")
-            print(f"Sent: {data.strip()}")
+                print(f"Sent: {data.strip()}")
         except Exception as e:
             # self.list.addItem(f"Error sending data: {e}")
             print(f"Error sending data: {e}")

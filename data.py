@@ -14,6 +14,7 @@ class DataProcess(QThread):
     def run(self):
         while self.running:
             if self.data is not None:
+                print
                 self.data_gauge.emit(self.data)
                 self.data = None
             time.sleep(1)

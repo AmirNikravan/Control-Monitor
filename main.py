@@ -15,7 +15,7 @@ class App(QMainWindow):
         super().__init__(parent)
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-        # self.arduino = None
+        self.arduino = ArduinoHandler('COM3',)
 
         # self.data_processor = DataProcess(
         #     self.worker_arduino, self.worker_gauge, self.ui
@@ -73,25 +73,27 @@ class App(QMainWindow):
         self.ui.toolButton_pressure.clicked.connect(
             lambda: self.change_page("pressure")
         )
+        self.ui.toolButton_keys.clicked.connect(lambda: self.change_page("keys"))
         # design
         self.ui.stackedWidget.setCurrentIndex(0)
         self.design_gauges()
         # Connect the signal to the slot
         # thread
-        self.worker = WorkerGauge()
-        self.worker.values.connect(self.update_gauge)
-        self.worker.start()
-        self.worker_arduino = WorkerArduino()
-        self.worker_dataprocess = DataProcess()
-        self.worker_gauge = Gauge(self.ui)
+        # self.worker = WorkerData()
+        # self.worker.values.connect(self.update_gauge)
+        # self.worker.start()
+        self.worker_arduino = WorkerArduino(self.arduino)
+        self.worker_data = WorkerData(self.ui)
+        # self.worker_dataprocess = DataProcess()
+        # self.worker_gauge = Gauge(self.ui)
         
         # Connect signals and slots
-        self.worker_arduino.data_received.connect(self.worker_dataprocess.get_data)
-        self.worker_dataprocess.data_gauge.connect(self.worker_gauge.process_data)
+        # self.worker_arduino.data_received.connect(self.worker_dataprocess.get_data)
+        # self.worker_dataprocess.data_gauge.connect(self.worker_gauge.process_data)
         
         self.worker_arduino.start()
-        self.worker_dataprocess.start()
-        self.worker_gauge.start()
+        # self.worker_dataprocess.start()
+        # self.worker_gauge.start()
     # def update_arduino_data(self, data):
     #     # Handle incoming data from Arduino
     #     print(f"Data received from Arduino: {data}")
@@ -112,6 +114,9 @@ class App(QMainWindow):
             self.ui.stackedWidget.setCurrentIndex(1)
         elif page == "pressure":
             self.ui.stackedWidget.setCurrentIndex(2)
+        elif page == "keys":
+            self.arduino._send('3')
+            self.ui.stackedWidget.setCurrentIndex(3)
 
     def handle_button_click(self, command):
         # Send commands to Arduino
