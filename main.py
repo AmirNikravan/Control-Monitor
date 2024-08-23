@@ -53,18 +53,18 @@ class App(QMainWindow):
         self.ui.toolButton_speed10.clicked.connect(
             lambda: self.handle_button_click("s10")
         )
-        self.ui.toolButton_increase.clicked.connect(
-            lambda: self.handle_button_click("in")
+        self.ui.increase_key.clicked.connect(
+            lambda: self.handle_button_click("6")
         )
-        self.ui.toolButton_decrease.clicked.connect(
-            lambda: self.handle_button_click("de")
+        self.ui.decrease_key.clicked.connect(
+            lambda: self.handle_button_click("7")
         )
-        self.ui.toolButton_start.clicked.connect(lambda: self.handle_button_click("st"))
-        self.ui.toolButton_stop.clicked.connect(lambda: self.handle_button_click("sp"))
-        self.ui.toolButton_emgstop.clicked.connect(
-            lambda: self.handle_button_click("mg")
+        self.ui.start_key.clicked.connect(lambda: self.handle_button_click("4")) # start
+        self.ui.stop_key.clicked.connect(lambda: self.handle_button_click("5"))
+        self.ui.emgstop_key.clicked.connect(
+            lambda: self.handle_button_click("8")
         )
-        self.ui.toolButton_reset.clicked.connect(lambda: self.handle_button_click("re"))
+        self.ui.toolButton_reset.clicked.connect(lambda: self.handle_button_click("9"))
         # change page
         self.ui.toolButton_testbed.clicked.connect(lambda: self.change_page("testbed"))
         self.ui.toolButton_temperature.clicked.connect(

@@ -794,7 +794,8 @@ class Ui_MainWindow(object):
         self.lamp_increase.setMinimumSize(QSize(62, 0))
         self.lamp_increase.setStyleSheet(u"    QLabel {\n"
 "\n"
-"	background-color: rgb(117, 117, 117);\n"
+"\n"
+"	background-color: rgb(255, 0, 0);\n"
 "                border-style: outset;\n"
 "                border-width: 1px;\n"
 "                border-radius: 30px;\n"
@@ -820,7 +821,8 @@ class Ui_MainWindow(object):
         self.lamp_decrease.setMinimumSize(QSize(62, 0))
         self.lamp_decrease.setStyleSheet(u"    QLabel {\n"
 "\n"
-"	background-color: rgb(117, 117, 117);\n"
+"\n"
+"	background-color: rgb(255, 0, 0);\n"
 "                border-style: outset;\n"
 "                border-width: 1px;\n"
 "                border-radius: 30px;\n"
@@ -846,7 +848,8 @@ class Ui_MainWindow(object):
         self.lamp_start.setMinimumSize(QSize(62, 0))
         self.lamp_start.setStyleSheet(u"    QLabel {\n"
 "\n"
-"	background-color: rgb(117, 117, 117);\n"
+"\n"
+"	background-color: rgb(255, 0, 0);\n"
 "                border-style: outset;\n"
 "                border-width: 1px;\n"
 "                border-radius: 30px;\n"
@@ -872,7 +875,8 @@ class Ui_MainWindow(object):
         self.lamp_emgstop.setMinimumSize(QSize(62, 0))
         self.lamp_emgstop.setStyleSheet(u"    QLabel {\n"
 "\n"
-"	background-color: rgb(117, 117, 117);\n"
+"\n"
+"	background-color: rgb(255, 0, 0);\n"
 "                border-style: outset;\n"
 "                border-width: 1px;\n"
 "                border-radius: 30px;\n"
@@ -898,7 +902,8 @@ class Ui_MainWindow(object):
         self.lamp_stop.setMinimumSize(QSize(62, 0))
         self.lamp_stop.setStyleSheet(u"    QLabel {\n"
 "\n"
-"	background-color: rgb(117, 117, 117);\n"
+"\n"
+"	background-color: rgb(255, 0, 0);\n"
 "                border-style: outset;\n"
 "                border-width: 1px;\n"
 "                border-radius: 30px;\n"

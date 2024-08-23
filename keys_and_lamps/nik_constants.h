@@ -203,6 +203,8 @@ void off_dec()
 // ----------------------------------------------------------------------------------------------------
 void emg_stop()
 {
+  LED_Pin[LED_INDEX_Stop].state = HIGH;
+  LED_Pin[LED_INDEX_Start].state = LOW;
   LED_Pin[LED_INDEX_Emg_Stop].state=HIGH;
   KEY_Pin[BUTTON_INDEX_Emg_Stop].state=HIGH;
   KEY_Pin[BUTTON_INDEX_Reset].state=LOW;  

@@ -1540,7 +1540,8 @@ background-color: rgb(60, 60, 60);
                <property name="styleSheet">
                 <string notr="true">    QLabel {
 
-	background-color: rgb(117, 117, 117);
+
+	background-color: rgb(255, 0, 0);
                 border-style: outset;
                 border-width: 1px;
                 border-radius: 30px;
@@ -1590,7 +1591,8 @@ background-color: rgb(60, 60, 60);
                <property name="styleSheet">
                 <string notr="true">    QLabel {
 
-	background-color: rgb(117, 117, 117);
+
+	background-color: rgb(255, 0, 0);
                 border-style: outset;
                 border-width: 1px;
                 border-radius: 30px;
@@ -1640,7 +1642,8 @@ background-color: rgb(60, 60, 60);
                <property name="styleSheet">
                 <string notr="true">    QLabel {
 
-	background-color: rgb(117, 117, 117);
+
+	background-color: rgb(255, 0, 0);
                 border-style: outset;
                 border-width: 1px;
                 border-radius: 30px;
@@ -1690,7 +1693,8 @@ background-color: rgb(60, 60, 60);
                <property name="styleSheet">
                 <string notr="true">    QLabel {
 
-	background-color: rgb(117, 117, 117);
+
+	background-color: rgb(255, 0, 0);
                 border-style: outset;
                 border-width: 1px;
                 border-radius: 30px;
@@ -1740,7 +1744,8 @@ background-color: rgb(60, 60, 60);
                <property name="styleSheet">
                 <string notr="true">    QLabel {
 
-	background-color: rgb(117, 117, 117);
+
+	background-color: rgb(255, 0, 0);
                 border-style: outset;
                 border-width: 1px;
                 border-radius: 30px;

@@ -37,27 +37,27 @@ void loop() {
       read_sensors();
       // delay(1000);      
     } 
-    else if (incomingByte==52) //4
+    else if (incomingByte=='4') //4
     {
       start();     
     }  
-    else if (incomingByte==53) //5
+    else if (incomingByte=='5') //5
     {
       stop();     
     }      
-    else if (incomingByte==54) //6
+    else if (incomingByte=='6') //6
     {
       inc();     
     }  
-    else if (incomingByte==55) //7
+    else if (incomingByte=='7') //7
     {
       dec();     
     }    
-    else if (incomingByte==56) //8
+    else if (incomingByte=='8') //8
     {
       emg_stop();     
     }           
-    else if (incomingByte==57) //9
+    else if (incomingByte=='9') //9
     {
       reset();     
     }                  
