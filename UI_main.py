@@ -72,7 +72,7 @@ class Ui_MainWindow(object):
 
         self.stackedWidget = QStackedWidget(self.centralwidget)
         self.stackedWidget.setObjectName(u"stackedWidget")
-        self.stackedWidget.setStyleSheet(u"background-color: rgb(224, 224, 224);")
+        self.stackedWidget.setStyleSheet(u"background-color: rgb(121, 121, 121);")
         self.testbed = QWidget()
         self.testbed.setObjectName(u"testbed")
         self.testbed.setStyleSheet(u"QToolButton{\n"
@@ -853,7 +853,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(MainWindow)

@@ -99,10 +99,10 @@
       <item>
        <widget class="QStackedWidget" name="stackedWidget">
         <property name="styleSheet">
-         <string notr="true">background-color: rgb(224, 224, 224);</string>
+         <string notr="true">background-color: rgb(121, 121, 121);</string>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>1</number>
         </property>
         <widget class="QWidget" name="testbed">
          <property name="styleSheet">

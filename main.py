@@ -97,10 +97,11 @@ class App(QMainWindow):
     #     print(f"Data received from Arduino: {data}")
 
     def update_gauge(self, val):
-        self.ui.speed_gauge.value = val
-        # self.ui.airboost_bank_a_temp_gauge.neede
-        self.ui.speed_gauge.setGaugeTheme(val)
-        self.ui.speed_gauge.repaint()
+        pass
+        # self.ui.speed_gauge.value = val
+        # # self.ui.airboost_bank_a_temp_gauge.neede
+        # self.ui.speed_gauge.setGaugeTheme(val)
+        # self.ui.speed_gauge.repaint()
 
 
     def change_page(self, page):
@@ -138,7 +139,29 @@ class App(QMainWindow):
             print(f"Ignoring non-numeric data: {data}")
 
     def design_gauges(self):
-
+        self.ui.airboost_bank_a_temp_gauge.setNeedleColor(245, 66, 93)
+        self.ui.exhuast_bank_a_temp_gauge.setNeedleColor(245, 66, 93)
+        self.ui.exhuast_bank_b_temp_gauge.setNeedleColor(245, 66, 93)
+        self.ui.airboost_bank_b_temp_gauge.setNeedleColor(245, 66, 93)
+        self.ui.oil_ntc_temp_gauge.setNeedleColor(245, 66, 93)
+        self.ui.oil_temp_gauge.setNeedleColor(245, 66, 93)
+        self.ui.freshwater_beforethermo_temp_gauge.setNeedleColor(245, 66, 93)
+        self.ui.freshwater_afterthermo_temp_gauge.setNeedleColor(245, 66, 93)
+        self.ui.sea_water_temp_gauge.setNeedleColor(245, 66, 93)
+        self.ui.airboost_bank_a_temp_gauge.setGaugeTheme(3)
+        self.ui.airboost_bank_b_temp_gauge.setGaugeTheme(3)
+        self.ui.exhuast_bank_a_temp_gauge.setGaugeTheme(3)
+        self.ui.exhuast_bank_b_temp_gauge.setGaugeTheme(3)
+        self.ui.oil_ntc_temp_gauge.setGaugeTheme(3)
+        self.ui.oil_temp_gauge.setGaugeTheme(3)
+        self.ui.freshwater_afterthermo_temp_gauge.setGaugeTheme(3)
+        self.ui.freshwater_beforethermo_temp_gauge.setGaugeTheme(3)
+        self.ui.sea_water_temp_gauge.setGaugeTheme(3)
+        self.ui.oil_pressure_gauge.setGaugeTheme(3)
+        self.ui.fuel_pressure_gauge.setGaugeTheme(3)
+        self.ui.airboost_pressure_gauge.setGaugeTheme(3)
+        self.ui.sea_water_pressure_gauge.setGaugeTheme(3)
+        self.ui.oil_switch_pressure_gauge.setGaugeTheme(3)
         self.ui.speed_gauge.setGaugeTheme(6)
         self.ui.speed_gauge.setMinValue(0)
         self.ui.speed_gauge.setMaxValue(255)

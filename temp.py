@@ -1,82 +1,68 @@
-# main.py
-from UI_main import Ui_MainWindow
-from PySide6.QtWidgets import *
-import sys
-from arduino import ArduinoHandler
-from thread import WorkerGauge, WorkerArduino
-from PySide6.QtCore import Signal
+import flet as ft
 
-class App(QMainWindow):
+def main(page: ft.Page):
+    page.title = "Beautiful Calculator"
+    page.window.width = 300
+    page.window.height = 400
+    page.padding = 10
+    page.spacing = 10
+    
+    def update_display(e):
+        current = display.value
+        if current == "0" or clear_on_next_input:
+            current = ""
+        display.value = current + e.control.data
+        display.update()
 
-    def __init__(self, parent=None):
-        super().__init__(parent)
-        self.ui = Ui_MainWindow()
-        self.ui.setupUi(self)
-        self.arduino = ArduinoHandler("COM4", self.ui.speed_gauge)
-        self.ui.widget.setMouseTracking(False)
-        
-        # Connect buttons to their respective handlers
-        self.setup_buttons()
+    def calculate(e):
+        try:
+            display.value = str(eval(display.value))
+            display.update()
+        except:
+            display.value = "Error"
+            display.update()
+    
+    def clear_display(e):
+        display.value = "0"
+        display.update()
 
-        # Initialize the gauges and pages
-        self.ui.stackedWidget.setCurrentIndex(0)
-        self.design_gauges()
+    def handle_clear_next_input(e):
+        nonlocal clear_on_next_input
+        clear_on_next_input = True
 
-        # Thread to handle the gauge update
-        self.worker_gauge = WorkerGauge()
-        self.worker_gauge.values.connect(self.update_gauge)
-        self.worker_gauge.start()
+    clear_on_next_input = False
 
-        # Thread to handle Arduino communication
-        self.worker_arduino = WorkerArduino(self.arduino)
-        self.worker_arduino.data_received.connect(self.update_arduino_data)
-        self.worker_arduino.start()
+    display = ft.TextField(
+        value="0", 
+        text_align=ft.TextAlign.RIGHT, 
+        width=290, 
+        height=60, 
+        read_only=True, 
+        border_radius=10, 
+        bgcolor=ft.colors.WHITE,
+        style=ft.TextStyle(size=24)
+    )
+    
+    buttons = [
+        ["7", "8", "9", "/"],
+        ["4", "5", "6", "*"],
+        ["1", "2", "3", "-"],
+        ["0", ".", "=", "+"]
+    ]
+    
+    page.add(display)
 
-    def setup_buttons(self):
-        self.ui.toolButton_speed1.clicked.connect(lambda: self.handle_button_click("s1"))
-        self.ui.toolButton_speed2.clicked.connect(lambda: self.handle_button_click("s2"))
-        self.ui.toolButton_speed3.clicked.connect(lambda: self.handle_button_click("s3"))
-        self.ui.toolButton_speed4.clicked.connect(lambda: self.handle_button_click("s4"))
-        self.ui.toolButton_speed5.clicked.connect(lambda: self.handle_button_click("s5"))
-        self.ui.toolButton_speed6.clicked.connect(lambda: self.handle_button_click("s6"))
-        self.ui.toolButton_speed7.clicked.connect(lambda: self.handle_button_click("s7"))
-        self.ui.toolButton_speed8.clicked.connect(lambda: self.handle_button_click("s8"))
-        self.ui.toolButton_speed9.clicked.connect(lambda: self.handle_button_click("s9"))
-        self.ui.toolButton_speed10.clicked.connect(lambda: self.handle_button_click("s10"))
-        self.ui.toolButton_increase.clicked.connect(lambda: self.handle_button_click("in"))
-        self.ui.toolButton_decrease.clicked.connect(lambda: self.handle_button_click("de"))
-        self.ui.toolButton_start.clicked.connect(lambda: self.handle_button_click("st"))
-        self.ui.toolButton_stop.clicked.connect(lambda: self.handle_button_click("sp"))
-        self.ui.toolButton_emgstop.clicked.connect(lambda: self.handle_button_click("mg"))
-        self.ui.toolButton_reset.clicked.connect(lambda: self.handle_button_click("re"))
-        self.ui.toolButton_testbed.clicked.connect(lambda: self.change_page("testbed"))
-        self.ui.toolButton_temperature.clicked.connect(lambda: self.change_page("temperature"))
-        self.ui.toolButton_pressure.clicked.connect(lambda:self.change_page("pressure"))
+    for row in buttons:
+        button_row = []
+        for label in row:
+            if label == "=":
+                btn = ft.Button(text=label, data=label, on_click=calculate, bgcolor=ft.colors.GREEN, border_radius=5, width=60, height=60)
+            else:
+                btn = ft.Button(text=label, data=label, on_click=update_display, border_radius=5, width=60, height=60)
+            button_row.append(btn)
+        page.add(ft.Row(controls=button_row, spacing=10, alignment=ft.MainAxisAlignment.CENTER))
 
-    def update_gauge(self, val):
-        self.ui.airboost_bank_a_temp_gauge.value = val[0]
-        self.ui.airboost_bank_a_temp_gauge.repaint()
+    clear_button = ft.Button(text="C", on_click=clear_display, bgcolor=ft.colors.RED, border_radius=5, width=60, height=60)
+    page.add(ft.Row(controls=[clear_button], alignment=ft.MainAxisAlignment.CENTER))
 
-    def update_arduino_data(self, data):
-        # Handle incoming data from Arduino
-        print(f"Data received from Arduino: {data}")
-        # You can update the UI or process the data as needed
-
-    def handle_button_click(self, command):
-        # Send commands to Arduino
-        self.arduino._send(command)
-
-    def closeEvent(self, event):
-        # Stop the threads and close the serial connection
-        self.worker_gauge.stop()
-        self.worker_gauge.wait()
-        self.worker_arduino.stop()
-        self.worker_arduino.wait()
-        self.arduino.close()
-        event.accept()
-
-if __name__ == "__main__":
-    app = QApplication(sys.argv)
-    window = App()
-    window.show()
-    sys.exit(app.exec())
+ft.app(target=main)
