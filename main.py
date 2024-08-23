@@ -83,15 +83,11 @@ class App(QMainWindow):
         # self.worker.values.connect(self.update_gauge)
         # self.worker.start()
         self.worker_arduino = WorkerArduino(self.arduino)
-        self.worker_data = WorkerData(self.ui)
-        # self.worker_dataprocess = DataProcess()
-        # self.worker_gauge = Gauge(self.ui)
-        
-        # Connect signals and slots
-        # self.worker_arduino.data_received.connect(self.worker_dataprocess.get_data)
-        # self.worker_dataprocess.data_gauge.connect(self.worker_gauge.process_data)
-        
+        self.worker_data = WorkerData(self.ui)        
         self.worker_arduino.start()
+        self.worker_arduino.data_received.connect(self.worker_data.get_data)
+        
+        self.worker_data.start()
         # self.worker_dataprocess.start()
         # self.worker_gauge.start()
     # def update_arduino_data(self, data):
