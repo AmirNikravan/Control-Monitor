@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'main.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.7.1
+## Created by: Qt User Interface Compiler version 6.7.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -26,15 +26,14 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(724, 773)
+        MainWindow.resize(725, 656)
+        MainWindow.setMaximumSize(QSize(16777215, 660))
         MainWindow.setWindowOpacity(1.000000000000000)
         MainWindow.setStyleSheet(u"background-color: rgb(191, 191, 191);")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.horizontalLayout_7 = QHBoxLayout(self.centralwidget)
-        self.horizontalLayout_7.setSpacing(0)
         self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
-        self.horizontalLayout_7.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout = QVBoxLayout()
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.widget = QWidget(self.centralwidget)
@@ -778,18 +777,18 @@ class Ui_MainWindow(object):
         self.stackedWidget.addWidget(self.pressure)
         self.keys = QWidget()
         self.keys.setObjectName(u"keys")
+        self.verticalLayout_38 = QVBoxLayout(self.keys)
+        self.verticalLayout_38.setObjectName(u"verticalLayout_38")
         self.label_7 = QLabel(self.keys)
         self.label_7.setObjectName(u"label_7")
-        self.label_7.setGeometry(QRect(560, 10, 61, 20))
-        self.widget1 = QWidget(self.keys)
-        self.widget1.setObjectName(u"widget1")
-        self.widget1.setGeometry(QRect(30, 30, 591, 111))
-        self.horizontalLayout_15 = QHBoxLayout(self.widget1)
+
+        self.verticalLayout_38.addWidget(self.label_7)
+
+        self.horizontalLayout_15 = QHBoxLayout()
         self.horizontalLayout_15.setObjectName(u"horizontalLayout_15")
-        self.horizontalLayout_15.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_32 = QVBoxLayout()
         self.verticalLayout_32.setObjectName(u"verticalLayout_32")
-        self.lamp_increase = QLabel(self.widget1)
+        self.lamp_increase = QLabel(self.keys)
         self.lamp_increase.setObjectName(u"lamp_increase")
         self.lamp_increase.setMinimumSize(QSize(62, 0))
         self.lamp_increase.setStyleSheet(u"    QLabel {\n"
@@ -803,7 +802,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_32.addWidget(self.lamp_increase)
 
-        self.label_32 = QLabel(self.widget1)
+        self.label_32 = QLabel(self.keys)
         self.label_32.setObjectName(u"label_32")
         self.label_32.setMaximumSize(QSize(83, 13))
         self.label_32.setFont(font4)
@@ -816,7 +815,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_33 = QVBoxLayout()
         self.verticalLayout_33.setObjectName(u"verticalLayout_33")
-        self.lamp_decrease = QLabel(self.widget1)
+        self.lamp_decrease = QLabel(self.keys)
         self.lamp_decrease.setObjectName(u"lamp_decrease")
         self.lamp_decrease.setMinimumSize(QSize(62, 0))
         self.lamp_decrease.setStyleSheet(u"    QLabel {\n"
@@ -830,7 +829,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_33.addWidget(self.lamp_decrease)
 
-        self.label_34 = QLabel(self.widget1)
+        self.label_34 = QLabel(self.keys)
         self.label_34.setObjectName(u"label_34")
         self.label_34.setMaximumSize(QSize(83, 13))
         self.label_34.setFont(font4)
@@ -843,7 +842,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_34 = QVBoxLayout()
         self.verticalLayout_34.setObjectName(u"verticalLayout_34")
-        self.lamp_start = QLabel(self.widget1)
+        self.lamp_start = QLabel(self.keys)
         self.lamp_start.setObjectName(u"lamp_start")
         self.lamp_start.setMinimumSize(QSize(62, 0))
         self.lamp_start.setStyleSheet(u"    QLabel {\n"
@@ -857,7 +856,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_34.addWidget(self.lamp_start)
 
-        self.label_35 = QLabel(self.widget1)
+        self.label_35 = QLabel(self.keys)
         self.label_35.setObjectName(u"label_35")
         self.label_35.setMaximumSize(QSize(83, 13))
         self.label_35.setFont(font4)
@@ -870,7 +869,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_35 = QVBoxLayout()
         self.verticalLayout_35.setObjectName(u"verticalLayout_35")
-        self.lamp_emgstop = QLabel(self.widget1)
+        self.lamp_emgstop = QLabel(self.keys)
         self.lamp_emgstop.setObjectName(u"lamp_emgstop")
         self.lamp_emgstop.setMinimumSize(QSize(62, 0))
         self.lamp_emgstop.setStyleSheet(u"    QLabel {\n"
@@ -884,7 +883,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_35.addWidget(self.lamp_emgstop)
 
-        self.label_36 = QLabel(self.widget1)
+        self.label_36 = QLabel(self.keys)
         self.label_36.setObjectName(u"label_36")
         self.label_36.setMaximumSize(QSize(83, 13))
         self.label_36.setFont(font4)
@@ -897,7 +896,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_36 = QVBoxLayout()
         self.verticalLayout_36.setObjectName(u"verticalLayout_36")
-        self.lamp_stop = QLabel(self.widget1)
+        self.lamp_stop = QLabel(self.keys)
         self.lamp_stop.setObjectName(u"lamp_stop")
         self.lamp_stop.setMinimumSize(QSize(62, 0))
         self.lamp_stop.setStyleSheet(u"    QLabel {\n"
@@ -911,7 +910,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_36.addWidget(self.lamp_stop)
 
-        self.label_37 = QLabel(self.widget1)
+        self.label_37 = QLabel(self.keys)
         self.label_37.setObjectName(u"label_37")
         self.label_37.setMaximumSize(QSize(83, 13))
         self.label_37.setFont(font4)
@@ -922,13 +921,12 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_15.addLayout(self.verticalLayout_36)
 
-        self.widget2 = QWidget(self.keys)
-        self.widget2.setObjectName(u"widget2")
-        self.widget2.setGeometry(QRect(30, 230, 601, 125))
-        self.horizontalLayout_16 = QHBoxLayout(self.widget2)
+
+        self.verticalLayout_38.addLayout(self.horizontalLayout_15)
+
+        self.horizontalLayout_16 = QHBoxLayout()
         self.horizontalLayout_16.setObjectName(u"horizontalLayout_16")
-        self.horizontalLayout_16.setContentsMargins(0, 0, 0, 0)
-        self.widget_3 = QWidget(self.widget2)
+        self.widget_3 = QWidget(self.keys)
         self.widget_3.setObjectName(u"widget_3")
         self.verticalLayout_8 = QVBoxLayout(self.widget_3)
         self.verticalLayout_8.setObjectName(u"verticalLayout_8")
@@ -960,7 +958,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_16.addWidget(self.widget_3)
 
-        self.widget_4 = QWidget(self.widget2)
+        self.widget_4 = QWidget(self.keys)
         self.widget_4.setObjectName(u"widget_4")
         self.verticalLayout_9 = QVBoxLayout(self.widget_4)
         self.verticalLayout_9.setObjectName(u"verticalLayout_9")
@@ -992,7 +990,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_16.addWidget(self.widget_4)
 
-        self.widget_5 = QWidget(self.widget2)
+        self.widget_5 = QWidget(self.keys)
         self.widget_5.setObjectName(u"widget_5")
         self.verticalLayout_10 = QVBoxLayout(self.widget_5)
         self.verticalLayout_10.setObjectName(u"verticalLayout_10")
@@ -1024,7 +1022,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_16.addWidget(self.widget_5)
 
-        self.widget_6 = QWidget(self.widget2)
+        self.widget_6 = QWidget(self.keys)
         self.widget_6.setObjectName(u"widget_6")
         self.verticalLayout_15 = QVBoxLayout(self.widget_6)
         self.verticalLayout_15.setObjectName(u"verticalLayout_15")
@@ -1056,7 +1054,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_16.addWidget(self.widget_6)
 
-        self.widget_7 = QWidget(self.widget2)
+        self.widget_7 = QWidget(self.keys)
         self.widget_7.setObjectName(u"widget_7")
         self.verticalLayout_37 = QVBoxLayout(self.widget_7)
         self.verticalLayout_37.setObjectName(u"verticalLayout_37")
@@ -1087,6 +1085,9 @@ class Ui_MainWindow(object):
 
 
         self.horizontalLayout_16.addWidget(self.widget_7)
+
+
+        self.verticalLayout_38.addLayout(self.horizontalLayout_16)
 
         self.stackedWidget.addWidget(self.keys)
 
@@ -1158,7 +1159,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 724, 18))
+        self.menubar.setGeometry(QRect(0, 0, 725, 34))
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
@@ -1166,7 +1167,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(3)
+        self.stackedWidget.setCurrentIndex(2)
 
 
         QMetaObject.connectSlotsByName(MainWindow)

@@ -15,7 +15,7 @@ class App(QMainWindow):
         super().__init__(parent)
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-        self.arduino = ArduinoHandler('COM9',)
+        self.arduino = ArduinoHandler('/dev/ttyACM0',)
 
         # self.data_processor = DataProcess(
         #     self.worker_arduino, self.worker_gauge, self.ui
