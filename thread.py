@@ -217,7 +217,7 @@ class WorkerArduino(QThread):
         while self.running:
             try:
                 # Print()
-
+                # self.temp_gauges()
                 print(f"in yeki {self.arduino_handler.serial_port.in_waiting}")
                 if self.arduino_handler.serial_port.in_waiting > 0:
                     raw_data = (
@@ -238,6 +238,31 @@ class WorkerArduino(QThread):
                 # print(f"Error reading from Arduino: {e}")
                 pass
             # time.sleep(0.5)
+    def temp_gauges(self, val=9):
+        # print(val)
+        if val is not None:
+            # print('i am here mother fucker bitch')
+            self.ui.airboost_bank_a_temp_gauge.value = random.randint(0, 300)
+            # self.ui.exhuast_bank_b_temp_gauge.value =  random.randint(0,300)
+            # self.ui.exhuast_bank_a_temp_gauge.value = random.randint(0,300)
+            # self.ui.oil_ntc_temp_gauge.value = random.randint(0,300)
+            # self.ui.oil_temp_gauge.value = random.randint(0,300)
+            self.ui.airboost_bank_b_temp_gauge.value = random.randint(0, 300)
+            # self.ui.airboost_bank_b_temp_gauge.valaue = random.randint(0,300)
+            self.ui.sea_water_temp_gauge.value = random.randint(0, 300)
+            self.ui.freshwater_beforethermo_temp_gauge.value = random.randint(0, 300)
+            self.ui.freshwater_afterthermo_temp_gauge.value = random.randint(0, 300)
+            # self.ui.freshwater_afterthermo_temp_gauge.repaint()
+            # self.ui.freshwater_beforethermo_temp_gauge.repaint()
+            # self.ui.sea_water_temp_gauge.repaint()
+            self.ui.airboost_bank_b_temp_gauge.repaint()
+            # self.ui.oil_temp_gauge.repaint()
+            # self.ui.oil_ntc_temp_gauge.repaint()
+            # self.ui.exhuast_bank_a_temp_gauge.repaint()
+            # self.ui.exhuast_bank_b_temp_gauge.repaint()
+            self.ui.airboost_bank_a_temp_gauge.repaint()
+            # time.sleep(0.3)
+
 
     def stop(self):
         self.running = False

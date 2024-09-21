@@ -3,12 +3,12 @@ from UI_main import Ui_MainWindow
 from PySide6.QtWidgets import *
 import sys
 from arduino import ArduinoHandler
-from PySide6.QtCore import Signal
+from PySide6.QtCore import QTimer
 import time
 from thread import *
 from data import *
 from processor import *
-
+import datetime
 class App(QMainWindow):
 
     def __init__(self, parent=None):
@@ -17,42 +17,7 @@ class App(QMainWindow):
         self.ui.setupUi(self)
         self.arduino = ArduinoHandler('/dev/ttyACM0',)
 
-        # self.data_processor = DataProcess(
-        #     self.worker_arduino, self.worker_gauge, self.ui
-        # )
-
-        # self.ui.widget.setMouseTracking(False)
-        # Buttons
-        self.ui.toolButton_speed1.clicked.connect(
-            lambda: self.handle_button_click("s1")
-        )
-        self.ui.toolButton_speed2.clicked.connect(
-            lambda: self.handle_button_click("s2")
-        )
-        self.ui.toolButton_speed3.clicked.connect(
-            lambda: self.handle_button_click("s3")
-        )
-        self.ui.toolButton_speed4.clicked.connect(
-            lambda: self.handle_button_click("s4")
-        )
-        self.ui.toolButton_speed5.clicked.connect(
-            lambda: self.handle_button_click("s5")
-        )
-        self.ui.toolButton_speed6.clicked.connect(
-            lambda: self.handle_button_click("s6")
-        )
-        self.ui.toolButton_speed7.clicked.connect(
-            lambda: self.handle_button_click("s7")
-        )
-        self.ui.toolButton_speed8.clicked.connect(
-            lambda: self.handle_button_click("s8")
-        )
-        self.ui.toolButton_speed9.clicked.connect(
-            lambda: self.handle_button_click("s9")
-        )
-        self.ui.toolButton_speed10.clicked.connect(
-            lambda: self.handle_button_click("s10")
-        )
+        # print(self.ui.right_menu.children())
         self.ui.increase_key.clicked.connect(
             lambda: self.handle_button_click("6")
         )
@@ -64,9 +29,8 @@ class App(QMainWindow):
         self.ui.emgstop_key.clicked.connect(
             lambda: self.handle_button_click("8")
         )
-        self.ui.toolButton_reset.clicked.connect(lambda: self.handle_button_click("9"))
         # change page
-        self.ui.toolButton_testbed.clicked.connect(lambda: self.change_page("testbed"))
+        self.ui.toolButton_shaft.clicked.connect(lambda: self.change_page("shaft"))
         self.ui.toolButton_temperature.clicked.connect(
             lambda: self.change_page("temperature")
         )
@@ -77,22 +41,24 @@ class App(QMainWindow):
         # design
         self.ui.stackedWidget.setCurrentIndex(0)
         self.design_gauges()
-        # Connect the signal to the slot
-        # thread
-        # self.worker = WorkerData()
-        # self.worker.values.connect(self.update_gauge)
-        # self.worker.start()
+
         self.worker_arduino = WorkerArduino(self.arduino)
         self.worker_data = WorkerData(self.ui)        
         self.worker_arduino.start()
         self.worker_arduino.data_received.connect(self.worker_data.get_data)
         
         self.worker_data.start()
-        # self.worker_dataprocess.start()
-        # self.worker_gauge.start()
-    # def update_arduino_data(self, data):
-    #     # Handle incoming data from Arduino
-    #     print(f"Data received from Arduino: {data}")
+        self.timer = QTimer(self)
+        self.timer.timeout.connect(self.update_time)  # Connect timeout to the update function
+        self.timer.start(1000)  # 1000 ms = 1 second
+
+        # Call update_time once at startup to set the initial time
+        self.update_time()
+
+    def update_time(self):
+        # Update the label with the current time
+        current_time = datetime.datetime.now().strftime('%H:%M:%S')
+        self.ui.label_time.setText(current_time)
 
     def update_gauge(self, val):
         pass
@@ -104,8 +70,9 @@ class App(QMainWindow):
 
     def change_page(self, page):
 
-        if page == "testbed":
+        if page == "shaft":
             self.ui.stackedWidget.setCurrentIndex(0)
+            
         elif page == "temperature":
             self.ui.stackedWidget.setCurrentIndex(1)
         elif page == "pressure":
@@ -138,7 +105,8 @@ class App(QMainWindow):
         except ValueError:
             # self.ui.listWidget.addItem(f"Ignoring non-numeric data: {data}")
             print(f"Ignoring non-numeric data: {data}")
-
+    def change_color():
+        pass
     def design_gauges(self):
         self.ui.airboost_bank_a_temp_gauge.setNeedleColor(245, 66, 93)
         self.ui.exhuast_bank_a_temp_gauge.setNeedleColor(245, 66, 93)
@@ -163,14 +131,14 @@ class App(QMainWindow):
         self.ui.airboost_pressure_gauge.setGaugeTheme(3)
         self.ui.sea_water_pressure_gauge.setGaugeTheme(3)
         self.ui.oil_switch_pressure_gauge.setGaugeTheme(3)
-        self.ui.speed_gauge.setGaugeTheme(6)
-        self.ui.speed_gauge.setMinValue(0)
-        self.ui.speed_gauge.setMaxValue(255)
-        self.ui.speed_gauge.setMouseTracking(False)
-        self.ui.speed_gauge.units = "RPM"
-        self.ui.rpm_gauge.setGaugeTheme(6)
-        self.ui.rpm_gauge.setMouseTracking(False)
-        self.ui.rpm_gauge.units = "RPM"
+        # self.ui.speed_gauge.setGaugeTheme(6)
+        # self.ui.speed_gauge.setMinValue(0)
+        # self.ui.speed_gauge.setMaxValue(255)
+        # self.ui.speed_gauge.setMouseTracking(False)
+        # self.ui.speed_gauge.units = "RPM"
+        # self.ui.rpm_gauge.setGaugeTheme(6)
+        # self.ui.rpm_gauge.setMouseTracking(False)
+        # self.ui.rpm_gauge.units = "RPM"
         self.ui.airboost_bank_a_temp_gauge.setMouseTracking(False)
         self.ui.exhuast_bank_b_temp_gauge.setMouseTracking(False)
         self.ui.exhuast_bank_a_temp_gauge.setMouseTracking(False)

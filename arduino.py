@@ -26,6 +26,7 @@ class ArduinoHandler(QObject):
             if data == None:
                 data = '3'
                 self.serial_port.write(data)
+                print('injam')
                 print(f"Sent: {data}")
             else:
                 self.serial_port.write(data.encode())
