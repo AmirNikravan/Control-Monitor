@@ -107,18 +107,149 @@ class Ui_MainWindow(object):
         self.shaft = QWidget()
         self.shaft.setObjectName(u"shaft")
         self.shaft.setStyleSheet(u"")
-        self.rpm_gauge_shaft = AnalogGaugeWidget(self.shaft)
-        self.rpm_gauge_shaft.setObjectName(u"rpm_gauge_shaft")
-        self.rpm_gauge_shaft.setGeometry(QRect(330, 140, 181, 161))
-        self.label_4 = QLabel(self.shaft)
-        self.label_4.setObjectName(u"label_4")
-        self.label_4.setGeometry(QRect(690, 60, 63, 20))
-        self.oil_temp_shaft_gauge = AnalogGaugeWidget(self.shaft)
+        self.widget = QWidget(self.shaft)
+        self.widget.setObjectName(u"widget")
+        self.widget.setGeometry(QRect(100, 360, 641, 71))
+        self.horizontalLayout_2 = QHBoxLayout(self.widget)
+        self.horizontalLayout_2.setSpacing(23)
+        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
+        self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
+        self.label_shaft_airflap = QLabel(self.widget)
+        self.label_shaft_airflap.setObjectName(u"label_shaft_airflap")
+        self.label_shaft_airflap.setFont(font)
+        self.label_shaft_airflap.setStyleSheet(u"            QLabel {\n"
+"\n"
+"	\n"
+"	background-color: rgb(143, 143, 143);\n"
+"                color: black;\n"
+"                padding: 20px;\n"
+"                border-radius: 15px;\n"
+"                border: 2px solid rgba(255, 255, 255, 100);\n"
+"                box-shadow: 5px 5px 15px rgba(0, 0, 0, 75);\n"
+"            }")
+        self.label_shaft_airflap.setAlignment(Qt.AlignCenter)
+
+        self.horizontalLayout_2.addWidget(self.label_shaft_airflap)
+
+        self.label_shaft_stop = QLabel(self.widget)
+        self.label_shaft_stop.setObjectName(u"label_shaft_stop")
+        self.label_shaft_stop.setFont(font)
+        self.label_shaft_stop.setStyleSheet(u"            QLabel {\n"
+"\n"
+"	\n"
+"	background-color: rgb(143, 143, 143);\n"
+"                color: black;\n"
+"                padding: 20px;\n"
+"                border-radius: 15px;\n"
+"                border: 2px solid rgba(255, 255, 255, 100);\n"
+"                box-shadow: 5px 5px 15px rgba(0, 0, 0, 75);\n"
+"            }")
+        self.label_shaft_stop.setAlignment(Qt.AlignCenter)
+
+        self.horizontalLayout_2.addWidget(self.label_shaft_stop)
+
+        self.label_shaft_start = QLabel(self.widget)
+        self.label_shaft_start.setObjectName(u"label_shaft_start")
+        self.label_shaft_start.setFont(font)
+        self.label_shaft_start.setStyleSheet(u"            QLabel {\n"
+"\n"
+"	\n"
+"	background-color: rgb(143, 143, 143);\n"
+"                color: black;\n"
+"                padding: 20px;\n"
+"                border-radius: 15px;\n"
+"                border: 2px solid rgba(255, 255, 255, 100);\n"
+"                box-shadow: 5px 5px 15px rgba(0, 0, 0, 75);\n"
+"            }")
+        self.label_shaft_start.setAlignment(Qt.AlignCenter)
+
+        self.horizontalLayout_2.addWidget(self.label_shaft_start)
+
+        self.label_shaft_water_level = QLabel(self.widget)
+        self.label_shaft_water_level.setObjectName(u"label_shaft_water_level")
+        self.label_shaft_water_level.setFont(font)
+        self.label_shaft_water_level.setStyleSheet(u"            QLabel {\n"
+"\n"
+"	\n"
+"	background-color: rgb(143, 143, 143);\n"
+"                color: black;\n"
+"                padding: 20px;\n"
+"                border-radius: 15px;\n"
+"                border: 2px solid rgba(255, 255, 255, 100);\n"
+"                box-shadow: 5px 5px 15px rgba(0, 0, 0, 75);\n"
+"            }")
+        self.label_shaft_water_level.setAlignment(Qt.AlignCenter)
+
+        self.horizontalLayout_2.addWidget(self.label_shaft_water_level)
+
+        self.horizontalLayout_2.setStretch(0, 2)
+        self.horizontalLayout_2.setStretch(1, 2)
+        self.horizontalLayout_2.setStretch(2, 2)
+        self.horizontalLayout_2.setStretch(3, 2)
+        self.widget1 = QWidget(self.shaft)
+        self.widget1.setObjectName(u"widget1")
+        self.widget1.setGeometry(QRect(44, 100, 731, 241))
+        self.horizontalLayout_3 = QHBoxLayout(self.widget1)
+        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
+        self.horizontalLayout_3.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_28 = QVBoxLayout()
+        self.verticalLayout_28.setObjectName(u"verticalLayout_28")
+        self.oil_temp_shaft_gauge = AnalogGaugeWidget(self.widget1)
         self.oil_temp_shaft_gauge.setObjectName(u"oil_temp_shaft_gauge")
-        self.oil_temp_shaft_gauge.setGeometry(QRect(150, 420, 120, 80))
-        self.oil_press_shaft_gauge = AnalogGaugeWidget(self.shaft)
+
+        self.verticalLayout_28.addWidget(self.oil_temp_shaft_gauge)
+
+        self.label_27 = QLabel(self.widget1)
+        self.label_27.setObjectName(u"label_27")
+        self.label_27.setMaximumSize(QSize(16777215, 22))
+        font3 = QFont()
+        font3.setFamilies([u"IRANSansXFaNum Black"])
+        font3.setPointSize(12)
+        font3.setBold(True)
+        self.label_27.setFont(font3)
+        self.label_27.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_28.addWidget(self.label_27)
+
+
+        self.horizontalLayout_3.addLayout(self.verticalLayout_28)
+
+        self.verticalLayout_29 = QVBoxLayout()
+        self.verticalLayout_29.setObjectName(u"verticalLayout_29")
+        self.rpm_gauge_shaft = AnalogGaugeWidget(self.widget1)
+        self.rpm_gauge_shaft.setObjectName(u"rpm_gauge_shaft")
+
+        self.verticalLayout_29.addWidget(self.rpm_gauge_shaft)
+
+        self.label_25 = QLabel(self.widget1)
+        self.label_25.setObjectName(u"label_25")
+        self.label_25.setMaximumSize(QSize(16777215, 22))
+        self.label_25.setFont(font3)
+        self.label_25.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_29.addWidget(self.label_25)
+
+
+        self.horizontalLayout_3.addLayout(self.verticalLayout_29)
+
+        self.verticalLayout_30 = QVBoxLayout()
+        self.verticalLayout_30.setObjectName(u"verticalLayout_30")
+        self.oil_press_shaft_gauge = AnalogGaugeWidget(self.widget1)
         self.oil_press_shaft_gauge.setObjectName(u"oil_press_shaft_gauge")
-        self.oil_press_shaft_gauge.setGeometry(QRect(460, 430, 120, 80))
+
+        self.verticalLayout_30.addWidget(self.oil_press_shaft_gauge)
+
+        self.label_4 = QLabel(self.widget1)
+        self.label_4.setObjectName(u"label_4")
+        self.label_4.setMaximumSize(QSize(16777215, 22))
+        self.label_4.setFont(font3)
+        self.label_4.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_30.addWidget(self.label_4)
+
+
+        self.horizontalLayout_3.addLayout(self.verticalLayout_30)
+
         self.stackedWidget.addWidget(self.shaft)
         self.temperature = QWidget()
         self.temperature.setObjectName(u"temperature")
@@ -128,11 +259,11 @@ class Ui_MainWindow(object):
         self.label_5.setObjectName(u"label_5")
         self.label_5.setMinimumSize(QSize(0, 12))
         self.label_5.setMaximumSize(QSize(16777215, 28))
-        font3 = QFont()
-        font3.setFamilies([u"IRANSansXFaNum"])
-        font3.setPointSize(14)
-        font3.setBold(True)
-        self.label_5.setFont(font3)
+        font4 = QFont()
+        font4.setFamilies([u"IRANSansXFaNum"])
+        font4.setPointSize(14)
+        font4.setBold(True)
+        self.label_5.setFont(font4)
 
         self.verticalLayout_20.addWidget(self.label_5)
 
@@ -148,11 +279,11 @@ class Ui_MainWindow(object):
         self.label_6 = QLabel(self.temperature)
         self.label_6.setObjectName(u"label_6")
         self.label_6.setMaximumSize(QSize(16777215, 19))
-        font4 = QFont()
-        font4.setFamilies([u"IRANSansXFaNum"])
-        font4.setPointSize(10)
-        font4.setBold(True)
-        self.label_6.setFont(font4)
+        font5 = QFont()
+        font5.setFamilies([u"IRANSansXFaNum"])
+        font5.setPointSize(10)
+        font5.setBold(True)
+        self.label_6.setFont(font5)
         self.label_6.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_7.addWidget(self.label_6)
@@ -170,7 +301,7 @@ class Ui_MainWindow(object):
         self.exhuast_bank_b_gauge = QLabel(self.temperature)
         self.exhuast_bank_b_gauge.setObjectName(u"exhuast_bank_b_gauge")
         self.exhuast_bank_b_gauge.setMaximumSize(QSize(16777215, 19))
-        self.exhuast_bank_b_gauge.setFont(font4)
+        self.exhuast_bank_b_gauge.setFont(font5)
         self.exhuast_bank_b_gauge.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_11.addWidget(self.exhuast_bank_b_gauge)
@@ -188,7 +319,7 @@ class Ui_MainWindow(object):
         self.label_11 = QLabel(self.temperature)
         self.label_11.setObjectName(u"label_11")
         self.label_11.setMaximumSize(QSize(16777215, 19))
-        self.label_11.setFont(font4)
+        self.label_11.setFont(font5)
         self.label_11.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_12.addWidget(self.label_11)
@@ -211,7 +342,7 @@ class Ui_MainWindow(object):
         self.label_12 = QLabel(self.temperature)
         self.label_12.setObjectName(u"label_12")
         self.label_12.setMaximumSize(QSize(16777215, 19))
-        self.label_12.setFont(font4)
+        self.label_12.setFont(font5)
         self.label_12.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_13.addWidget(self.label_12)
@@ -229,7 +360,7 @@ class Ui_MainWindow(object):
         self.label_10 = QLabel(self.temperature)
         self.label_10.setObjectName(u"label_10")
         self.label_10.setMaximumSize(QSize(16777215, 19))
-        self.label_10.setFont(font4)
+        self.label_10.setFont(font5)
         self.label_10.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_14.addWidget(self.label_10)
@@ -247,7 +378,7 @@ class Ui_MainWindow(object):
         self.label_15 = QLabel(self.temperature)
         self.label_15.setObjectName(u"label_15")
         self.label_15.setMaximumSize(QSize(16777215, 19))
-        self.label_15.setFont(font4)
+        self.label_15.setFont(font5)
         self.label_15.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_16.addWidget(self.label_15)
@@ -270,7 +401,7 @@ class Ui_MainWindow(object):
         self.label_16 = QLabel(self.temperature)
         self.label_16.setObjectName(u"label_16")
         self.label_16.setMaximumSize(QSize(16777215, 19))
-        self.label_16.setFont(font4)
+        self.label_16.setFont(font5)
         self.label_16.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_17.addWidget(self.label_16)
@@ -288,7 +419,7 @@ class Ui_MainWindow(object):
         self.label_17 = QLabel(self.temperature)
         self.label_17.setObjectName(u"label_17")
         self.label_17.setMaximumSize(QSize(16777215, 19))
-        self.label_17.setFont(font4)
+        self.label_17.setFont(font5)
         self.label_17.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_18.addWidget(self.label_17)
@@ -306,7 +437,7 @@ class Ui_MainWindow(object):
         self.label_18 = QLabel(self.temperature)
         self.label_18.setObjectName(u"label_18")
         self.label_18.setMaximumSize(QSize(16777215, 19))
-        self.label_18.setFont(font4)
+        self.label_18.setFont(font5)
         self.label_18.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_19.addWidget(self.label_18)
@@ -325,7 +456,7 @@ class Ui_MainWindow(object):
         self.label_13 = QLabel(self.pressure)
         self.label_13.setObjectName(u"label_13")
         self.label_13.setMaximumSize(QSize(16777215, 28))
-        self.label_13.setFont(font3)
+        self.label_13.setFont(font4)
 
         self.verticalLayout_26.addWidget(self.label_13)
 
@@ -342,7 +473,7 @@ class Ui_MainWindow(object):
         self.label_19 = QLabel(self.pressure)
         self.label_19.setObjectName(u"label_19")
         self.label_19.setMaximumSize(QSize(16777215, 19))
-        self.label_19.setFont(font4)
+        self.label_19.setFont(font5)
         self.label_19.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_21.addWidget(self.label_19)
@@ -361,7 +492,7 @@ class Ui_MainWindow(object):
         self.label_20 = QLabel(self.pressure)
         self.label_20.setObjectName(u"label_20")
         self.label_20.setMaximumSize(QSize(16777215, 19))
-        self.label_20.setFont(font4)
+        self.label_20.setFont(font5)
         self.label_20.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_22.addWidget(self.label_20)
@@ -380,7 +511,7 @@ class Ui_MainWindow(object):
         self.label_21 = QLabel(self.pressure)
         self.label_21.setObjectName(u"label_21")
         self.label_21.setMaximumSize(QSize(16777215, 19))
-        self.label_21.setFont(font4)
+        self.label_21.setFont(font5)
         self.label_21.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_23.addWidget(self.label_21)
@@ -409,7 +540,7 @@ class Ui_MainWindow(object):
         self.label_23 = QLabel(self.pressure)
         self.label_23.setObjectName(u"label_23")
         self.label_23.setMaximumSize(QSize(16777215, 19))
-        self.label_23.setFont(font4)
+        self.label_23.setFont(font5)
         self.label_23.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_25.addWidget(self.label_23)
@@ -433,7 +564,7 @@ class Ui_MainWindow(object):
         self.label_22 = QLabel(self.pressure)
         self.label_22.setObjectName(u"label_22")
         self.label_22.setMaximumSize(QSize(16777215, 19))
-        self.label_22.setFont(font4)
+        self.label_22.setFont(font5)
         self.label_22.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_24.addWidget(self.label_22)
@@ -479,11 +610,11 @@ class Ui_MainWindow(object):
         self.label_32 = QLabel(self.keys)
         self.label_32.setObjectName(u"label_32")
         self.label_32.setMaximumSize(QSize(83, 13))
-        font5 = QFont()
-        font5.setFamilies([u"IRANSansXFaNum Black"])
-        font5.setPointSize(10)
-        font5.setBold(True)
-        self.label_32.setFont(font5)
+        font6 = QFont()
+        font6.setFamilies([u"IRANSansXFaNum Black"])
+        font6.setPointSize(10)
+        font6.setBold(True)
+        self.label_32.setFont(font6)
         self.label_32.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_32.addWidget(self.label_32)
@@ -510,7 +641,7 @@ class Ui_MainWindow(object):
         self.label_34 = QLabel(self.keys)
         self.label_34.setObjectName(u"label_34")
         self.label_34.setMaximumSize(QSize(83, 13))
-        self.label_34.setFont(font5)
+        self.label_34.setFont(font6)
         self.label_34.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_33.addWidget(self.label_34)
@@ -537,7 +668,7 @@ class Ui_MainWindow(object):
         self.label_35 = QLabel(self.keys)
         self.label_35.setObjectName(u"label_35")
         self.label_35.setMaximumSize(QSize(83, 13))
-        self.label_35.setFont(font5)
+        self.label_35.setFont(font6)
         self.label_35.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_34.addWidget(self.label_35)
@@ -564,7 +695,7 @@ class Ui_MainWindow(object):
         self.label_36 = QLabel(self.keys)
         self.label_36.setObjectName(u"label_36")
         self.label_36.setMaximumSize(QSize(83, 13))
-        self.label_36.setFont(font5)
+        self.label_36.setFont(font6)
         self.label_36.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_35.addWidget(self.label_36)
@@ -591,7 +722,7 @@ class Ui_MainWindow(object):
         self.label_37 = QLabel(self.keys)
         self.label_37.setObjectName(u"label_37")
         self.label_37.setMaximumSize(QSize(83, 13))
-        self.label_37.setFont(font5)
+        self.label_37.setFont(font6)
         self.label_37.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_36.addWidget(self.label_37)
@@ -618,7 +749,7 @@ class Ui_MainWindow(object):
         self.label_8 = QLabel(self.widget_3)
         self.label_8.setObjectName(u"label_8")
         self.label_8.setMaximumSize(QSize(16777215, 12))
-        self.label_8.setFont(font4)
+        self.label_8.setFont(font5)
         self.label_8.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_8.addWidget(self.label_8)
@@ -640,7 +771,7 @@ class Ui_MainWindow(object):
         self.label_9 = QLabel(self.widget_4)
         self.label_9.setObjectName(u"label_9")
         self.label_9.setMaximumSize(QSize(16777215, 12))
-        self.label_9.setFont(font4)
+        self.label_9.setFont(font5)
         self.label_9.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_9.addWidget(self.label_9)
@@ -662,7 +793,7 @@ class Ui_MainWindow(object):
         self.label_14 = QLabel(self.widget_5)
         self.label_14.setObjectName(u"label_14")
         self.label_14.setMaximumSize(QSize(16777215, 12))
-        self.label_14.setFont(font4)
+        self.label_14.setFont(font5)
         self.label_14.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_10.addWidget(self.label_14)
@@ -684,7 +815,7 @@ class Ui_MainWindow(object):
         self.label_24 = QLabel(self.widget_6)
         self.label_24.setObjectName(u"label_24")
         self.label_24.setMaximumSize(QSize(16777215, 12))
-        self.label_24.setFont(font4)
+        self.label_24.setFont(font5)
         self.label_24.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_15.addWidget(self.label_24)
@@ -706,7 +837,7 @@ class Ui_MainWindow(object):
         self.label_26 = QLabel(self.widget_7)
         self.label_26.setObjectName(u"label_26")
         self.label_26.setMaximumSize(QSize(16777215, 12))
-        self.label_26.setFont(font4)
+        self.label_26.setFont(font5)
         self.label_26.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_37.addWidget(self.label_26)
@@ -737,16 +868,22 @@ class Ui_MainWindow(object):
         self.right_menu.setStyleSheet(u"QToolButton{\n"
 "border:none\n"
 "\n"
+"}\n"
+"QToolButton::hover{\n"
+"	background-color: rgb(183, 183, 183);\n"
+"\n"
 "}")
         self.verticalLayout_27 = QVBoxLayout(self.right_menu)
         self.verticalLayout_27.setObjectName(u"verticalLayout_27")
         self.verticalLayout_2 = QVBoxLayout()
+        self.verticalLayout_2.setSpacing(6)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
+        self.verticalLayout_2.setContentsMargins(-1, -1, -1, 0)
         self.toolButton_shaft = QToolButton(self.right_menu)
         self.toolButton_shaft.setObjectName(u"toolButton_shaft")
-        self.toolButton_shaft.setMinimumSize(QSize(75, 25))
+        self.toolButton_shaft.setMinimumSize(QSize(75, 60))
         self.toolButton_shaft.setMaximumSize(QSize(60, 25))
-        self.toolButton_shaft.setFont(font4)
+        self.toolButton_shaft.setFont(font5)
 
         self.verticalLayout_2.addWidget(self.toolButton_shaft)
 
@@ -763,12 +900,13 @@ class Ui_MainWindow(object):
         self.verticalLayout_27.addLayout(self.verticalLayout_2)
 
         self.verticalLayout_3 = QVBoxLayout()
+        self.verticalLayout_3.setSpacing(10)
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
         self.toolButton_temperature = QToolButton(self.right_menu)
         self.toolButton_temperature.setObjectName(u"toolButton_temperature")
-        self.toolButton_temperature.setMinimumSize(QSize(75, 25))
+        self.toolButton_temperature.setMinimumSize(QSize(75, 60))
         self.toolButton_temperature.setMaximumSize(QSize(60, 25))
-        self.toolButton_temperature.setFont(font4)
+        self.toolButton_temperature.setFont(font5)
 
         self.verticalLayout_3.addWidget(self.toolButton_temperature)
 
@@ -788,9 +926,9 @@ class Ui_MainWindow(object):
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
         self.toolButton_pressure = QToolButton(self.right_menu)
         self.toolButton_pressure.setObjectName(u"toolButton_pressure")
-        self.toolButton_pressure.setMinimumSize(QSize(75, 25))
+        self.toolButton_pressure.setMinimumSize(QSize(75, 60))
         self.toolButton_pressure.setMaximumSize(QSize(60, 25))
-        self.toolButton_pressure.setFont(font4)
+        self.toolButton_pressure.setFont(font5)
 
         self.verticalLayout_4.addWidget(self.toolButton_pressure)
 
@@ -807,12 +945,13 @@ class Ui_MainWindow(object):
         self.verticalLayout_27.addLayout(self.verticalLayout_4)
 
         self.verticalLayout_5 = QVBoxLayout()
+        self.verticalLayout_5.setSpacing(8)
         self.verticalLayout_5.setObjectName(u"verticalLayout_5")
         self.toolButton_keys = QToolButton(self.right_menu)
         self.toolButton_keys.setObjectName(u"toolButton_keys")
-        self.toolButton_keys.setMinimumSize(QSize(75, 25))
+        self.toolButton_keys.setMinimumSize(QSize(75, 60))
         self.toolButton_keys.setMaximumSize(QSize(60, 25))
-        self.toolButton_keys.setFont(font4)
+        self.toolButton_keys.setFont(font5)
 
         self.verticalLayout_5.addWidget(self.toolButton_keys)
 
@@ -832,8 +971,8 @@ class Ui_MainWindow(object):
         self.verticalLayout_6.setObjectName(u"verticalLayout_6")
         self.toolButton = QToolButton(self.right_menu)
         self.toolButton.setObjectName(u"toolButton")
-        self.toolButton.setMinimumSize(QSize(75, 25))
-        self.toolButton.setFont(font4)
+        self.toolButton.setMinimumSize(QSize(75, 60))
+        self.toolButton.setFont(font5)
 
         self.verticalLayout_6.addWidget(self.toolButton)
 
@@ -872,7 +1011,13 @@ class Ui_MainWindow(object):
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u062a\u0648\u0631:", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0627\u0645\u0648\u0634", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u" \u0648\u0636\u0639\u06cc\u062a \u0645\u0648\u062a\u0648\u0631 :", None))
-        self.label_4.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
+        self.label_shaft_airflap.setText(QCoreApplication.translate("MainWindow", u"Air flap", None))
+        self.label_shaft_stop.setText(QCoreApplication.translate("MainWindow", u"Stoped", None))
+        self.label_shaft_start.setText(QCoreApplication.translate("MainWindow", u"Started", None))
+        self.label_shaft_water_level.setText(QCoreApplication.translate("MainWindow", u"Water Level", None))
+        self.label_27.setText(QCoreApplication.translate("MainWindow", u"\u062f\u0645\u0627\u06cc \u0631\u0648\u063a\u0646", None))
+        self.label_25.setText(QCoreApplication.translate("MainWindow", u"RPM", None))
+        self.label_4.setText(QCoreApplication.translate("MainWindow", u"\u0641\u0634\u0627\u0631\u0631\u0648\u063a\u0646", None))
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"\u0633\u0646\u0633\u0648\u0631 \u0647\u0627\u06cc \u062f\u0645\u0627", None))
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"Exhuast Bank B", None))
         self.exhuast_bank_b_gauge.setText(QCoreApplication.translate("MainWindow", u"Exhuast Bank A", None))
