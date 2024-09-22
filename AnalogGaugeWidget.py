@@ -18,7 +18,7 @@
 
 import os
 import math
-
+import time
 ########################################################################
 ## MODULE UPDATED TO USE QTPY
 ########################################################################
@@ -75,7 +75,7 @@ class AnalogGaugeWidget(QWidget):
         # DEFAULT NEEDLE COLOR ON DRAG
         ################################################################################################
         # self.NeedleColorDrag = QColor(255, 0, 00, 255)
-        self.setNeedleColorOnDrag(255, 0, 00, 255)
+        self.setNeedleColorOnDrag(25, 22, 00, 255)
 
         ################################################################################################
         # DEFAULT SCALE TEXT COLOR
@@ -209,7 +209,7 @@ class AnalogGaugeWidget(QWidget):
         ################################################################################################
         # NEEDLE SCALE FACTOR/LENGTH
         ################################################################################################
-        self.needle_scale_factor = 0.8
+        self.needle_scale_factor = 0.9
         ################################################################################################
         # ENABLE NEEDLE POLYGON BY DEFAULT
         ################################################################################################
@@ -249,6 +249,12 @@ class AnalogGaugeWidget(QWidget):
     ################################################################################################
     # SET SCALE FONT FAMILY
     ################################################################################################
+    def setValue(self,value):
+        if isinstance(value, (int, float)) and not None:
+            self.value = value
+        else:
+            self.value = 0
+        self.repaint()
     def setScaleFontFamily(self, font):
         self.scale_fontname = str(font)
 
@@ -1475,19 +1481,19 @@ class AnalogGaugeWidget(QWidget):
         def recursive_set(parent):
             for child in parent.findChildren(QObject):
                 try:
-                    child.setMouseTracking(flag)
+                    child.setMouseTracking(False)
                 except:
                     pass
                 recursive_set(child)
 
-        QWidget.setMouseTracking(self, flag)
+        QWidget.setMouseTracking(self, False)
         recursive_set(self)
 
     def mouseReleaseEvent(self, QMouseEvent):
-        self.NeedleColor = self.NeedleColorReleased
+        # self.NeedleColor = self.NeedleColorReleased
 
-        if not self.use_timer_event:
-            self.update()
+        # if not self.use_timer_event:
+        #     self.update()
         pass
 
     ########################################################################
@@ -1498,55 +1504,56 @@ class AnalogGaugeWidget(QWidget):
         self.update()
 
     def mouseMoveEvent(self, event):
-        x, y = event.x() - (self.width() / 2), event.y() - (self.height() / 2)
-        if not x == 0:
-            angle = math.atan2(y, x) / math.pi * 180
-            # winkellaenge der anzeige immer positiv 0 - 360deg
-            # min wert + umskalierter wert
-            value = (
-                float(math.fmod(angle - self.scale_angle_start_value + 720, 360))
-                / (float(self.scale_angle_size) / float(self.maxValue - self.minValue))
-            ) + self.minValue
-            temp = value
-            fmod = float(math.fmod(angle - self.scale_angle_start_value + 720, 360))
-            state = 0
-            if (
-                (
-                    self.value
-                    - (self.maxValue - self.minValue) * self.valueNeedleSnapzone
-                )
-                <= value
-                <= (
-                    self.value
-                    + (self.maxValue - self.minValue) * self.valueNeedleSnapzone
-                )
-            ):
-                self.NeedleColor = self.NeedleColorDrag
-                # todo: evtl ueberpruefen
-                #
-                state = 9
-                # if value >= self.maxValue and self.last_value < (self.maxValue - self.minValue) / 2:
-                if (
-                    value >= self.maxValue
-                    and self.last_value < (self.maxValue - self.minValue) / 2
-                ):
-                    state = 1
-                    value = self.maxValue
-                    self.last_value = self.minValue
-                    self.valueChanged.emit(int(value))
+        pass
+        # x, y = event.x() - (self.width() / 2), event.y() - (self.height() / 2)
+        # if not x == 0:
+        #     angle = math.atan2(y, x) / math.pi * 180
+        #     # winkellaenge der anzeige immer positiv 0 - 360deg
+        #     # min wert + umskalierter wert
+        #     value = (
+        #         float(math.fmod(angle - self.scale_angle_start_value + 720, 360))
+        #         / (float(self.scale_angle_size) / float(self.maxValue - self.minValue))
+        #     ) + self.minValue
+        #     temp = value
+        #     fmod = float(math.fmod(angle - self.scale_angle_start_value + 720, 360))
+        #     state = 0
+        #     if (
+        #         (
+        #             self.value
+        #             - (self.maxValue - self.minValue) * self.valueNeedleSnapzone
+        #         )
+        #         <= value
+        #         <= (
+        #             self.value
+        #             + (self.maxValue - self.minValue) * self.valueNeedleSnapzone
+        #         )
+        #     ):
+        #         self.NeedleColor = self.NeedleColorDrag
+        #         # todo: evtl ueberpruefen
+        #         #
+        #         state = 9
+        #         # if value >= self.maxValue and self.last_value < (self.maxValue - self.minValue) / 2:
+        #         if (
+        #             value >= self.maxValue
+        #             and self.last_value < (self.maxValue - self.minValue) / 2
+        #         ):
+        #             state = 1
+        #             value = self.maxValue
+        #             self.last_value = self.minValue
+        #             self.valueChanged.emit(int(value))
 
-                elif value >= self.maxValue >= self.last_value:
-                    state = 2
-                    value = self.maxValue
-                    self.last_value = self.maxValue
-                    self.valueChanged.emit(int(value))
+        #         elif value >= self.maxValue >= self.last_value:
+        #             state = 2
+        #             value = self.maxValue
+        #             self.last_value = self.maxValue
+        #             self.valueChanged.emit(int(value))
 
-                else:
-                    state = 3
-                    self.last_value = value
-                    self.valueChanged.emit(int(value))
+        #         else:
+        #             state = 3
+        #             self.last_value = value
+        #             self.valueChanged.emit(int(value))
 
-                self.updateValue(value)
+        #         self.updateValue(value)
 
 
 ################################################################################################

@@ -309,6 +309,7 @@ class Ui_MainWindow(object):
         self.exhuast_bank_a_temp_gauge.setObjectName(u"exhuast_bank_a_temp_gauge")
         self.exhuast_bank_a_temp_gauge.setMinimumSize(QSize(255, 212))
         self.exhuast_bank_a_temp_gauge.setMaximumSize(QSize(16777215, 16777215))
+        self.exhuast_bank_a_temp_gauge.setMouseTracking(True)
 
         self.verticalLayout_7.addWidget(self.exhuast_bank_a_temp_gauge)
 
@@ -1354,7 +1355,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(2)
+        self.stackedWidget.setCurrentIndex(1)
         self.stackedWidget_sensosr.setCurrentIndex(0)
 
 

@@ -2,7 +2,7 @@
 from UI_main import Ui_MainWindow
 from PySide6.QtWidgets import *
 import sys
-from arduino import ArduinoHandler
+# from arduino import ArduinoHandler
 from PySide6.QtCore import QTimer
 import time
 from thread import *
@@ -17,9 +17,9 @@ class App(QMainWindow):
         super().__init__(parent)
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-        self.arduino = ArduinoHandler(
-            "COM9",
-        )
+        # self.arduino = ArduinoHandler(
+        #     "COM3",
+        # )
         # self.ui.tableWidget_data.resizeColumnsToContents()
         self.ui.tableWidget_data.setColumnWidth(0,300)
         self.ui.tableWidget_data.setColumnWidth(1,100)
@@ -50,12 +50,12 @@ class App(QMainWindow):
         self.ui.stackedWidget.setCurrentIndex(0)
         self.design_gauges()
 
-        self.worker_arduino = WorkerArduino(self.arduino)
-        self.worker_data = WorkerData(self.ui)
+        self.worker_arduino = WorkerArduino('COM3')
+        self.worker_arduino.data_received.connect(self.process_serial_data)
         self.worker_arduino.start()
-        self.worker_arduino.data_received.connect(self.worker_data.get_data)
-
-        self.worker_data.start()
+        self.update_worker = UpdateWorker(self.ui)
+        self.update_worker.start()
+        
         self.timer = QTimer(self)
         self.timer.timeout.connect(
             self.update_time
@@ -64,7 +64,9 @@ class App(QMainWindow):
 
         # Call update_time once at startup to set the initial time
         self.update_time()
-
+    def process_serial_data(self,value):
+        # print(value)
+        self.update_worker.update_values(value)
     def update_time(self):
 
         # Update the label with the current time
@@ -92,7 +94,7 @@ class App(QMainWindow):
                 self.ui.stackedWidget_sensosr.setCurrentIndex(min)
             else:
                 self.ui.stackedWidget_sensosr.setCurrentIndex(current + 1)
-
+        time.sleep(1)
     def change_page(self, page):
 
         if page == "shaft":
@@ -103,12 +105,12 @@ class App(QMainWindow):
         elif page == "pressure":
             self.ui.stackedWidget.setCurrentIndex(2)
         elif page == "keys":
-            self.arduino._send("3")
+            self.worker_arduino.send_command("3")
             self.ui.stackedWidget.setCurrentIndex(3)
 
     def handle_button_click(self, command):
         # Send commands to Arduino
-        self.arduino._send(command)
+        self.worker_arduino.send_command(command)
 
     def update_data_label(self, data):
         # print(f"Raw data received: '{data}'")
@@ -135,6 +137,7 @@ class App(QMainWindow):
         pass
 
     def design_gauges(self):
+        
         self.ui.airboost_bank_a_temp_gauge.setNeedleColor(245, 66, 93)
         self.ui.exhuast_bank_a_temp_gauge.setNeedleColor(245, 66, 93)
         self.ui.exhuast_bank_b_temp_gauge.setNeedleColor(245, 66, 93)

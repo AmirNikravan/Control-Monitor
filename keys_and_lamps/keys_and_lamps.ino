@@ -66,5 +66,5 @@ void loop() {
     }
   } 
   // controll.run();
-  delay(20); 
+  delay(200); 
 }

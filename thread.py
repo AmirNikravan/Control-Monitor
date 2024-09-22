@@ -1,9 +1,51 @@
 from PySide6.QtCore import QThread, Signal , QTimer
 import random
-import time
-import json
+import time , json
+import serial
 from PySide6.QtWidgets import QApplication
+class UpdateWorker(QThread):
+    def __init__(self, ui):
+        super().__init__()
+        self.ui = ui
+        self.data = None
+    def update_values(self, data):
+        """Receive JSON data and update internal state for gauges."""
+        try:
+            if not data:
+                return
+            self.data = data
 
+        except Exception as e:
+            print(e)    
+    def run(self):
+        while True:
+            if self.data: 
+                data_json = json.loads(self.data)
+                self.temperature = data_json['t']
+                self.pressure = data_json['p']
+                self.keys = data_json['k']
+                self.lamps = data_json['l']
+                self.update_gauges()
+                # print(self.data)
+                # time.sleep(0.3)
+            time.sleep(1)  # Update every 1 second   
+    def update_gauges(self):
+            # print(self.temperature['t7'])
+            self.ui.airboost_bank_a_temp_gauge.setValue(self.temperature['t1'])
+            # self.ui.airboost_bank_a_temp_gauge.setEnabled(False)
+            self.ui.exhuast_bank_b_temp_gauge.setValue(self.temperature['t2'])
+            self.ui.exhuast_bank_a_temp_gauge.setValue(self.temperature['t3'])
+            self.ui.oil_ntc_temp_gauge.setValue(self.temperature['t4'])
+            self.ui.oil_temp_gauge.setValue(self.temperature['t5'])
+            self.ui.airboost_bank_b_temp_gauge.setValue(self.temperature['t6'])
+            self.ui.sea_water_temp_gauge.setValue(self.temperature['t7'])
+            self.ui.freshwater_beforethermo_temp_gauge.setValue(self.temperature['t8'])
+            self.ui.freshwater_afterthermo_temp_gauge.setValue(self.temperature['t9'])
+            self.ui.oil_pressure_gauge.setValue(self.pressure['p1'])
+            self.ui.oil_switch_pressure_gauge.setValue(self.pressure['p2'])
+            self.ui.airboost_pressure_gauge.setValue(self.pressure['p3'])
+            self.ui.sea_water_pressure_gauge.setValue(self.pressure['p4'])
+            self.ui.fuel_pressure_gauge.setValue(self.pressure['p5'])
 class WorkerData(QThread):
     values = Signal(int)
 
@@ -204,65 +246,39 @@ class WorkerData(QThread):
 
 
 class WorkerArduino(QThread):
-    data_received = Signal(dict)
+    data_received = Signal(str)
 
-    def __init__(self, arduino_handler):
+    def __init__(self, port, baud_rate=115200):
         super().__init__()
+        self.port = port
+        self.baud_rate = baud_rate
         self.running = True
-        self.arduino_handler = arduino_handler
+        self.serial_port = None
+        self.establish_connection()
+        # self.serial_port.write('3'.encode('utf-8'))
+
+    def establish_connection(self):
+        try:
+            self.serial_port = serial.Serial(self.port, self.baud_rate)
+            time.sleep(1)
+            print(f"Connected to Arduino on {self.port}")
+        except serial.SerialException as e:
+            print(f"Error connecting to Arduino: {e}")
 
     def run(self):
-        # print(3234234)
-        data = {}
         while self.running:
             try:
-                # Print()
-                # self.temp_gauges()
-                print(f"in yeki {self.arduino_handler.serial_port.in_waiting}")
-                if self.arduino_handler.serial_port.in_waiting > 0:
-                    raw_data = (
-                        self.arduino_handler.serial_port.readline().decode().strip()
-                    )
-                    data = json.loads(raw_data)
-                    # d = data["k"]
-                    # print(f"data = {d }" )
-                    # print(f"data = {data}" )
-                else:
-                    self.arduino_handler._send("3")
-
-                # print(data)
-                self.data_received.emit(data)
-                time.sleep(0.8)
-
+                if self.serial_port:
+                    if self.serial_port.in_waiting > 0:  # Check if there is data available
+                        data = self.serial_port.readline().decode('utf-8').strip()
+                        self.data_received.emit(data)
+                    else:
+                        self.send_command('3')  # Send '3' if no data is available
+                time.sleep(1)
             except Exception as e:
-                # print(f"Error reading from Arduino: {e}")
-                pass
-            # time.sleep(0.5)
-    def temp_gauges(self, val=9):
-        # print(val)
-        if val is not None:
-            # print('i am here mother fucker bitch')
-            self.ui.airboost_bank_a_temp_gauge.value = random.randint(0, 300)
-            # self.ui.exhuast_bank_b_temp_gauge.value =  random.randint(0,300)
-            # self.ui.exhuast_bank_a_temp_gauge.value = random.randint(0,300)
-            # self.ui.oil_ntc_temp_gauge.value = random.randint(0,300)
-            # self.ui.oil_temp_gauge.value = random.randint(0,300)
-            self.ui.airboost_bank_b_temp_gauge.value = random.randint(0, 300)
-            # self.ui.airboost_bank_b_temp_gauge.valaue = random.randint(0,300)
-            self.ui.sea_water_temp_gauge.value = random.randint(0, 300)
-            self.ui.freshwater_beforethermo_temp_gauge.value = random.randint(0, 300)
-            self.ui.freshwater_afterthermo_temp_gauge.value = random.randint(0, 300)
-            # self.ui.freshwater_afterthermo_temp_gauge.repaint()
-            # self.ui.freshwater_beforethermo_temp_gauge.repaint()
-            # self.ui.sea_water_temp_gauge.repaint()
-            self.ui.airboost_bank_b_temp_gauge.repaint()
-            # self.ui.oil_temp_gauge.repaint()
-            # self.ui.oil_ntc_temp_gauge.repaint()
-            # self.ui.exhuast_bank_a_temp_gauge.repaint()
-            # self.ui.exhuast_bank_b_temp_gauge.repaint()
-            self.ui.airboost_bank_a_temp_gauge.repaint()
-            # time.sleep(0.3)
+                print(f"Error reading from Arduino: {e}")
 
-
-    def stop(self):
-        self.running = False
+    def send_command(self, command):
+        if self.serial_port:
+            self.serial_port.write(command.encode('utf-8'))
+            # print(f"Sent: {command}")

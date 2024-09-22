@@ -385,6 +385,8 @@ void read_sensors() {
   sensors["t"]["t3"] = t3;
   sensors["t"]["t4"] = t4;
   sensors["t"]["t5"] = t5;
+  sensors["t"]["t8"] = random(1000);
+  sensors["t"]["t9"] = random(1000);
   float c1=exhaust1.readCelsius();
   sensors["t"]["t6"] = c1;
     float c2=exhaust2.readCelsius();
@@ -395,12 +397,12 @@ void read_sensors() {
 		 sensors["p"]["p"+String(i+1)] =x/50;
 	}
 
-//  sensors["p"]["p1"] =x/100;
- // sensors["p"]["p1"] =random(0,5);  
-//  sensors["p"]["p2"] =  random(0,20);
-//  sensors["p"]["p3"] = random(0,20);
-//  sensors["p"]["p4"] = random(0,20);
-
+ sensors["p"]["p1"] =random(1000);
+ sensors["p"]["p1"] =random(1000); 
+ sensors["p"]["p2"] =  random(1000);
+ sensors["p"]["p3"] = random(1000);
+ sensors["p"]["p4"] = random(1000);
+  sensors["p"]["p5"] = random(1000);
 
   for (byte i = 0; i < BUTTON_NUM; i++) {
     char k[3];
@@ -414,6 +416,7 @@ void read_sensors() {
 
 
   Serial.println(sensors);
+  delay(900);
 }
 // ----------------------------------------------------------------------------------------------------
 
