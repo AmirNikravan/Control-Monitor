@@ -9,26 +9,26 @@ from thread import *
 from data import *
 from processor import *
 import datetime
+
+
 class App(QMainWindow):
 
     def __init__(self, parent=None):
         super().__init__(parent)
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-        self.arduino = ArduinoHandler('/dev/ttyACM0',)
+        self.arduino = ArduinoHandler(
+            "COM9",
+        )
 
         # print(self.ui.right_menu.children())
-        self.ui.increase_key.clicked.connect(
-            lambda: self.handle_button_click("6")
-        )
-        self.ui.decrease_key.clicked.connect(
-            lambda: self.handle_button_click("7")
-        )
-        self.ui.start_key.clicked.connect(lambda: self.handle_button_click("4")) # start
+        self.ui.increase_key.clicked.connect(lambda: self.handle_button_click("6"))
+        self.ui.decrease_key.clicked.connect(lambda: self.handle_button_click("7"))
+        self.ui.start_key.clicked.connect(
+            lambda: self.handle_button_click("4")
+        )  # start
         self.ui.stop_key.clicked.connect(lambda: self.handle_button_click("5"))
-        self.ui.emgstop_key.clicked.connect(
-            lambda: self.handle_button_click("8")
-        )
+        self.ui.emgstop_key.clicked.connect(lambda: self.handle_button_click("8"))
         # change page
         self.ui.toolButton_shaft.clicked.connect(lambda: self.change_page("shaft"))
         self.ui.toolButton_temperature.clicked.connect(
@@ -38,18 +38,24 @@ class App(QMainWindow):
             lambda: self.change_page("pressure")
         )
         self.ui.toolButton_keys.clicked.connect(lambda: self.change_page("keys"))
+        self.ui.toolButton_nextpage_sensors.clicked.connect(
+            lambda: self.change_page_sensors("next")
+        )
+        self.ui.toolButton_previouspage_sensors.clicked.connect(lambda:self.change_page_sensors('previous'))
         # design
         self.ui.stackedWidget.setCurrentIndex(0)
         self.design_gauges()
 
         self.worker_arduino = WorkerArduino(self.arduino)
-        self.worker_data = WorkerData(self.ui)        
+        self.worker_data = WorkerData(self.ui)
         self.worker_arduino.start()
         self.worker_arduino.data_received.connect(self.worker_data.get_data)
-        
+
         self.worker_data.start()
         self.timer = QTimer(self)
-        self.timer.timeout.connect(self.update_time)  # Connect timeout to the update function
+        self.timer.timeout.connect(
+            self.update_time
+        )  # Connect timeout to the update function
         self.timer.start(1000)  # 1000 ms = 1 second
 
         # Call update_time once at startup to set the initial time
@@ -57,7 +63,7 @@ class App(QMainWindow):
 
     def update_time(self):
         # Update the label with the current time
-        current_time = datetime.datetime.now().strftime('%H:%M:%S')
+        current_time = datetime.datetime.now().strftime("%H:%M:%S")
         self.ui.label_time.setText(current_time)
 
     def update_gauge(self, val):
@@ -67,18 +73,32 @@ class App(QMainWindow):
         # self.ui.speed_gauge.setGaugeTheme(val)
         # self.ui.speed_gauge.repaint()
 
+    def change_page_sensors(self, page):
+        min = 0
+        max = 2
+        current = self.ui.stackedWidget_sensosr.currentIndex()
+        if page == "previous":
+            if current == min:
+                self.ui.stackedWidget_sensosr.setCurrentIndex(max)
+            else:
+                self.ui.stackedWidget_sensosr.setCurrentIndex(current - 1)
+        elif page == "next":
+            if current == max:
+                self.ui.stackedWidget_sensosr.setCurrentIndex(min)
+            else:
+                self.ui.stackedWidget_sensosr.setCurrentIndex(current + 1)
 
     def change_page(self, page):
 
         if page == "shaft":
             self.ui.stackedWidget.setCurrentIndex(0)
-            
+
         elif page == "temperature":
             self.ui.stackedWidget.setCurrentIndex(1)
         elif page == "pressure":
             self.ui.stackedWidget.setCurrentIndex(2)
         elif page == "keys":
-            self.arduino._send('3')
+            self.arduino._send("3")
             self.ui.stackedWidget.setCurrentIndex(3)
 
     def handle_button_click(self, command):
@@ -105,8 +125,10 @@ class App(QMainWindow):
         except ValueError:
             # self.ui.listWidget.addItem(f"Ignoring non-numeric data: {data}")
             print(f"Ignoring non-numeric data: {data}")
+
     def change_color():
         pass
+
     def design_gauges(self):
         self.ui.airboost_bank_a_temp_gauge.setNeedleColor(245, 66, 93)
         self.ui.exhuast_bank_a_temp_gauge.setNeedleColor(245, 66, 93)
@@ -154,7 +176,7 @@ class App(QMainWindow):
         self.ui.sea_water_temp_gauge.setMouseTracking(False)
         self.ui.freshwater_beforethermo_temp_gauge.setMouseTracking(False)
         self.ui.freshwater_afterthermo_temp_gauge.setMouseTracking(False)
-        
+
         # print(i)\
         # time.sleep(1)
         # self.ui.speed_gauge.repaint()
