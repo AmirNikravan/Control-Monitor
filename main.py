@@ -20,7 +20,11 @@ class App(QMainWindow):
         self.arduino = ArduinoHandler(
             "COM9",
         )
-
+        # self.ui.tableWidget_data.resizeColumnsToContents()
+        self.ui.tableWidget_data.setColumnWidth(0,300)
+        self.ui.tableWidget_data.setColumnWidth(1,100)
+        self.ui.tableWidget_data.setColumnWidth(2,100)
+        self.ui.tableWidget_data.setColumnWidth(3,300)
         # print(self.ui.right_menu.children())
         self.ui.increase_key.clicked.connect(lambda: self.handle_button_click("6"))
         self.ui.decrease_key.clicked.connect(lambda: self.handle_button_click("7"))
@@ -62,6 +66,7 @@ class App(QMainWindow):
         self.update_time()
 
     def update_time(self):
+
         # Update the label with the current time
         current_time = datetime.datetime.now().strftime("%H:%M:%S")
         self.ui.label_time.setText(current_time)
@@ -75,7 +80,7 @@ class App(QMainWindow):
 
     def change_page_sensors(self, page):
         min = 0
-        max = 2
+        max = 4
         current = self.ui.stackedWidget_sensosr.currentIndex()
         if page == "previous":
             if current == min:

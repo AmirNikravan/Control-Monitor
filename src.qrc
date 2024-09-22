@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="icons">
+    <file>icons/icons8-back-arrow-100.png</file>
+    <file>icons/icons8-forward-button-100.png</file>
+  </qresource>
+</RCC>
