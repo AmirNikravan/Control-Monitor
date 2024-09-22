@@ -248,8 +248,9 @@ class WorkerData(QThread):
 class WorkerArduino(QThread):
     data_received = Signal(str)
 
-    def __init__(self, port, baud_rate=115200):
+    def __init__(self,ui, port, baud_rate=115200):
         super().__init__()
+        self.ui = ui
         self.port = port
         self.baud_rate = baud_rate
         self.running = True
@@ -271,7 +272,13 @@ class WorkerArduino(QThread):
                 if self.serial_port:
                     if self.serial_port.in_waiting > 0:  # Check if there is data available
                         data = self.serial_port.readline().decode('utf-8').strip()
-                        self.data_received.emit(data)
+                        # self.data_received.emit(data)
+                        data_json = json.loads(data)
+                        self.temperature = data_json['t']
+                        self.pressure = data_json['p']
+                        self.keys = data_json['k']
+                        self.lamps = data_json['l']
+                        self.update_gauges()
                     else:
                         self.send_command('3')  # Send '3' if no data is available
                 time.sleep(1)
@@ -282,3 +289,23 @@ class WorkerArduino(QThread):
         if self.serial_port:
             self.serial_port.write(command.encode('utf-8'))
             # print(f"Sent: {command}")
+    def update_gauges(self):
+        try:
+            # print(self.temperature['t7'])
+            self.ui.airboost_bank_a_temp_gauge.setValue(self.temperature['t1'])
+            # self.ui.airboost_bank_a_temp_gauge.setEnabled(False)
+            self.ui.exhuast_bank_b_temp_gauge.setValue(self.temperature['t2'])
+            self.ui.exhuast_bank_a_temp_gauge.setValue(self.temperature['t3'])
+            self.ui.oil_ntc_temp_gauge.setValue(self.temperature['t4'])
+            self.ui.oil_temp_gauge.setValue(self.temperature['t5'])
+            self.ui.airboost_bank_b_temp_gauge.setValue(self.temperature['t6'])
+            self.ui.sea_water_temp_gauge.setValue(self.temperature['t7'])
+            self.ui.freshwater_beforethermo_temp_gauge.setValue(self.temperature['t8'])
+            self.ui.freshwater_afterthermo_temp_gauge.setValue(self.temperature['t9'])
+            self.ui.oil_pressure_gauge.setValue(self.pressure['p1'])
+            self.ui.oil_switch_pressure_gauge.setValue(self.pressure['p2'])
+            self.ui.airboost_pressure_gauge.setValue(self.pressure['p3'])
+            self.ui.sea_water_pressure_gauge.setValue(self.pressure['p4'])
+            self.ui.fuel_pressure_gauge.setValue(self.pressure['p5'])
+        except Exception as e:
+            print(e)

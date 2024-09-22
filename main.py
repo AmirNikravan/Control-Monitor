@@ -50,8 +50,8 @@ class App(QMainWindow):
         self.ui.stackedWidget.setCurrentIndex(0)
         self.design_gauges()
 
-        self.worker_arduino = WorkerArduino('COM3')
-        self.worker_arduino.data_received.connect(self.process_serial_data)
+        self.worker_arduino = WorkerArduino(self.ui,'COM3')
+        # self.worker_arduino.data_received.connect(self.process_serial_data)
         self.worker_arduino.start()
         self.update_worker = UpdateWorker(self.ui)
         self.update_worker.start()
@@ -61,7 +61,6 @@ class App(QMainWindow):
             self.update_time
         )  # Connect timeout to the update function
         self.timer.start(1000)  # 1000 ms = 1 second
-
         # Call update_time once at startup to set the initial time
         self.update_time()
     def process_serial_data(self,value):
@@ -79,8 +78,13 @@ class App(QMainWindow):
         # # self.ui.airboost_bank_a_temp_gauge.neede
         # self.ui.speed_gauge.setGaugeTheme(val)
         # self.ui.speed_gauge.repaint()
-
+    def test(self):
+        while True:
+            for i in range(0,5):
+                self.ui.stackedWidget_sensosr.setCurrentIndex(i)
+                time.sleep(1)
     def change_page_sensors(self, page):
+        
         min = 0
         max = 4
         current = self.ui.stackedWidget_sensosr.currentIndex()
@@ -93,8 +97,9 @@ class App(QMainWindow):
             if current == max:
                 self.ui.stackedWidget_sensosr.setCurrentIndex(min)
             else:
+                
                 self.ui.stackedWidget_sensosr.setCurrentIndex(current + 1)
-        time.sleep(1)
+        # time.sleep(1)/
     def change_page(self, page):
 
         if page == "shaft":

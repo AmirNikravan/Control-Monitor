@@ -1,44 +1,40 @@
-from PySide6.QtWidgets import QApplication, QLabel, QWidget, QVBoxLayout
-from PySide6.QtGui import QFont, QColor
-from PySide6.QtCore import Qt
+from PySide6.QtWidgets import QApplication, QMainWindow, QStackedWidget, QWidget, QVBoxLayout, QLabel
+from PySide6.QtCore import QTimer
+import sys
 
-class BeautifulLabelApp(QWidget):
+class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
-        
-        # Set up the window layout
-        layout = QVBoxLayout()
-        
-        # Create and style the QLabel
-        label = QLabel("Hello, Beautiful QLabel!")
-        label.setAlignment(Qt.AlignCenter)
-        
-        # Set font properties
-        font = QFont("Arial", 16, QFont.Bold)
-        label.setFont(font)
-        
-        # Style the QLabel with a gradient background, rounded corners, and shadow
-        label.setStyleSheet("""
-            QLabel {
-                background: qlineargradient(
-                    spread: pad, x1: 0, y1: 0, x2: 1, y2: 1, 
-                    stop: 0 rgba(0, 153, 255, 255), stop: 1 rgba(102, 255, 102, 255)
-                );
-                color: white;
-                padding: 20px;
-                border-radius: 15px;
-                border: 2px solid rgba(255, 255, 255, 100);
-                box-shadow: 5px 5px 15px rgba(0, 0, 0, 75);
-            }
-        """)
 
-        layout.addWidget(label)
-        self.setLayout(layout)
-        self.setWindowTitle("Beautiful QLabel")
-        self.resize(400, 200)
+        self.stacked_widget = QStackedWidget()
+        self.setCentralWidget(self.stacked_widget)
 
-# Run the application
-app = QApplication([])
-window = BeautifulLabelApp()
+        # ایجاد دو صفحه نمونه
+        self.page1 = QWidget()
+        self.page1_layout = QVBoxLayout()
+        self.page1_layout.addWidget(QLabel("Page 1"))
+        self.page1.setLayout(self.page1_layout)
+
+        self.page2 = QWidget()
+        self.page2_layout = QVBoxLayout()
+        self.page2_layout.addWidget(QLabel("Page 2"))
+        self.page2.setLayout(self.page2_layout)
+
+        self.stacked_widget.addWidget(self.page1)
+        self.stacked_widget.addWidget(self.page2)
+
+        # تایمر برای تغییر صفحه
+        self.timer = QTimer(self)
+        self.timer.timeout.connect(self.change_page)
+        self.timer.start(1000)  # تغییر هر ۱ ثانیه
+
+        self.current_page = 0
+
+    def change_page(self):
+        self.current_page = (self.current_page + 1) % self.stacked_widget.count()
+        self.stacked_widget.setCurrentIndex(self.current_page)
+
+app = QApplication(sys.argv)
+window = MainWindow()
 window.show()
-app.exec()
+sys.exit(app.exec())
