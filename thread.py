@@ -283,7 +283,7 @@ class WorkerArduino(QThread):
                         self.update_current_page_gauges()
                     else:
                         self.send_command('3')  # Send '3' if no data is available
-                time.sleep(1)
+                time.sleep(1.5)
             except Exception as e:
                 print(f"Error reading from Arduino: {e}")
 
@@ -318,11 +318,12 @@ class WorkerArduino(QThread):
         self.ui.freshwater_beforethermo_temp_gauge.setValue(self.temperature['t8'])
         self.ui.freshwater_afterthermo_temp_gauge.setValue(self.temperature['t9'])
     def update_gauges_page_3(self):
+        # print(self.time_check)
+        
         duration = time.time()-self.time_check
-
-# تبدیل به دقیقه و ثانیه
+        # print(duration)
         minutes = int(duration // 60)
-        seconds = duration % 6
+        seconds = duration % 60
         print(f'page 3 {minutes}: {seconds}')
         self.ui.oil_pressure_gauge.setValue(self.pressure['p1'])
         self.ui.oil_switch_pressure_gauge.setValue(self.pressure['p2'])
