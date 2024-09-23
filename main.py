@@ -99,7 +99,8 @@ class App(QMainWindow):
             else:
                 
                 self.ui.stackedWidget_sensosr.setCurrentIndex(current + 1)
-        # time.sleep(1)/
+        # time.sleep(0.8)
+        time.sleep(0.6)
     def change_page(self, page):
 
         if page == "shaft":

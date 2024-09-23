@@ -299,25 +299,29 @@ class WorkerArduino(QThread):
         except Exception as e:
             print(e)
     def update_gauges_page_0(self):
-        print('page')
+        print('page0')
         self.ui.airboost_bank_a_temp_gauge.setValue(self.temperature['t1'])
         # self.ui.airboost_bank_a_temp_gauge.setEnabled(False)
         self.ui.exhuast_bank_b_temp_gauge.setValue(self.temperature['t2'])
         self.ui.exhuast_bank_a_temp_gauge.setValue(self.temperature['t3'])
 
     def update_gauges_page_1(self):
+        print('page1')
         self.ui.airboost_bank_b_temp_gauge.setValue(self.temperature['t4'])
         self.ui.oil_temp_gauge.setValue(self.temperature['t5'])
         self.ui.oil_ntc_temp_gauge.setValue(self.temperature['t6'])
     def update_gauges_page_2(self):
+        print('pag2')
         self.ui.sea_water_temp_gauge.setValue(self.temperature['t7'])
         self.ui.freshwater_beforethermo_temp_gauge.setValue(self.temperature['t8'])
         self.ui.freshwater_afterthermo_temp_gauge.setValue(self.temperature['t9'])
     def update_gauges_page_3(self):
+        print('page3')
         self.ui.oil_pressure_gauge.setValue(self.pressure['p1'])
         self.ui.oil_switch_pressure_gauge.setValue(self.pressure['p2'])
         self.ui.airboost_pressure_gauge.setValue(self.pressure['p3'])
     def update_gauges_page_4(self):
+        print('page4')
         self.ui.sea_water_pressure_gauge.setValue(self.pressure['p4'])
         self.ui.fuel_pressure_gauge.setValue(self.pressure['p5'])
     # Add more methods for other pages...
