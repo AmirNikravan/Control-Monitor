@@ -2,6 +2,7 @@ from PySide6.QtCore import QThread, Signal , QTimer
 import random
 import time , json
 import serial
+import datetime
 from PySide6.QtWidgets import QApplication
 class UpdateWorker(QThread):
     def __init__(self, ui):
@@ -255,6 +256,7 @@ class WorkerArduino(QThread):
         self.baud_rate = baud_rate
         self.running = True
         self.serial_port = None
+        self.time_check = time.time()
         self.establish_connection()
         # self.serial_port.write('3'.encode('utf-8'))
 
@@ -316,7 +318,12 @@ class WorkerArduino(QThread):
         self.ui.freshwater_beforethermo_temp_gauge.setValue(self.temperature['t8'])
         self.ui.freshwater_afterthermo_temp_gauge.setValue(self.temperature['t9'])
     def update_gauges_page_3(self):
-        print('page3')
+        duration = time.time()-self.time_check
+
+# تبدیل به دقیقه و ثانیه
+        minutes = int(duration // 60)
+        seconds = duration % 6
+        print(f'page 3 {minutes}: {seconds}')
         self.ui.oil_pressure_gauge.setValue(self.pressure['p1'])
         self.ui.oil_switch_pressure_gauge.setValue(self.pressure['p2'])
         self.ui.airboost_pressure_gauge.setValue(self.pressure['p3'])

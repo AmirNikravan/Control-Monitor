@@ -1,1 +1,1 @@
-value
+.strftime("%H:%M:%S")
