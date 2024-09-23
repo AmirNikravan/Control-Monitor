@@ -278,7 +278,7 @@ class WorkerArduino(QThread):
                         self.pressure = data_json['p']
                         self.keys = data_json['k']
                         self.lamps = data_json['l']
-                        self.update_gauges()
+                        self.update_current_page_gauges()
                     else:
                         self.send_command('3')  # Send '3' if no data is available
                 time.sleep(1)
@@ -292,20 +292,45 @@ class WorkerArduino(QThread):
     def update_gauges(self):
         try:
             # print(self.temperature['t7'])
-            self.ui.airboost_bank_a_temp_gauge.setValue(self.temperature['t1'])
-            # self.ui.airboost_bank_a_temp_gauge.setEnabled(False)
-            self.ui.exhuast_bank_b_temp_gauge.setValue(self.temperature['t2'])
-            self.ui.exhuast_bank_a_temp_gauge.setValue(self.temperature['t3'])
-            self.ui.oil_ntc_temp_gauge.setValue(self.temperature['t4'])
-            self.ui.oil_temp_gauge.setValue(self.temperature['t5'])
-            self.ui.airboost_bank_b_temp_gauge.setValue(self.temperature['t6'])
-            self.ui.sea_water_temp_gauge.setValue(self.temperature['t7'])
-            self.ui.freshwater_beforethermo_temp_gauge.setValue(self.temperature['t8'])
-            self.ui.freshwater_afterthermo_temp_gauge.setValue(self.temperature['t9'])
-            self.ui.oil_pressure_gauge.setValue(self.pressure['p1'])
-            self.ui.oil_switch_pressure_gauge.setValue(self.pressure['p2'])
-            self.ui.airboost_pressure_gauge.setValue(self.pressure['p3'])
-            self.ui.sea_water_pressure_gauge.setValue(self.pressure['p4'])
-            self.ui.fuel_pressure_gauge.setValue(self.pressure['p5'])
+            pass
+
+
+            
         except Exception as e:
             print(e)
+    def update_gauges_page_0(self):
+        print('page')
+        self.ui.airboost_bank_a_temp_gauge.setValue(self.temperature['t1'])
+        # self.ui.airboost_bank_a_temp_gauge.setEnabled(False)
+        self.ui.exhuast_bank_b_temp_gauge.setValue(self.temperature['t2'])
+        self.ui.exhuast_bank_a_temp_gauge.setValue(self.temperature['t3'])
+
+    def update_gauges_page_1(self):
+        self.ui.airboost_bank_b_temp_gauge.setValue(self.temperature['t4'])
+        self.ui.oil_temp_gauge.setValue(self.temperature['t5'])
+        self.ui.oil_ntc_temp_gauge.setValue(self.temperature['t6'])
+    def update_gauges_page_2(self):
+        self.ui.sea_water_temp_gauge.setValue(self.temperature['t7'])
+        self.ui.freshwater_beforethermo_temp_gauge.setValue(self.temperature['t8'])
+        self.ui.freshwater_afterthermo_temp_gauge.setValue(self.temperature['t9'])
+    def update_gauges_page_3(self):
+        self.ui.oil_pressure_gauge.setValue(self.pressure['p1'])
+        self.ui.oil_switch_pressure_gauge.setValue(self.pressure['p2'])
+        self.ui.airboost_pressure_gauge.setValue(self.pressure['p3'])
+    def update_gauges_page_4(self):
+        self.ui.sea_water_pressure_gauge.setValue(self.pressure['p4'])
+        self.ui.fuel_pressure_gauge.setValue(self.pressure['p5'])
+    # Add more methods for other pages...
+
+    def update_current_page_gauges(self):
+        current_page = self.ui.stackedWidget_sensosr.currentIndex()
+        if current_page == 0:
+            self.update_gauges_page_0()
+        elif current_page == 1:
+            self.update_gauges_page_1()
+        elif current_page == 2 :
+            self.update_gauges_page_2()
+        elif current_page == 3 :
+            self.update_gauges_page_3()
+        elif current_page == 4 :
+            self.update_gauges_page_4()
