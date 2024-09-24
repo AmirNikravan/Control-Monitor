@@ -200,7 +200,7 @@
          <number>0</number>
         </property>
         <property name="currentIndex">
-         <number>1</number>
+         <number>2</number>
         </property>
         <widget class="QWidget" name="shaft">
          <property name="styleSheet">
@@ -449,7 +449,7 @@
           <item>
            <widget class="QStackedWidget" name="stackedWidget_sensosr">
             <property name="currentIndex">
-             <number>0</number>
+             <number>3</number>
             </property>
             <widget class="QWidget" name="page">
              <layout class="QVBoxLayout" name="verticalLayout_31">
@@ -1339,7 +1339,7 @@
                      </font>
                     </property>
                     <property name="text">
-                     <string>Sea Water</string>
+                     <string>Sea Water Pressure</string>
                     </property>
                     <property name="alignment">
                      <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -1670,6 +1670,31 @@ QToolButton::hover{
                   <string/>
                  </property>
                 </row>
+                <row>
+                 <property name="text">
+                  <string/>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string/>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string/>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string/>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string/>
+                 </property>
+                </row>
                 <column>
                  <property name="text">
                   <string>نام سنسور</string>
@@ -1708,6 +1733,17 @@ QToolButton::hover{
                 </column>
                 <column>
                  <property name="text">
+                  <string>بازه</string>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>IRANSansXFaNum</family>
+                   <pointsize>10</pointsize>
+                  </font>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
                   <string>یکا</string>
                  </property>
                  <property name="font">
@@ -1729,11 +1765,14 @@ QToolButton::hover{
                  </property>
                 </item>
                 <item row="0" column="2">
+                 <property name="text">
+                  <string/>
+                 </property>
                  <property name="textAlignment">
                   <set>AlignCenter</set>
                  </property>
                 </item>
-                <item row="0" column="3">
+                <item row="0" column="4">
                  <property name="text">
                   <string>centigrade</string>
                  </property>
@@ -1747,11 +1786,14 @@ QToolButton::hover{
                  </property>
                 </item>
                 <item row="1" column="2">
+                 <property name="text">
+                  <string/>
+                 </property>
                  <property name="textAlignment">
                   <set>AlignCenter</set>
                  </property>
                 </item>
-                <item row="1" column="3">
+                <item row="1" column="4">
                  <property name="text">
                   <string>centigrade</string>
                  </property>
@@ -1765,11 +1807,14 @@ QToolButton::hover{
                  </property>
                 </item>
                 <item row="2" column="2">
+                 <property name="text">
+                  <string/>
+                 </property>
                  <property name="textAlignment">
                   <set>AlignCenter</set>
                  </property>
                 </item>
-                <item row="2" column="3">
+                <item row="2" column="4">
                  <property name="text">
                   <string>centigrade</string>
                  </property>
@@ -1783,11 +1828,14 @@ QToolButton::hover{
                  </property>
                 </item>
                 <item row="3" column="2">
+                 <property name="text">
+                  <string/>
+                 </property>
                  <property name="textAlignment">
                   <set>AlignCenter</set>
                  </property>
                 </item>
-                <item row="3" column="3">
+                <item row="3" column="4">
                  <property name="text">
                   <string>centigrade</string>
                  </property>
@@ -1801,11 +1849,14 @@ QToolButton::hover{
                  </property>
                 </item>
                 <item row="4" column="2">
+                 <property name="text">
+                  <string/>
+                 </property>
                  <property name="textAlignment">
                   <set>AlignCenter</set>
                  </property>
                 </item>
-                <item row="4" column="3">
+                <item row="4" column="4">
                  <property name="text">
                   <string>centigrade</string>
                  </property>
@@ -1819,11 +1870,14 @@ QToolButton::hover{
                  </property>
                 </item>
                 <item row="5" column="2">
+                 <property name="text">
+                  <string/>
+                 </property>
                  <property name="textAlignment">
                   <set>AlignCenter</set>
                  </property>
                 </item>
-                <item row="5" column="3">
+                <item row="5" column="4">
                  <property name="text">
                   <string>centigrade</string>
                  </property>
@@ -1837,11 +1891,14 @@ QToolButton::hover{
                  </property>
                 </item>
                 <item row="6" column="2">
+                 <property name="text">
+                  <string/>
+                 </property>
                  <property name="textAlignment">
                   <set>AlignCenter</set>
                  </property>
                 </item>
-                <item row="6" column="3">
+                <item row="6" column="4">
                  <property name="text">
                   <string>centigrade</string>
                  </property>
@@ -1855,11 +1912,14 @@ QToolButton::hover{
                  </property>
                 </item>
                 <item row="7" column="2">
+                 <property name="text">
+                  <string/>
+                 </property>
                  <property name="textAlignment">
                   <set>AlignCenter</set>
                  </property>
                 </item>
-                <item row="7" column="3">
+                <item row="7" column="4">
                  <property name="text">
                   <string>centigrade</string>
                  </property>
@@ -1873,13 +1933,86 @@ QToolButton::hover{
                  </property>
                 </item>
                 <item row="8" column="2">
+                 <property name="text">
+                  <string/>
+                 </property>
                  <property name="textAlignment">
                   <set>AlignCenter</set>
                  </property>
                 </item>
-                <item row="8" column="3">
+                <item row="8" column="4">
                  <property name="text">
                   <string>centigrade</string>
+                 </property>
+                 <property name="textAlignment">
+                  <set>AlignCenter</set>
+                 </property>
+                </item>
+                <item row="9" column="0">
+                 <property name="text">
+                  <string>Sea Water Pressure</string>
+                 </property>
+                </item>
+                <item row="9" column="4">
+                 <property name="text">
+                  <string>bar</string>
+                 </property>
+                 <property name="textAlignment">
+                  <set>AlignCenter</set>
+                 </property>
+                </item>
+                <item row="10" column="0">
+                 <property name="text">
+                  <string>Fuel Pressure</string>
+                 </property>
+                </item>
+                <item row="10" column="4">
+                 <property name="text">
+                  <string>bar</string>
+                 </property>
+                 <property name="textAlignment">
+                  <set>AlignCenter</set>
+                 </property>
+                </item>
+                <item row="11" column="0">
+                 <property name="text">
+                  <string>Oil Pressure</string>
+                 </property>
+                </item>
+                <item row="11" column="1">
+                 <property name="text">
+                  <string/>
+                 </property>
+                </item>
+                <item row="11" column="4">
+                 <property name="text">
+                  <string>bar</string>
+                 </property>
+                 <property name="textAlignment">
+                  <set>AlignCenter</set>
+                 </property>
+                </item>
+                <item row="12" column="0">
+                 <property name="text">
+                  <string>Oil Switch Pressure</string>
+                 </property>
+                </item>
+                <item row="12" column="4">
+                 <property name="text">
+                  <string>bar</string>
+                 </property>
+                 <property name="textAlignment">
+                  <set>AlignCenter</set>
+                 </property>
+                </item>
+                <item row="13" column="0">
+                 <property name="text">
+                  <string>Air Boost Pressure</string>
+                 </property>
+                </item>
+                <item row="13" column="4">
+                 <property name="text">
+                  <string>bar</string>
                  </property>
                  <property name="textAlignment">
                   <set>AlignCenter</set>

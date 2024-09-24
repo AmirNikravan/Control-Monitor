@@ -281,6 +281,7 @@ class WorkerArduino(QThread):
                         self.keys = data_json['k']
                         self.lamps = data_json['l']
                         self.update_current_page_gauges()
+                        self.update_table()
                     else:
                         self.send_command('3')  # Send '3' if no data is available
                 time.sleep(0.1)
@@ -291,15 +292,14 @@ class WorkerArduino(QThread):
         if self.serial_port:
             self.serial_port.write(command.encode('utf-8'))
             # print(f"Sent: {command}")
-    def update_gauges(self):
-        try:
-            # print(self.temperature['t7'])
-            pass
-
+    def update_table(self):
+        # if self.ui.stackedWidget.currentIndex() == 2:
+            
+        pass
 
             
-        except Exception as e:
-            print(e)
+        # except Exception as e:
+        #     print(e)
     def update_gauges_page_0(self):
         print('page0')
         self.ui.airboost_bank_a_temp_gauge.updateValue(self.temperature['t1'])

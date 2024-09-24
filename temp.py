@@ -1,40 +1,83 @@
-from PySide6.QtWidgets import QApplication, QMainWindow, QStackedWidget, QWidget, QVBoxLayout, QLabel
-from PySide6.QtCore import QTimer
 import sys
+from PySide6.QtWidgets import QApplication, QWidget, QVBoxLayout, QHBoxLayout, QCheckBox, QPushButton, QDateEdit, QLabel
+from PySide6.QtCore import QDate
+import numpy as np
+import matplotlib.pyplot as plt
 
-class MainWindow(QMainWindow):
+class GraphPage(QWidget):
     def __init__(self):
         super().__init__()
 
-        self.stacked_widget = QStackedWidget()
-        self.setCentralWidget(self.stacked_widget)
+        self.setWindowTitle("Graph Page")
+        self.layout = QVBoxLayout()
 
-        # ایجاد دو صفحه نمونه
-        self.page1 = QWidget()
-        self.page1_layout = QVBoxLayout()
-        self.page1_layout.addWidget(QLabel("Page 1"))
-        self.page1.setLayout(self.page1_layout)
+        # Checkboxes for data selection
+        self.checkbox1 = QCheckBox("Data Series 1")
+        self.checkbox2 = QCheckBox("Data Series 2")
+        self.checkbox3 = QCheckBox("Data Series 3")
 
-        self.page2 = QWidget()
-        self.page2_layout = QVBoxLayout()
-        self.page2_layout.addWidget(QLabel("Page 2"))
-        self.page2.setLayout(self.page2_layout)
+        self.layout.addWidget(self.checkbox1)
+        self.layout.addWidget(self.checkbox2)
+        self.layout.addWidget(self.checkbox3)
 
-        self.stacked_widget.addWidget(self.page1)
-        self.stacked_widget.addWidget(self.page2)
+        # Date selection
+        self.start_date = QDateEdit()
+        self.start_date.setDate(QDate.currentDate().addMonths(-1))
+        self.start_date.setCalendarPopup(True)
+        self.layout.addWidget(QLabel("Start Date:"))
+        self.layout.addWidget(self.start_date)
 
-        # تایمر برای تغییر صفحه
-        self.timer = QTimer(self)
-        self.timer.timeout.connect(self.change_page)
-        self.timer.start(1000)  # تغییر هر ۱ ثانیه
+        self.end_date = QDateEdit()
+        self.end_date.setDate(QDate.currentDate())
+        self.end_date.setCalendarPopup(True)
+        self.layout.addWidget(QLabel("End Date:"))
+        self.layout.addWidget(self.end_date)
 
-        self.current_page = 0
+        # Button to update graph
+        self.update_button = QPushButton("Update Graph")
+        self.update_button.clicked.connect(self.update_graph)
+        self.layout.addWidget(self.update_button)
 
-    def change_page(self):
-        self.current_page = (self.current_page + 1) % self.stacked_widget.count()
-        self.stacked_widget.setCurrentIndex(self.current_page)
+        self.setLayout(self.layout)
 
-app = QApplication(sys.argv)
-window = MainWindow()
-window.show()
-sys.exit(app.exec())
+    def update_graph(self):
+        # Gather selected data
+        data_series = []
+        if self.checkbox1.isChecked():
+            data_series.append(self.generate_data(1))
+        if self.checkbox2.isChecked():
+            data_series.append(self.generate_data(2))
+        if self.checkbox3.isChecked():
+            data_series.append(self.generate_data(3))
+
+        # Filter by date range (mock implementation)
+        start = self.start_date.date().toPyDate()
+        end = self.end_date.date().toPyDate()
+        
+        # Create the graph
+        self.plot_graph(data_series, start, end)
+
+    def generate_data(self, series_number):
+        x = np.arange(0, 100)
+        y = np.random.rand(100) * series_number * 10
+        return x, y
+
+    def plot_graph(self, data_series, start, end):
+        plt.clf()  # Clear previous plot
+        for series in data_series:
+            x, y = series
+            plt.plot(x, y, label=f"Series {len(data_series)}")
+
+        plt.xlim(0, 100)
+        plt.ylim(0, 30)
+        plt.title(f"Graph from {start} to {end}")
+        plt.xlabel("X-axis")
+        plt.ylabel("Y-axis")
+        plt.legend()
+        plt.show()
+
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    window = GraphPage()
+    window.show()
+    sys.exit(app.exec())
