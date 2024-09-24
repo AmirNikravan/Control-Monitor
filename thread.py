@@ -283,7 +283,7 @@ class WorkerArduino(QThread):
                         self.update_current_page_gauges()
                     else:
                         self.send_command('3')  # Send '3' if no data is available
-                time.sleep(1.5)
+                time.sleep(0.1)
             except Exception as e:
                 print(f"Error reading from Arduino: {e}")
 
@@ -302,21 +302,21 @@ class WorkerArduino(QThread):
             print(e)
     def update_gauges_page_0(self):
         print('page0')
-        self.ui.airboost_bank_a_temp_gauge.setValue(self.temperature['t1'])
+        self.ui.airboost_bank_a_temp_gauge.updateValue(self.temperature['t1'])
         # self.ui.airboost_bank_a_temp_gauge.setEnabled(False)
-        self.ui.exhuast_bank_b_temp_gauge.setValue(self.temperature['t2'])
-        self.ui.exhuast_bank_a_temp_gauge.setValue(self.temperature['t3'])
+        self.ui.exhuast_bank_b_temp_gauge.updateValue(self.temperature['t2'])
+        self.ui.exhuast_bank_a_temp_gauge.updateValue(self.temperature['t3'])
 
     def update_gauges_page_1(self):
         print('page1')
-        self.ui.airboost_bank_b_temp_gauge.setValue(self.temperature['t4'])
-        self.ui.oil_temp_gauge.setValue(self.temperature['t5'])
-        self.ui.oil_ntc_temp_gauge.setValue(self.temperature['t6'])
+        self.ui.airboost_bank_b_temp_gauge.updateValue(self.temperature['t4'])
+        self.ui.oil_temp_gauge.updateValue(self.temperature['t5'])
+        self.ui.oil_ntc_temp_gauge.updateValue(self.temperature['t6'])
     def update_gauges_page_2(self):
         print('pag2')
-        self.ui.sea_water_temp_gauge.setValue(self.temperature['t7'])
-        self.ui.freshwater_beforethermo_temp_gauge.setValue(self.temperature['t8'])
-        self.ui.freshwater_afterthermo_temp_gauge.setValue(self.temperature['t9'])
+        self.ui.sea_water_temp_gauge.updateValue(self.temperature['t7'])
+        self.ui.freshwater_beforethermo_temp_gauge.updateValue(self.temperature['t8'])
+        self.ui.freshwater_afterthermo_temp_gauge.updateValue(self.temperature['t9'])
     def update_gauges_page_3(self):
         # print(self.time_check)
         
@@ -325,13 +325,13 @@ class WorkerArduino(QThread):
         minutes = int(duration // 60)
         seconds = duration % 60
         print(f'page 3 {minutes}: {seconds}')
-        self.ui.oil_pressure_gauge.setValue(self.pressure['p1'])
-        self.ui.oil_switch_pressure_gauge.setValue(self.pressure['p2'])
-        self.ui.airboost_pressure_gauge.setValue(self.pressure['p3'])
+        self.ui.oil_pressure_gauge.updateValue(self.pressure['p1'])
+        self.ui.oil_switch_pressure_gauge.updateValue(self.pressure['p2'])
+        self.ui.airboost_pressure_gauge.updateValue(self.pressure['p3'])
     def update_gauges_page_4(self):
         print('page4')
-        self.ui.sea_water_pressure_gauge.setValue(self.pressure['p4'])
-        self.ui.fuel_pressure_gauge.setValue(self.pressure['p5'])
+        self.ui.sea_water_pressure_gauge.updateValue(self.pressure['p4'])
+        self.ui.fuel_pressure_gauge.updateValue(self.pressure['p5'])
     # Add more methods for other pages...
 
     def update_current_page_gauges(self):

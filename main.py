@@ -54,8 +54,8 @@ class App(QMainWindow):
         self.worker_arduino = WorkerArduino(self.ui,'COM3')
         # self.worker_arduino.data_received.connect(self.process_serial_data)
         self.worker_arduino.start()
-        self.update_worker = UpdateWorker(self.ui)
-        self.update_worker.start()
+        # self.update_worker = UpdateWorker(self.ui)
+        # self.update_worker.start()
         
         self.timer = QTimer(self)
         self.timer.timeout.connect(
@@ -66,7 +66,8 @@ class App(QMainWindow):
         self.update_time()
     def process_serial_data(self,value):
         # print(value)
-        self.update_worker.update_values(value)
+        pass
+        # self.update_worker.update_values(value)
     def update_time(self):
 
         # Update the label with the current time
@@ -101,7 +102,7 @@ class App(QMainWindow):
                 
                 self.ui.stackedWidget_sensosr.setCurrentIndex(current + 1)
         # time.sleep(0.8)
-        time.sleep(0.6)
+        # time.sleep(0.6)
     def change_page(self, page):
 
         if page == "shaft":

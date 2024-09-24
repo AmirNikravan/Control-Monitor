@@ -787,7 +787,8 @@ class AnalogGaugeWidget(QWidget):
         #
         # if mouse_controlled:
         #     self.valueChanged.emit(int(value))
-
+        if value== None or self.minValue == None:
+            return
         if value <= self.minValue:
             self.value = self.minValue
         elif value >= self.maxValue:
