@@ -57,7 +57,7 @@ class App(QMainWindow):
         self.worker_arduino.start()
         # self.update_worker = UpdateWorker(self.ui)
         # self.update_worker.start()
-        
+        self.check_table()
         self.timer = QTimer(self)
         self.timer.timeout.connect(
             self.update_time
@@ -65,6 +65,16 @@ class App(QMainWindow):
         self.timer.start(1000)  # 1000 ms = 1 second
         # Call update_time once at startup to set the initial time
         self.update_time()
+    def check_table(self):
+        print(self.ui.tableWidget_data.setColumnCount(5))
+        self.ui.tableWidget_data.setRowCount(14)
+        self.ui.tableWidget_data.setItem(1,1,QTableWidgetItem(34))
+        self.ui.tableWidget_data.repaint()
+        # for i in range(0,10):
+        #     self.ui.tableWidget_data.setItem(i,1,QTableWidgetItem(2))
+        # for i in range(10,15):
+        #     self.ui.tableWidget_data.setItem(i,1,QTableWidgetItem(2))
+        
     def process_serial_data(self,value):
         # print(value)
         pass

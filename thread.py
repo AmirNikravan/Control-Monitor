@@ -3,7 +3,7 @@ import random
 import time , json
 import serial
 import datetime
-from PySide6.QtWidgets import QApplication
+from PySide6.QtWidgets import QApplication ,QTableWidgetItem
 class UpdateWorker(QThread):
     def __init__(self, ui):
         super().__init__()
@@ -293,10 +293,19 @@ class WorkerArduino(QThread):
             self.serial_port.write(command.encode('utf-8'))
             # print(f"Sent: {command}")
     def update_table(self):
-        # if self.ui.stackedWidget.currentIndex() == 2:
-            
-        pass
-
+        print(1)
+        if self.ui.stackedWidget.currentIndex() == 2:
+            print(2)
+            self.ui.tableWidget_data.setRowCount(14) 
+            self.ui.tableWidget_data.setColumnCount(5)
+            try:
+                for i in range(0,10):
+                    self.ui.tableWidget_data.setItem(i,1,QTableWidgetItem(self.temperature[f't{i}']))
+                for i in range(10,15):
+                    self.ui.tableWidget_data.setItem(i,1,QTableWidgetItem(self.temperature[f't{i-9}']))
+                # self.ui.tableWidget_data.repaint()
+            except Exception as e:
+                print(f'{e}')
             
         # except Exception as e:
         #     print(e)
