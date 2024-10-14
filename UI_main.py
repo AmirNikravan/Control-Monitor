@@ -129,6 +129,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_28.setObjectName(u"verticalLayout_28")
         self.oil_temp_shaft_gauge = AnalogGaugeWidget(self.shaft)
         self.oil_temp_shaft_gauge.setObjectName(u"oil_temp_shaft_gauge")
+        self.oil_temp_shaft_gauge.setMinimumSize(QSize(0, 192))
 
         self.verticalLayout_28.addWidget(self.oil_temp_shaft_gauge)
 
@@ -140,9 +141,10 @@ class Ui_MainWindow(object):
         font4.setPointSize(12)
         font4.setBold(True)
         self.label_27.setFont(font4)
+        self.label_27.setStyleSheet(u"color: rgb(255, 255, 255);")
         self.label_27.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
-        self.verticalLayout_28.addWidget(self.label_27)
+        self.verticalLayout_28.addWidget(self.label_27, 0, Qt.AlignmentFlag.AlignHCenter|Qt.AlignmentFlag.AlignVCenter)
 
 
         self.horizontalLayout_3.addLayout(self.verticalLayout_28)
@@ -151,6 +153,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_29.setObjectName(u"verticalLayout_29")
         self.rpm_gauge_shaft = AnalogGaugeWidget(self.shaft)
         self.rpm_gauge_shaft.setObjectName(u"rpm_gauge_shaft")
+        self.rpm_gauge_shaft.setMinimumSize(QSize(0, 192))
 
         self.verticalLayout_29.addWidget(self.rpm_gauge_shaft)
 
@@ -158,9 +161,10 @@ class Ui_MainWindow(object):
         self.label_25.setObjectName(u"label_25")
         self.label_25.setMaximumSize(QSize(16777215, 22))
         self.label_25.setFont(font4)
+        self.label_25.setStyleSheet(u"color: rgb(255, 255, 255);")
         self.label_25.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
-        self.verticalLayout_29.addWidget(self.label_25)
+        self.verticalLayout_29.addWidget(self.label_25, 0, Qt.AlignmentFlag.AlignHCenter|Qt.AlignmentFlag.AlignVCenter)
 
 
         self.horizontalLayout_3.addLayout(self.verticalLayout_29)
@@ -169,6 +173,12 @@ class Ui_MainWindow(object):
         self.verticalLayout_30.setObjectName(u"verticalLayout_30")
         self.oil_press_shaft_gauge = AnalogGaugeWidget(self.shaft)
         self.oil_press_shaft_gauge.setObjectName(u"oil_press_shaft_gauge")
+        sizePolicy = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.oil_press_shaft_gauge.sizePolicy().hasHeightForWidth())
+        self.oil_press_shaft_gauge.setSizePolicy(sizePolicy)
+        self.oil_press_shaft_gauge.setMinimumSize(QSize(1, 192))
 
         self.verticalLayout_30.addWidget(self.oil_press_shaft_gauge)
 
@@ -176,9 +186,10 @@ class Ui_MainWindow(object):
         self.label_4.setObjectName(u"label_4")
         self.label_4.setMaximumSize(QSize(16777215, 22))
         self.label_4.setFont(font4)
+        self.label_4.setStyleSheet(u"color: rgb(255, 255, 255);")
         self.label_4.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
-        self.verticalLayout_30.addWidget(self.label_4)
+        self.verticalLayout_30.addWidget(self.label_4, 0, Qt.AlignmentFlag.AlignHCenter|Qt.AlignmentFlag.AlignVCenter)
 
 
         self.horizontalLayout_3.addLayout(self.verticalLayout_30)
@@ -186,11 +197,16 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_41.addLayout(self.horizontalLayout_3)
 
+        self.verticalSpacer_7 = QSpacerItem(23, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Maximum)
+
+        self.verticalLayout_41.addItem(self.verticalSpacer_7)
+
         self.horizontalLayout_2 = QHBoxLayout()
         self.horizontalLayout_2.setSpacing(23)
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
         self.label_shaft_airflap = QLabel(self.shaft)
         self.label_shaft_airflap.setObjectName(u"label_shaft_airflap")
+        self.label_shaft_airflap.setMinimumSize(QSize(107, 0))
         self.label_shaft_airflap.setFont(font1)
         self.label_shaft_airflap.setStyleSheet(u"            QLabel {\n"
 "\n"
@@ -198,15 +214,16 @@ class Ui_MainWindow(object):
 "	background-color: rgb(143, 143, 143);\n"
 "                color: black;\n"
 "                padding: 20px;\n"
-"                border-radius: 15px;\n"
+"                border-radius: 45px;\n"
 "                border: 2px solid rgba(255, 255, 255, 100);\n"
 "            }")
         self.label_shaft_airflap.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
-        self.horizontalLayout_2.addWidget(self.label_shaft_airflap)
+        self.horizontalLayout_2.addWidget(self.label_shaft_airflap, 0, Qt.AlignmentFlag.AlignHCenter|Qt.AlignmentFlag.AlignVCenter)
 
         self.label_shaft_stop = QLabel(self.shaft)
         self.label_shaft_stop.setObjectName(u"label_shaft_stop")
+        self.label_shaft_stop.setMinimumSize(QSize(107, 0))
         self.label_shaft_stop.setFont(font1)
         self.label_shaft_stop.setStyleSheet(u"            QLabel {\n"
 "\n"
@@ -214,15 +231,16 @@ class Ui_MainWindow(object):
 "	background-color: rgb(143, 143, 143);\n"
 "                color: black;\n"
 "                padding: 20px;\n"
-"                border-radius: 15px;\n"
+"                border-radius: 45px;\n"
 "                border: 2px solid rgba(255, 255, 255, 100);\n"
 "            }")
         self.label_shaft_stop.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
-        self.horizontalLayout_2.addWidget(self.label_shaft_stop)
+        self.horizontalLayout_2.addWidget(self.label_shaft_stop, 0, Qt.AlignmentFlag.AlignHCenter|Qt.AlignmentFlag.AlignVCenter)
 
         self.label_shaft_start = QLabel(self.shaft)
         self.label_shaft_start.setObjectName(u"label_shaft_start")
+        self.label_shaft_start.setMinimumSize(QSize(107, 0))
         self.label_shaft_start.setFont(font1)
         self.label_shaft_start.setStyleSheet(u"            QLabel {\n"
 "\n"
@@ -230,12 +248,12 @@ class Ui_MainWindow(object):
 "	background-color: rgb(143, 143, 143);\n"
 "                color: black;\n"
 "                padding: 20px;\n"
-"                border-radius: 15px;\n"
+"                border-radius: 45px;\n"
 "                border: 2px solid rgba(255, 255, 255, 100);\n"
 "            }")
         self.label_shaft_start.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
-        self.horizontalLayout_2.addWidget(self.label_shaft_start)
+        self.horizontalLayout_2.addWidget(self.label_shaft_start, 0, Qt.AlignmentFlag.AlignHCenter|Qt.AlignmentFlag.AlignVCenter)
 
         self.label_shaft_water_level = QLabel(self.shaft)
         self.label_shaft_water_level.setObjectName(u"label_shaft_water_level")
@@ -246,12 +264,12 @@ class Ui_MainWindow(object):
 "	background-color: rgb(143, 143, 143);\n"
 "                color: black;\n"
 "                padding: 20px;\n"
-"                border-radius: 15px;\n"
+"                border-radius: 45px;\n"
 "                border: 2px solid rgba(255, 255, 255, 100);\n"
 "            }")
         self.label_shaft_water_level.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
-        self.horizontalLayout_2.addWidget(self.label_shaft_water_level)
+        self.horizontalLayout_2.addWidget(self.label_shaft_water_level, 0, Qt.AlignmentFlag.AlignHCenter|Qt.AlignmentFlag.AlignVCenter)
 
         self.horizontalLayout_2.setStretch(0, 2)
         self.horizontalLayout_2.setStretch(1, 2)
@@ -286,18 +304,16 @@ class Ui_MainWindow(object):
         self.horizontalLayout_7 = QHBoxLayout()
         self.horizontalLayout_7.setSpacing(0)
         self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
-        self.horizontalSpacer_8 = QSpacerItem(68, 6, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Minimum)
-
-        self.horizontalLayout_7.addItem(self.horizontalSpacer_8)
-
         self.label_31 = QLabel(self.page)
         self.label_31.setObjectName(u"label_31")
-        sizePolicy = QSizePolicy(QSizePolicy.Policy.Maximum, QSizePolicy.Policy.Maximum)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.label_31.sizePolicy().hasHeightForWidth())
-        self.label_31.setSizePolicy(sizePolicy)
+        sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Maximum, QSizePolicy.Policy.Maximum)
+        sizePolicy1.setHorizontalStretch(0)
+        sizePolicy1.setVerticalStretch(0)
+        sizePolicy1.setHeightForWidth(self.label_31.sizePolicy().hasHeightForWidth())
+        self.label_31.setSizePolicy(sizePolicy1)
         self.label_31.setMaximumSize(QSize(16777215, 27))
+        self.label_31.setStyleSheet(u"color: rgb(255, 255, 255);\n"
+"font: 900 10pt \"IRANSansXFaNum\";")
 
         self.horizontalLayout_7.addWidget(self.label_31)
 
@@ -386,15 +402,13 @@ class Ui_MainWindow(object):
         self.horizontalLayout_6 = QHBoxLayout()
         self.horizontalLayout_6.setSpacing(0)
         self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
-        self.horizontalSpacer_7 = QSpacerItem(68, 6, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Minimum)
-
-        self.horizontalLayout_6.addItem(self.horizontalSpacer_7)
-
         self.label_30 = QLabel(self.page_3)
         self.label_30.setObjectName(u"label_30")
-        sizePolicy.setHeightForWidth(self.label_30.sizePolicy().hasHeightForWidth())
-        self.label_30.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.label_30.sizePolicy().hasHeightForWidth())
+        self.label_30.setSizePolicy(sizePolicy1)
         self.label_30.setMaximumSize(QSize(16777215, 27))
+        self.label_30.setStyleSheet(u"color: rgb(255, 255, 255);\n"
+"font: 900 10pt \"IRANSansXFaNum\";")
 
         self.horizontalLayout_6.addWidget(self.label_30)
 
@@ -480,14 +494,12 @@ class Ui_MainWindow(object):
         self.horizontalLayout_5 = QHBoxLayout()
         self.horizontalLayout_5.setSpacing(0)
         self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
-        self.horizontalSpacer_6 = QSpacerItem(40, 6, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Minimum)
-
-        self.horizontalLayout_5.addItem(self.horizontalSpacer_6)
-
         self.label_28 = QLabel(self.page_2)
         self.label_28.setObjectName(u"label_28")
-        sizePolicy.setHeightForWidth(self.label_28.sizePolicy().hasHeightForWidth())
-        self.label_28.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.label_28.sizePolicy().hasHeightForWidth())
+        self.label_28.setSizePolicy(sizePolicy1)
+        self.label_28.setStyleSheet(u"color: rgb(255, 255, 255);\n"
+"font: 900 10pt \"IRANSansXFaNum\";")
 
         self.horizontalLayout_5.addWidget(self.label_28)
 
@@ -573,14 +585,12 @@ class Ui_MainWindow(object):
         self.horizontalLayout_14 = QHBoxLayout()
         self.horizontalLayout_14.setSpacing(0)
         self.horizontalLayout_14.setObjectName(u"horizontalLayout_14")
-        self.horizontalSpacer_9 = QSpacerItem(40, 6, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Minimum)
-
-        self.horizontalLayout_14.addItem(self.horizontalSpacer_9)
-
         self.label_29 = QLabel(self.page_4)
         self.label_29.setObjectName(u"label_29")
-        sizePolicy.setHeightForWidth(self.label_29.sizePolicy().hasHeightForWidth())
-        self.label_29.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.label_29.sizePolicy().hasHeightForWidth())
+        self.label_29.setSizePolicy(sizePolicy1)
+        self.label_29.setStyleSheet(u"color: rgb(255, 255, 255);\n"
+"font: 900 10pt \"IRANSansXFaNum\";")
 
         self.horizontalLayout_14.addWidget(self.label_29)
 
@@ -664,14 +674,12 @@ class Ui_MainWindow(object):
         self.horizontalLayout_17 = QHBoxLayout()
         self.horizontalLayout_17.setSpacing(0)
         self.horizontalLayout_17.setObjectName(u"horizontalLayout_17")
-        self.horizontalSpacer_10 = QSpacerItem(40, 6, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Minimum)
-
-        self.horizontalLayout_17.addItem(self.horizontalSpacer_10)
-
         self.label_33 = QLabel(self.page_5)
         self.label_33.setObjectName(u"label_33")
-        sizePolicy.setHeightForWidth(self.label_33.sizePolicy().hasHeightForWidth())
-        self.label_33.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.label_33.sizePolicy().hasHeightForWidth())
+        self.label_33.setSizePolicy(sizePolicy1)
+        self.label_33.setStyleSheet(u"color: rgb(255, 255, 255);\n"
+"font: 900 10pt \"IRANSansXFaNum\";")
 
         self.horizontalLayout_17.addWidget(self.label_33)
 
@@ -1001,260 +1009,332 @@ class Ui_MainWindow(object):
         self.verticalLayout_38.setObjectName(u"verticalLayout_38")
         self.label_7 = QLabel(self.keys)
         self.label_7.setObjectName(u"label_7")
+        sizePolicy2 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Maximum)
+        sizePolicy2.setHorizontalStretch(0)
+        sizePolicy2.setVerticalStretch(0)
+        sizePolicy2.setHeightForWidth(self.label_7.sizePolicy().hasHeightForWidth())
+        self.label_7.setSizePolicy(sizePolicy2)
+        self.label_7.setFont(font4)
+        self.label_7.setStyleSheet(u"color: rgb(255, 255, 255);")
 
-        self.verticalLayout_38.addWidget(self.label_7)
+        self.verticalLayout_38.addWidget(self.label_7, 0, Qt.AlignmentFlag.AlignHCenter)
 
         self.horizontalLayout_15 = QHBoxLayout()
+        self.horizontalLayout_15.setSpacing(0)
         self.horizontalLayout_15.setObjectName(u"horizontalLayout_15")
         self.verticalLayout_32 = QVBoxLayout()
         self.verticalLayout_32.setObjectName(u"verticalLayout_32")
         self.lamp_increase = QLabel(self.keys)
         self.lamp_increase.setObjectName(u"lamp_increase")
-        self.lamp_increase.setMinimumSize(QSize(62, 0))
+        self.lamp_increase.setMinimumSize(QSize(94, 99))
         self.lamp_increase.setStyleSheet(u"    QLabel {\n"
 "\n"
 "\n"
 "	background-color: red;\n"
 "                border-style: outset;\n"
 "                border-width: 1px;\n"
-"                border-radius: 30px;\n"
+"                border-radius: 45px;\n"
 "        }")
 
-        self.verticalLayout_32.addWidget(self.lamp_increase)
+        self.verticalLayout_32.addWidget(self.lamp_increase, 0, Qt.AlignmentFlag.AlignHCenter|Qt.AlignmentFlag.AlignVCenter)
 
         self.label_32 = QLabel(self.keys)
         self.label_32.setObjectName(u"label_32")
         self.label_32.setMaximumSize(QSize(83, 13))
         self.label_32.setFont(font6)
+        self.label_32.setStyleSheet(u"color: rgb(255, 255, 255);")
         self.label_32.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
-        self.verticalLayout_32.addWidget(self.label_32)
+        self.verticalLayout_32.addWidget(self.label_32, 0, Qt.AlignmentFlag.AlignHCenter)
 
 
         self.horizontalLayout_15.addLayout(self.verticalLayout_32)
 
         self.verticalLayout_33 = QVBoxLayout()
+        self.verticalLayout_33.setSpacing(0)
         self.verticalLayout_33.setObjectName(u"verticalLayout_33")
         self.lamp_decrease = QLabel(self.keys)
         self.lamp_decrease.setObjectName(u"lamp_decrease")
-        self.lamp_decrease.setMinimumSize(QSize(62, 0))
+        self.lamp_decrease.setMinimumSize(QSize(94, 99))
         self.lamp_decrease.setStyleSheet(u"    QLabel {\n"
 "\n"
 "\n"
 "	background-color: red;\n"
 "                border-style: outset;\n"
 "                border-width: 1px;\n"
-"                border-radius: 30px;\n"
+"                border-radius: 45px;\n"
 "        }")
 
-        self.verticalLayout_33.addWidget(self.lamp_decrease)
+        self.verticalLayout_33.addWidget(self.lamp_decrease, 0, Qt.AlignmentFlag.AlignHCenter|Qt.AlignmentFlag.AlignVCenter)
 
         self.label_34 = QLabel(self.keys)
         self.label_34.setObjectName(u"label_34")
         self.label_34.setMaximumSize(QSize(83, 13))
         self.label_34.setFont(font6)
+        self.label_34.setStyleSheet(u"color: rgb(255, 255, 255);")
         self.label_34.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
-        self.verticalLayout_33.addWidget(self.label_34)
+        self.verticalLayout_33.addWidget(self.label_34, 0, Qt.AlignmentFlag.AlignHCenter)
 
 
         self.horizontalLayout_15.addLayout(self.verticalLayout_33)
 
         self.verticalLayout_34 = QVBoxLayout()
+        self.verticalLayout_34.setSpacing(0)
         self.verticalLayout_34.setObjectName(u"verticalLayout_34")
         self.lamp_start = QLabel(self.keys)
         self.lamp_start.setObjectName(u"lamp_start")
-        self.lamp_start.setMinimumSize(QSize(62, 0))
+        self.lamp_start.setMinimumSize(QSize(94, 99))
+        self.lamp_start.setMaximumSize(QSize(16777215, 16777215))
         self.lamp_start.setStyleSheet(u"    QLabel {\n"
 "\n"
 "\n"
 "	background-color: red;\n"
 "                border-style: outset;\n"
 "                border-width: 1px;\n"
-"                border-radius: 30px;\n"
+"                border-radius: 45px;\n"
 "        }")
 
-        self.verticalLayout_34.addWidget(self.lamp_start)
+        self.verticalLayout_34.addWidget(self.lamp_start, 0, Qt.AlignmentFlag.AlignHCenter|Qt.AlignmentFlag.AlignVCenter)
 
         self.label_35 = QLabel(self.keys)
         self.label_35.setObjectName(u"label_35")
         self.label_35.setMaximumSize(QSize(83, 13))
         self.label_35.setFont(font6)
+        self.label_35.setStyleSheet(u"color: rgb(255, 255, 255);")
         self.label_35.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
-        self.verticalLayout_34.addWidget(self.label_35)
+        self.verticalLayout_34.addWidget(self.label_35, 0, Qt.AlignmentFlag.AlignHCenter)
 
 
         self.horizontalLayout_15.addLayout(self.verticalLayout_34)
-
-        self.verticalLayout_35 = QVBoxLayout()
-        self.verticalLayout_35.setObjectName(u"verticalLayout_35")
-        self.lamp_emgstop = QLabel(self.keys)
-        self.lamp_emgstop.setObjectName(u"lamp_emgstop")
-        self.lamp_emgstop.setMinimumSize(QSize(62, 0))
-        self.lamp_emgstop.setStyleSheet(u"    QLabel {\n"
-"\n"
-"\n"
-"	background-color: red;\n"
-"                border-style: outset;\n"
-"                border-width: 1px;\n"
-"                border-radius: 30px;\n"
-"        }")
-
-        self.verticalLayout_35.addWidget(self.lamp_emgstop)
-
-        self.label_36 = QLabel(self.keys)
-        self.label_36.setObjectName(u"label_36")
-        self.label_36.setMaximumSize(QSize(83, 13))
-        self.label_36.setFont(font6)
-        self.label_36.setAlignment(Qt.AlignmentFlag.AlignCenter)
-
-        self.verticalLayout_35.addWidget(self.label_36)
-
-
-        self.horizontalLayout_15.addLayout(self.verticalLayout_35)
 
         self.verticalLayout_36 = QVBoxLayout()
         self.verticalLayout_36.setObjectName(u"verticalLayout_36")
         self.lamp_stop = QLabel(self.keys)
         self.lamp_stop.setObjectName(u"lamp_stop")
-        self.lamp_stop.setMinimumSize(QSize(62, 0))
+        self.lamp_stop.setMinimumSize(QSize(94, 99))
         self.lamp_stop.setStyleSheet(u"    QLabel {\n"
 "\n"
 "\n"
 "	background-color: red;\n"
 "                border-style: outset;\n"
 "                border-width: 1px;\n"
-"                border-radius: 30px;\n"
+"                border-radius: 45px;\n"
 "        }")
 
-        self.verticalLayout_36.addWidget(self.lamp_stop)
+        self.verticalLayout_36.addWidget(self.lamp_stop, 0, Qt.AlignmentFlag.AlignHCenter|Qt.AlignmentFlag.AlignVCenter)
 
         self.label_37 = QLabel(self.keys)
         self.label_37.setObjectName(u"label_37")
         self.label_37.setMaximumSize(QSize(83, 13))
         self.label_37.setFont(font6)
+        self.label_37.setStyleSheet(u"color: rgb(255, 255, 255);")
         self.label_37.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
-        self.verticalLayout_36.addWidget(self.label_37)
+        self.verticalLayout_36.addWidget(self.label_37, 0, Qt.AlignmentFlag.AlignHCenter)
 
 
         self.horizontalLayout_15.addLayout(self.verticalLayout_36)
 
+        self.verticalLayout_35 = QVBoxLayout()
+        self.verticalLayout_35.setObjectName(u"verticalLayout_35")
+        self.lamp_emgstop = QLabel(self.keys)
+        self.lamp_emgstop.setObjectName(u"lamp_emgstop")
+        self.lamp_emgstop.setMinimumSize(QSize(94, 99))
+        self.lamp_emgstop.setStyleSheet(u"    QLabel {\n"
+"\n"
+"\n"
+"	background-color: red;\n"
+"                border-style: outset;\n"
+"                border-width: 1px;\n"
+"                border-radius: 45px;\n"
+"        }")
+
+        self.verticalLayout_35.addWidget(self.lamp_emgstop, 0, Qt.AlignmentFlag.AlignHCenter|Qt.AlignmentFlag.AlignVCenter)
+
+        self.label_36 = QLabel(self.keys)
+        self.label_36.setObjectName(u"label_36")
+        self.label_36.setMaximumSize(QSize(83, 13))
+        self.label_36.setFont(font6)
+        self.label_36.setStyleSheet(u"color: rgb(255, 255, 255);")
+        self.label_36.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        self.verticalLayout_35.addWidget(self.label_36, 0, Qt.AlignmentFlag.AlignHCenter)
+
+
+        self.horizontalLayout_15.addLayout(self.verticalLayout_35)
+
 
         self.verticalLayout_38.addLayout(self.horizontalLayout_15)
 
+        self.verticalSpacer_6 = QSpacerItem(35, 182, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Maximum)
+
+        self.verticalLayout_38.addItem(self.verticalSpacer_6)
+
         self.horizontalLayout_16 = QHBoxLayout()
+        self.horizontalLayout_16.setSpacing(0)
         self.horizontalLayout_16.setObjectName(u"horizontalLayout_16")
         self.widget_3 = QWidget(self.keys)
         self.widget_3.setObjectName(u"widget_3")
         self.verticalLayout_8 = QVBoxLayout(self.widget_3)
+        self.verticalLayout_8.setSpacing(0)
         self.verticalLayout_8.setObjectName(u"verticalLayout_8")
+        self.verticalLayout_8.setContentsMargins(0, 0, 0, -1)
         self.increase_key = QToolButton(self.widget_3)
         self.increase_key.setObjectName(u"increase_key")
-        self.increase_key.setMinimumSize(QSize(66, 60))
-        self.increase_key.setStyleSheet(u"background-color: rgb(158, 255, 226);")
+        self.increase_key.setMinimumSize(QSize(95, 70))
+        self.increase_key.setMaximumSize(QSize(95, 70))
+        self.increase_key.setStyleSheet(u"QToolButton{\n"
+"border:none;\n"
+"}")
+        icon2 = QIcon()
+        icon2.addFile(u":/icons/icons/icons8-add-64.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.increase_key.setIcon(icon2)
+        self.increase_key.setIconSize(QSize(50, 73))
 
-        self.verticalLayout_8.addWidget(self.increase_key)
+        self.verticalLayout_8.addWidget(self.increase_key, 0, Qt.AlignmentFlag.AlignHCenter)
 
         self.label_8 = QLabel(self.widget_3)
         self.label_8.setObjectName(u"label_8")
         self.label_8.setMaximumSize(QSize(16777215, 12))
         self.label_8.setFont(font)
+        self.label_8.setStyleSheet(u"color: rgb(255, 255, 255);")
         self.label_8.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout_8.addWidget(self.label_8)
 
 
-        self.horizontalLayout_16.addWidget(self.widget_3)
+        self.horizontalLayout_16.addWidget(self.widget_3, 0, Qt.AlignmentFlag.AlignHCenter|Qt.AlignmentFlag.AlignVCenter)
 
         self.widget_4 = QWidget(self.keys)
         self.widget_4.setObjectName(u"widget_4")
         self.verticalLayout_9 = QVBoxLayout(self.widget_4)
+        self.verticalLayout_9.setSpacing(0)
         self.verticalLayout_9.setObjectName(u"verticalLayout_9")
+        self.verticalLayout_9.setContentsMargins(0, 0, 0, 9)
         self.decrease_key = QToolButton(self.widget_4)
         self.decrease_key.setObjectName(u"decrease_key")
-        self.decrease_key.setMinimumSize(QSize(66, 60))
-        self.decrease_key.setStyleSheet(u"background-color: rgb(130, 121, 255);")
+        self.decrease_key.setMinimumSize(QSize(95, 70))
+        self.decrease_key.setMaximumSize(QSize(95, 70))
+        self.decrease_key.setStyleSheet(u"QToolButton{\n"
+"border:none;\n"
+"}")
+        icon3 = QIcon()
+        icon3.addFile(u":/icons/icons/icons8-remove-100.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.decrease_key.setIcon(icon3)
+        self.decrease_key.setIconSize(QSize(53, 70))
 
-        self.verticalLayout_9.addWidget(self.decrease_key)
+        self.verticalLayout_9.addWidget(self.decrease_key, 0, Qt.AlignmentFlag.AlignHCenter)
 
         self.label_9 = QLabel(self.widget_4)
         self.label_9.setObjectName(u"label_9")
         self.label_9.setMaximumSize(QSize(16777215, 12))
         self.label_9.setFont(font)
+        self.label_9.setStyleSheet(u"color: rgb(255, 255, 255);")
         self.label_9.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout_9.addWidget(self.label_9)
 
 
-        self.horizontalLayout_16.addWidget(self.widget_4)
+        self.horizontalLayout_16.addWidget(self.widget_4, 0, Qt.AlignmentFlag.AlignHCenter|Qt.AlignmentFlag.AlignVCenter)
 
         self.widget_5 = QWidget(self.keys)
         self.widget_5.setObjectName(u"widget_5")
         self.verticalLayout_10 = QVBoxLayout(self.widget_5)
+        self.verticalLayout_10.setSpacing(0)
         self.verticalLayout_10.setObjectName(u"verticalLayout_10")
+        self.verticalLayout_10.setContentsMargins(0, 0, 0, 0)
         self.start_key = QToolButton(self.widget_5)
         self.start_key.setObjectName(u"start_key")
-        self.start_key.setMinimumSize(QSize(66, 60))
-        self.start_key.setStyleSheet(u"background-color: rgb(23, 154, 255);")
+        self.start_key.setMinimumSize(QSize(95, 70))
+        self.start_key.setMaximumSize(QSize(95, 70))
+        self.start_key.setStyleSheet(u"QToolButton{\n"
+"border:none;\n"
+"}")
+        icon4 = QIcon()
+        icon4.addFile(u":/icons/icons/icons8-start-button-64.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.start_key.setIcon(icon4)
+        self.start_key.setIconSize(QSize(92, 67))
 
-        self.verticalLayout_10.addWidget(self.start_key)
+        self.verticalLayout_10.addWidget(self.start_key, 0, Qt.AlignmentFlag.AlignHCenter|Qt.AlignmentFlag.AlignVCenter)
 
         self.label_14 = QLabel(self.widget_5)
         self.label_14.setObjectName(u"label_14")
         self.label_14.setMaximumSize(QSize(16777215, 12))
         self.label_14.setFont(font)
+        self.label_14.setStyleSheet(u"color: rgb(255, 255, 255);")
         self.label_14.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout_10.addWidget(self.label_14)
 
 
-        self.horizontalLayout_16.addWidget(self.widget_5)
+        self.horizontalLayout_16.addWidget(self.widget_5, 0, Qt.AlignmentFlag.AlignHCenter|Qt.AlignmentFlag.AlignVCenter)
+
+        self.widget_7 = QWidget(self.keys)
+        self.widget_7.setObjectName(u"widget_7")
+        self.verticalLayout_37 = QVBoxLayout(self.widget_7)
+        self.verticalLayout_37.setSpacing(0)
+        self.verticalLayout_37.setObjectName(u"verticalLayout_37")
+        self.verticalLayout_37.setContentsMargins(0, -1, 0, 0)
+        self.stop_key = QToolButton(self.widget_7)
+        self.stop_key.setObjectName(u"stop_key")
+        self.stop_key.setMinimumSize(QSize(95, 70))
+        self.stop_key.setMaximumSize(QSize(95, 70))
+        self.stop_key.setStyleSheet(u"QToolButton{\n"
+"border:none;\n"
+"}")
+        icon5 = QIcon()
+        icon5.addFile(u":/icons/icons/icons8-stop-button-67.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.stop_key.setIcon(icon5)
+        self.stop_key.setIconSize(QSize(45, 61))
+
+        self.verticalLayout_37.addWidget(self.stop_key, 0, Qt.AlignmentFlag.AlignHCenter|Qt.AlignmentFlag.AlignVCenter)
+
+        self.label_26 = QLabel(self.widget_7)
+        self.label_26.setObjectName(u"label_26")
+        self.label_26.setMinimumSize(QSize(0, 25))
+        self.label_26.setMaximumSize(QSize(16777215, 12))
+        self.label_26.setFont(font)
+        self.label_26.setStyleSheet(u"color: rgb(255, 255, 255);")
+        self.label_26.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        self.verticalLayout_37.addWidget(self.label_26, 0, Qt.AlignmentFlag.AlignVCenter)
+
+
+        self.horizontalLayout_16.addWidget(self.widget_7, 0, Qt.AlignmentFlag.AlignHCenter|Qt.AlignmentFlag.AlignVCenter)
 
         self.widget_6 = QWidget(self.keys)
         self.widget_6.setObjectName(u"widget_6")
         self.verticalLayout_15 = QVBoxLayout(self.widget_6)
+        self.verticalLayout_15.setSpacing(0)
         self.verticalLayout_15.setObjectName(u"verticalLayout_15")
+        self.verticalLayout_15.setContentsMargins(0, 0, 0, 0)
         self.emgstop_key = QToolButton(self.widget_6)
         self.emgstop_key.setObjectName(u"emgstop_key")
-        self.emgstop_key.setMinimumSize(QSize(66, 60))
-        self.emgstop_key.setStyleSheet(u"background-color: rgb(192, 255, 227);")
+        self.emgstop_key.setMinimumSize(QSize(95, 70))
+        self.emgstop_key.setMaximumSize(QSize(95, 70))
+        self.emgstop_key.setStyleSheet(u"QToolButton{\n"
+"border:none;\n"
+"}")
+        icon6 = QIcon()
+        icon6.addFile(u":/icons/icons/icons8-stop-sign-60.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.emgstop_key.setIcon(icon6)
+        self.emgstop_key.setIconSize(QSize(66, 80))
 
-        self.verticalLayout_15.addWidget(self.emgstop_key)
+        self.verticalLayout_15.addWidget(self.emgstop_key, 0, Qt.AlignmentFlag.AlignHCenter|Qt.AlignmentFlag.AlignVCenter)
 
         self.label_24 = QLabel(self.widget_6)
         self.label_24.setObjectName(u"label_24")
         self.label_24.setMaximumSize(QSize(16777215, 12))
         self.label_24.setFont(font)
+        self.label_24.setStyleSheet(u"color: rgb(255, 255, 255);")
         self.label_24.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout_15.addWidget(self.label_24)
 
 
-        self.horizontalLayout_16.addWidget(self.widget_6)
-
-        self.widget_7 = QWidget(self.keys)
-        self.widget_7.setObjectName(u"widget_7")
-        self.verticalLayout_37 = QVBoxLayout(self.widget_7)
-        self.verticalLayout_37.setObjectName(u"verticalLayout_37")
-        self.stop_key = QToolButton(self.widget_7)
-        self.stop_key.setObjectName(u"stop_key")
-        self.stop_key.setMinimumSize(QSize(66, 60))
-        self.stop_key.setStyleSheet(u"")
-
-        self.verticalLayout_37.addWidget(self.stop_key)
-
-        self.label_26 = QLabel(self.widget_7)
-        self.label_26.setObjectName(u"label_26")
-        self.label_26.setMaximumSize(QSize(16777215, 12))
-        self.label_26.setFont(font)
-        self.label_26.setAlignment(Qt.AlignmentFlag.AlignCenter)
-
-        self.verticalLayout_37.addWidget(self.label_26)
-
-
-        self.horizontalLayout_16.addWidget(self.widget_7)
+        self.horizontalLayout_16.addWidget(self.widget_6, 0, Qt.AlignmentFlag.AlignHCenter|Qt.AlignmentFlag.AlignVCenter)
 
 
         self.verticalLayout_38.addLayout(self.horizontalLayout_16)
@@ -1409,7 +1489,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(2)
+        self.stackedWidget.setCurrentIndex(3)
         self.stackedWidget_sensosr.setCurrentIndex(4)
 
 
@@ -1425,7 +1505,7 @@ class Ui_MainWindow(object):
         self.label.setText(QCoreApplication.translate("MainWindow", u" \u0648\u0636\u0639\u06cc\u062a \u0645\u0648\u062a\u0648\u0631 :", None))
         self.label_27.setText(QCoreApplication.translate("MainWindow", u"\u062f\u0645\u0627\u06cc \u0631\u0648\u063a\u0646", None))
         self.label_25.setText(QCoreApplication.translate("MainWindow", u"RPM", None))
-        self.label_4.setText(QCoreApplication.translate("MainWindow", u"\u0641\u0634\u0627\u0631\u0631\u0648\u063a\u0646", None))
+        self.label_4.setText(QCoreApplication.translate("MainWindow", u"\u0641\u0634\u0627\u0631 \u0631\u0648\u063a\u0646", None))
         self.label_shaft_airflap.setText(QCoreApplication.translate("MainWindow", u"Air flap", None))
         self.label_shaft_stop.setText(QCoreApplication.translate("MainWindow", u"Stoped", None))
         self.label_shaft_start.setText(QCoreApplication.translate("MainWindow", u"Started", None))
@@ -1532,20 +1612,20 @@ class Ui_MainWindow(object):
         self.label_34.setText(QCoreApplication.translate("MainWindow", u"Decrease", None))
         self.lamp_start.setText("")
         self.label_35.setText(QCoreApplication.translate("MainWindow", u"Start", None))
-        self.lamp_emgstop.setText("")
-        self.label_36.setText(QCoreApplication.translate("MainWindow", u"EMG Stop", None))
         self.lamp_stop.setText("")
         self.label_37.setText(QCoreApplication.translate("MainWindow", u"Stop", None))
+        self.lamp_emgstop.setText("")
+        self.label_36.setText(QCoreApplication.translate("MainWindow", u"EMG Stop", None))
         self.increase_key.setText("")
         self.label_8.setText(QCoreApplication.translate("MainWindow", u"increase", None))
         self.decrease_key.setText("")
         self.label_9.setText(QCoreApplication.translate("MainWindow", u"Decrease", None))
         self.start_key.setText("")
         self.label_14.setText(QCoreApplication.translate("MainWindow", u"Start", None))
-        self.emgstop_key.setText("")
-        self.label_24.setText(QCoreApplication.translate("MainWindow", u"EMG Stop", None))
         self.stop_key.setText("")
         self.label_26.setText(QCoreApplication.translate("MainWindow", u"Stop", None))
+        self.emgstop_key.setText("")
+        self.label_24.setText(QCoreApplication.translate("MainWindow", u"EMG Stop", None))
         self.toolButton_shaft.setText(QCoreApplication.translate("MainWindow", u"\u0634\u0641\u062a", None))
         self.toolButton_temperature.setText(QCoreApplication.translate("MainWindow", u"\u0633\u0646\u0633\u0648\u0631\u0647\u0627", None))
         self.toolButton_pressure.setText(QCoreApplication.translate("MainWindow", u"\u062c\u062f\u0648\u0644", None))

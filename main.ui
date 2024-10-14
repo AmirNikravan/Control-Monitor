@@ -227,9 +227,16 @@
             <item>
              <layout class="QVBoxLayout" name="verticalLayout_28">
               <item>
-               <widget class="AnalogGaugeWidget" name="oil_temp_shaft_gauge" native="true"/>
+               <widget class="AnalogGaugeWidget" name="oil_temp_shaft_gauge" native="true">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>192</height>
+                 </size>
+                </property>
+               </widget>
               </item>
-              <item>
+              <item alignment="Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignVCenter">
                <widget class="QLabel" name="label_27">
                 <property name="maximumSize">
                  <size>
@@ -244,6 +251,9 @@
                   <bold>true</bold>
                  </font>
                 </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);</string>
+                </property>
                 <property name="text">
                  <string>دمای روغن</string>
                 </property>
@@ -257,9 +267,16 @@
             <item>
              <layout class="QVBoxLayout" name="verticalLayout_29">
               <item>
-               <widget class="AnalogGaugeWidget" name="rpm_gauge_shaft" native="true"/>
+               <widget class="AnalogGaugeWidget" name="rpm_gauge_shaft" native="true">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>192</height>
+                 </size>
+                </property>
+               </widget>
               </item>
-              <item>
+              <item alignment="Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignVCenter">
                <widget class="QLabel" name="label_25">
                 <property name="maximumSize">
                  <size>
@@ -274,6 +291,9 @@
                   <bold>true</bold>
                  </font>
                 </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);</string>
+                </property>
                 <property name="text">
                  <string>RPM</string>
                 </property>
@@ -287,9 +307,22 @@
             <item>
              <layout class="QVBoxLayout" name="verticalLayout_30">
               <item>
-               <widget class="AnalogGaugeWidget" name="oil_press_shaft_gauge" native="true"/>
+               <widget class="AnalogGaugeWidget" name="oil_press_shaft_gauge" native="true">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>1</width>
+                  <height>192</height>
+                 </size>
+                </property>
+               </widget>
               </item>
-              <item>
+              <item alignment="Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignVCenter">
                <widget class="QLabel" name="label_4">
                 <property name="maximumSize">
                  <size>
@@ -304,8 +337,11 @@
                   <bold>true</bold>
                  </font>
                 </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);</string>
+                </property>
                 <property name="text">
-                 <string>فشارروغن</string>
+                 <string>فشار روغن</string>
                 </property>
                 <property name="alignment">
                  <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -317,12 +353,34 @@
            </layout>
           </item>
           <item>
+           <spacer name="verticalSpacer_7">
+            <property name="orientation">
+             <enum>Qt::Orientation::Vertical</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Policy::Maximum</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>23</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
            <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="2,2,2,2">
             <property name="spacing">
              <number>23</number>
             </property>
-            <item>
+            <item alignment="Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignVCenter">
              <widget class="QLabel" name="label_shaft_airflap">
+              <property name="minimumSize">
+               <size>
+                <width>107</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="font">
                <font>
                 <family>IRANSansXFaNum</family>
@@ -336,7 +394,7 @@
 	background-color: rgb(143, 143, 143);
                 color: black;
                 padding: 20px;
-                border-radius: 15px;
+                border-radius: 45px;
                 border: 2px solid rgba(255, 255, 255, 100);
             }</string>
               </property>
@@ -348,8 +406,14 @@
               </property>
              </widget>
             </item>
-            <item>
+            <item alignment="Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignVCenter">
              <widget class="QLabel" name="label_shaft_stop">
+              <property name="minimumSize">
+               <size>
+                <width>107</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="font">
                <font>
                 <family>IRANSansXFaNum</family>
@@ -363,7 +427,7 @@
 	background-color: rgb(143, 143, 143);
                 color: black;
                 padding: 20px;
-                border-radius: 15px;
+                border-radius: 45px;
                 border: 2px solid rgba(255, 255, 255, 100);
             }</string>
               </property>
@@ -375,8 +439,14 @@
               </property>
              </widget>
             </item>
-            <item>
+            <item alignment="Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignVCenter">
              <widget class="QLabel" name="label_shaft_start">
+              <property name="minimumSize">
+               <size>
+                <width>107</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="font">
                <font>
                 <family>IRANSansXFaNum</family>
@@ -390,7 +460,7 @@
 	background-color: rgb(143, 143, 143);
                 color: black;
                 padding: 20px;
-                border-radius: 15px;
+                border-radius: 45px;
                 border: 2px solid rgba(255, 255, 255, 100);
             }</string>
               </property>
@@ -402,7 +472,7 @@
               </property>
              </widget>
             </item>
-            <item>
+            <item alignment="Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignVCenter">
              <widget class="QLabel" name="label_shaft_water_level">
               <property name="font">
                <font>
@@ -417,7 +487,7 @@
 	background-color: rgb(143, 143, 143);
                 color: black;
                 padding: 20px;
-                border-radius: 15px;
+                border-radius: 45px;
                 border: 2px solid rgba(255, 255, 255, 100);
             }</string>
               </property>
@@ -464,7 +534,7 @@
           <item>
            <widget class="QStackedWidget" name="stackedWidget_sensosr">
             <property name="currentIndex">
-             <number>4</number>
+             <number>1</number>
             </property>
             <widget class="QWidget" name="page">
              <layout class="QVBoxLayout" name="verticalLayout_31">
@@ -473,22 +543,6 @@
                 <property name="spacing">
                  <number>0</number>
                 </property>
-                <item>
-                 <spacer name="horizontalSpacer_8">
-                  <property name="orientation">
-                   <enum>Qt::Orientation::Horizontal</enum>
-                  </property>
-                  <property name="sizeType">
-                   <enum>QSizePolicy::Policy::Minimum</enum>
-                  </property>
-                  <property name="sizeHint" stdset="0">
-                   <size>
-                    <width>68</width>
-                    <height>6</height>
-                   </size>
-                  </property>
-                 </spacer>
-                </item>
                 <item>
                  <widget class="QLabel" name="label_31">
                   <property name="sizePolicy">
@@ -502,6 +556,10 @@
                     <width>16777215</width>
                     <height>27</height>
                    </size>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">color: rgb(255, 255, 255);
+font: 900 10pt &quot;IRANSansXFaNum&quot;;</string>
                   </property>
                   <property name="text">
                    <string>دما</string>
@@ -684,22 +742,6 @@
                  <number>0</number>
                 </property>
                 <item>
-                 <spacer name="horizontalSpacer_7">
-                  <property name="orientation">
-                   <enum>Qt::Orientation::Horizontal</enum>
-                  </property>
-                  <property name="sizeType">
-                   <enum>QSizePolicy::Policy::Minimum</enum>
-                  </property>
-                  <property name="sizeHint" stdset="0">
-                   <size>
-                    <width>68</width>
-                    <height>6</height>
-                   </size>
-                  </property>
-                 </spacer>
-                </item>
-                <item>
                  <widget class="QLabel" name="label_30">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
@@ -712,6 +754,10 @@
                     <width>16777215</width>
                     <height>27</height>
                    </size>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">color: rgb(255, 255, 255);
+font: 900 10pt &quot;IRANSansXFaNum&quot;;</string>
                   </property>
                   <property name="text">
                    <string>دما</string>
@@ -885,28 +931,16 @@
                  <number>0</number>
                 </property>
                 <item>
-                 <spacer name="horizontalSpacer_6">
-                  <property name="orientation">
-                   <enum>Qt::Orientation::Horizontal</enum>
-                  </property>
-                  <property name="sizeType">
-                   <enum>QSizePolicy::Policy::Minimum</enum>
-                  </property>
-                  <property name="sizeHint" stdset="0">
-                   <size>
-                    <width>40</width>
-                    <height>6</height>
-                   </size>
-                  </property>
-                 </spacer>
-                </item>
-                <item>
                  <widget class="QLabel" name="label_28">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
                     <horstretch>0</horstretch>
                     <verstretch>0</verstretch>
                    </sizepolicy>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">color: rgb(255, 255, 255);
+font: 900 10pt &quot;IRANSansXFaNum&quot;;</string>
                   </property>
                   <property name="text">
                    <string>دما</string>
@@ -1080,28 +1114,16 @@
                  <number>0</number>
                 </property>
                 <item>
-                 <spacer name="horizontalSpacer_9">
-                  <property name="orientation">
-                   <enum>Qt::Orientation::Horizontal</enum>
-                  </property>
-                  <property name="sizeType">
-                   <enum>QSizePolicy::Policy::Minimum</enum>
-                  </property>
-                  <property name="sizeHint" stdset="0">
-                   <size>
-                    <width>40</width>
-                    <height>6</height>
-                   </size>
-                  </property>
-                 </spacer>
-                </item>
-                <item>
                  <widget class="QLabel" name="label_29">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
                     <horstretch>0</horstretch>
                     <verstretch>0</verstretch>
                    </sizepolicy>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">color: rgb(255, 255, 255);
+font: 900 10pt &quot;IRANSansXFaNum&quot;;</string>
                   </property>
                   <property name="text">
                    <string>فشار</string>
@@ -1269,28 +1291,16 @@
                  <number>0</number>
                 </property>
                 <item>
-                 <spacer name="horizontalSpacer_10">
-                  <property name="orientation">
-                   <enum>Qt::Orientation::Horizontal</enum>
-                  </property>
-                  <property name="sizeType">
-                   <enum>QSizePolicy::Policy::Minimum</enum>
-                  </property>
-                  <property name="sizeHint" stdset="0">
-                   <size>
-                    <width>40</width>
-                    <height>6</height>
-                   </size>
-                  </property>
-                 </spacer>
-                </item>
-                <item>
                  <widget class="QLabel" name="label_33">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
                     <horstretch>0</horstretch>
                     <verstretch>0</verstretch>
                    </sizepolicy>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">color: rgb(255, 255, 255);
+font: 900 10pt &quot;IRANSansXFaNum&quot;;</string>
                   </property>
                   <property name="text">
                    <string>فشار</string>
@@ -1795,6 +1805,11 @@ QToolButton::hover{
                   <set>AlignCenter</set>
                  </property>
                 </item>
+                <item row="0" column="3">
+                 <property name="text">
+                  <string>-14 - 74</string>
+                 </property>
+                </item>
                 <item row="0" column="4">
                  <property name="text">
                   <string>centigrade</string>
@@ -1816,6 +1831,11 @@ QToolButton::hover{
                   <set>AlignCenter</set>
                  </property>
                 </item>
+                <item row="1" column="3">
+                 <property name="text">
+                  <string>-14 - 74</string>
+                 </property>
+                </item>
                 <item row="1" column="4">
                  <property name="text">
                   <string>centigrade</string>
@@ -1826,7 +1846,7 @@ QToolButton::hover{
                 </item>
                 <item row="2" column="0">
                  <property name="text">
-                  <string>Oil Temperature</string>
+                  <string>Fresh Water before Thermostat Temperature</string>
                  </property>
                 </item>
                 <item row="2" column="2">
@@ -1847,7 +1867,7 @@ QToolButton::hover{
                 </item>
                 <item row="3" column="0">
                  <property name="text">
-                  <string>Oil NTC Temperature</string>
+                  <string>Fresh Water after Thermostat Temperature </string>
                  </property>
                 </item>
                 <item row="3" column="2">
@@ -1868,7 +1888,7 @@ QToolButton::hover{
                 </item>
                 <item row="4" column="0">
                  <property name="text">
-                  <string>Fresh Water after Thermostat Temperature </string>
+                  <string>Exhuast Bank A Temperature</string>
                  </property>
                 </item>
                 <item row="4" column="2">
@@ -1889,7 +1909,7 @@ QToolButton::hover{
                 </item>
                 <item row="5" column="0">
                  <property name="text">
-                  <string>Fresh Water before Thermostat Temperature</string>
+                  <string>Exhuast Bank B Temperature</string>
                  </property>
                 </item>
                 <item row="5" column="2">
@@ -1931,7 +1951,7 @@ QToolButton::hover{
                 </item>
                 <item row="7" column="0">
                  <property name="text">
-                  <string>Exhuast Bank A Temperature</string>
+                  <string>Oil Temperature</string>
                  </property>
                 </item>
                 <item row="7" column="2">
@@ -1952,7 +1972,7 @@ QToolButton::hover{
                 </item>
                 <item row="8" column="0">
                  <property name="text">
-                  <string>Exhuast Bank B Temperature</string>
+                  <string>Oil NTC Temperature</string>
                  </property>
                 </item>
                 <item row="8" column="2">
@@ -1999,12 +2019,7 @@ QToolButton::hover{
                 </item>
                 <item row="11" column="0">
                  <property name="text">
-                  <string>Oil Pressure</string>
-                 </property>
-                </item>
-                <item row="11" column="1">
-                 <property name="text">
-                  <string/>
+                  <string>Oil Switch Pressure</string>
                  </property>
                 </item>
                 <item row="11" column="4">
@@ -2017,7 +2032,7 @@ QToolButton::hover{
                 </item>
                 <item row="12" column="0">
                  <property name="text">
-                  <string>Oil Switch Pressure</string>
+                  <string>Air Boost Pressure</string>
                  </property>
                 </item>
                 <item row="12" column="4">
@@ -2030,7 +2045,12 @@ QToolButton::hover{
                 </item>
                 <item row="13" column="0">
                  <property name="text">
-                  <string>Air Boost Pressure</string>
+                  <string>Oil Pressure</string>
+                 </property>
+                </item>
+                <item row="13" column="1">
+                 <property name="text">
+                  <string/>
                  </property>
                 </item>
                 <item row="13" column="4">
@@ -2051,8 +2071,24 @@ QToolButton::hover{
         </widget>
         <widget class="QWidget" name="keys">
          <layout class="QVBoxLayout" name="verticalLayout_38">
-          <item>
+          <item alignment="Qt::AlignmentFlag::AlignHCenter">
            <widget class="QLabel" name="label_7">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <family>IRANSansXFaNum Black</family>
+              <pointsize>12</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: rgb(255, 255, 255);</string>
+            </property>
             <property name="text">
              <string>کلید ها</string>
             </property>
@@ -2060,24 +2096,27 @@ QToolButton::hover{
           </item>
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout_15">
+            <property name="spacing">
+             <number>0</number>
+            </property>
             <item>
              <layout class="QVBoxLayout" name="verticalLayout_32">
-              <item>
+              <item alignment="Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignVCenter">
                <widget class="QLabel" name="lamp_increase">
                 <property name="minimumSize">
                  <size>
-                  <width>62</width>
-                  <height>0</height>
+                  <width>94</width>
+                  <height>99</height>
                  </size>
                 </property>
                 <property name="styleSheet">
                  <string notr="true">    QLabel {
 
 
-	background-color: red;
+	background-color: rgb(195, 195, 195);
                 border-style: outset;
                 border-width: 1px;
-                border-radius: 30px;
+                border-radius: 45px;
         }</string>
                 </property>
                 <property name="text">
@@ -2085,7 +2124,7 @@ QToolButton::hover{
                 </property>
                </widget>
               </item>
-              <item>
+              <item alignment="Qt::AlignmentFlag::AlignHCenter">
                <widget class="QLabel" name="label_32">
                 <property name="maximumSize">
                  <size>
@@ -2100,6 +2139,9 @@ QToolButton::hover{
                   <bold>true</bold>
                  </font>
                 </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);</string>
+                </property>
                 <property name="text">
                  <string>Increase</string>
                 </property>
@@ -2112,22 +2154,25 @@ QToolButton::hover{
             </item>
             <item>
              <layout class="QVBoxLayout" name="verticalLayout_33">
-              <item>
+              <property name="spacing">
+               <number>0</number>
+              </property>
+              <item alignment="Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignVCenter">
                <widget class="QLabel" name="lamp_decrease">
                 <property name="minimumSize">
                  <size>
-                  <width>62</width>
-                  <height>0</height>
+                  <width>94</width>
+                  <height>99</height>
                  </size>
                 </property>
                 <property name="styleSheet">
                  <string notr="true">    QLabel {
 
 
-	background-color: red;
+	background-color: rgb(195, 195, 195);
                 border-style: outset;
                 border-width: 1px;
-                border-radius: 30px;
+                border-radius: 45px;
         }</string>
                 </property>
                 <property name="text">
@@ -2135,7 +2180,7 @@ QToolButton::hover{
                 </property>
                </widget>
               </item>
-              <item>
+              <item alignment="Qt::AlignmentFlag::AlignHCenter">
                <widget class="QLabel" name="label_34">
                 <property name="maximumSize">
                  <size>
@@ -2150,6 +2195,9 @@ QToolButton::hover{
                   <bold>true</bold>
                  </font>
                 </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);</string>
+                </property>
                 <property name="text">
                  <string>Decrease</string>
                 </property>
@@ -2162,22 +2210,31 @@ QToolButton::hover{
             </item>
             <item>
              <layout class="QVBoxLayout" name="verticalLayout_34">
-              <item>
+              <property name="spacing">
+               <number>0</number>
+              </property>
+              <item alignment="Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignVCenter">
                <widget class="QLabel" name="lamp_start">
                 <property name="minimumSize">
                  <size>
-                  <width>62</width>
-                  <height>0</height>
+                  <width>94</width>
+                  <height>99</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>16777215</height>
                  </size>
                 </property>
                 <property name="styleSheet">
                  <string notr="true">    QLabel {
 
 
-	background-color: red;
+	background-color: rgb(195, 195, 195);
                 border-style: outset;
                 border-width: 1px;
-                border-radius: 30px;
+                border-radius: 45px;
         }</string>
                 </property>
                 <property name="text">
@@ -2185,7 +2242,7 @@ QToolButton::hover{
                 </property>
                </widget>
               </item>
-              <item>
+              <item alignment="Qt::AlignmentFlag::AlignHCenter">
                <widget class="QLabel" name="label_35">
                 <property name="maximumSize">
                  <size>
@@ -2200,6 +2257,9 @@ QToolButton::hover{
                   <bold>true</bold>
                  </font>
                 </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);</string>
+                </property>
                 <property name="text">
                  <string>Start</string>
                 </property>
@@ -2211,73 +2271,23 @@ QToolButton::hover{
              </layout>
             </item>
             <item>
-             <layout class="QVBoxLayout" name="verticalLayout_35">
-              <item>
-               <widget class="QLabel" name="lamp_emgstop">
-                <property name="minimumSize">
-                 <size>
-                  <width>62</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">    QLabel {
-
-
-	background-color: red;
-                border-style: outset;
-                border-width: 1px;
-                border-radius: 30px;
-        }</string>
-                </property>
-                <property name="text">
-                 <string/>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLabel" name="label_36">
-                <property name="maximumSize">
-                 <size>
-                  <width>83</width>
-                  <height>13</height>
-                 </size>
-                </property>
-                <property name="font">
-                 <font>
-                  <family>IRANSansXFaNum Black</family>
-                  <pointsize>10</pointsize>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="text">
-                 <string>EMG Stop</string>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignmentFlag::AlignCenter</set>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </item>
-            <item>
              <layout class="QVBoxLayout" name="verticalLayout_36">
-              <item>
+              <item alignment="Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignVCenter">
                <widget class="QLabel" name="lamp_stop">
                 <property name="minimumSize">
                  <size>
-                  <width>62</width>
-                  <height>0</height>
+                  <width>94</width>
+                  <height>99</height>
                  </size>
                 </property>
                 <property name="styleSheet">
                  <string notr="true">    QLabel {
 
 
-	background-color: red;
+	background-color: rgb(195, 195, 195);
                 border-style: outset;
                 border-width: 1px;
-                border-radius: 30px;
+                border-radius: 45px;
         }</string>
                 </property>
                 <property name="text">
@@ -2285,7 +2295,7 @@ QToolButton::hover{
                 </property>
                </widget>
               </item>
-              <item>
+              <item alignment="Qt::AlignmentFlag::AlignHCenter">
                <widget class="QLabel" name="label_37">
                 <property name="maximumSize">
                  <size>
@@ -2300,8 +2310,64 @@ QToolButton::hover{
                   <bold>true</bold>
                  </font>
                 </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);</string>
+                </property>
                 <property name="text">
                  <string>Stop</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignmentFlag::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_35">
+              <item alignment="Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignVCenter">
+               <widget class="QLabel" name="lamp_emgstop">
+                <property name="minimumSize">
+                 <size>
+                  <width>94</width>
+                  <height>99</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">    QLabel {
+
+
+	background-color: rgb(195, 195, 195);
+                border-style: outset;
+                border-width: 1px;
+                border-radius: 45px;
+        }</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+               </widget>
+              </item>
+              <item alignment="Qt::AlignmentFlag::AlignHCenter">
+               <widget class="QLabel" name="label_36">
+                <property name="maximumSize">
+                 <size>
+                  <width>83</width>
+                  <height>13</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>IRANSansXFaNum Black</family>
+                  <pointsize>10</pointsize>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);</string>
+                </property>
+                <property name="text">
+                 <string>EMG Stop</string>
                 </property>
                 <property name="alignment">
                  <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -2313,23 +2379,72 @@ QToolButton::hover{
            </layout>
           </item>
           <item>
+           <spacer name="verticalSpacer_6">
+            <property name="orientation">
+             <enum>Qt::Orientation::Vertical</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Policy::Maximum</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>35</width>
+              <height>182</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
            <layout class="QHBoxLayout" name="horizontalLayout_16">
-            <item>
+            <property name="spacing">
+             <number>0</number>
+            </property>
+            <item alignment="Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignVCenter">
              <widget class="QWidget" name="widget_3" native="true">
               <layout class="QVBoxLayout" name="verticalLayout_8">
-               <item>
+               <property name="spacing">
+                <number>0</number>
+               </property>
+               <property name="leftMargin">
+                <number>0</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <item alignment="Qt::AlignmentFlag::AlignHCenter">
                 <widget class="QToolButton" name="increase_key">
                  <property name="minimumSize">
                   <size>
-                   <width>66</width>
-                   <height>60</height>
+                   <width>95</width>
+                   <height>70</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>95</width>
+                   <height>70</height>
                   </size>
                  </property>
                  <property name="styleSheet">
-                  <string notr="true">background-color: rgb(158, 255, 226);</string>
+                  <string notr="true">QToolButton{
+border:none;
+}</string>
                  </property>
                  <property name="text">
                   <string/>
+                 </property>
+                 <property name="icon">
+                  <iconset resource="src.qrc">
+                   <normaloff>:/icons/icons/icons8-add-64.png</normaloff>:/icons/icons/icons8-add-64.png</iconset>
+                 </property>
+                 <property name="iconSize">
+                  <size>
+                   <width>50</width>
+                   <height>73</height>
+                  </size>
                  </property>
                 </widget>
                </item>
@@ -2348,6 +2463,9 @@ QToolButton::hover{
                    <bold>true</bold>
                   </font>
                  </property>
+                 <property name="styleSheet">
+                  <string notr="true">color: rgb(255, 255, 255);</string>
+                 </property>
                  <property name="text">
                   <string>increase</string>
                  </property>
@@ -2359,22 +2477,55 @@ QToolButton::hover{
               </layout>
              </widget>
             </item>
-            <item>
+            <item alignment="Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignVCenter">
              <widget class="QWidget" name="widget_4" native="true">
               <layout class="QVBoxLayout" name="verticalLayout_9">
-               <item>
+               <property name="spacing">
+                <number>0</number>
+               </property>
+               <property name="leftMargin">
+                <number>0</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>9</number>
+               </property>
+               <item alignment="Qt::AlignmentFlag::AlignHCenter">
                 <widget class="QToolButton" name="decrease_key">
                  <property name="minimumSize">
                   <size>
-                   <width>66</width>
-                   <height>60</height>
+                   <width>95</width>
+                   <height>70</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>95</width>
+                   <height>70</height>
                   </size>
                  </property>
                  <property name="styleSheet">
-                  <string notr="true">background-color: rgb(130, 121, 255);</string>
+                  <string notr="true">QToolButton{
+border:none;
+}</string>
                  </property>
                  <property name="text">
                   <string/>
+                 </property>
+                 <property name="icon">
+                  <iconset resource="src.qrc">
+                   <normaloff>:/icons/icons/icons8-remove-100.png</normaloff>:/icons/icons/icons8-remove-100.png</iconset>
+                 </property>
+                 <property name="iconSize">
+                  <size>
+                   <width>53</width>
+                   <height>70</height>
+                  </size>
                  </property>
                 </widget>
                </item>
@@ -2393,6 +2544,9 @@ QToolButton::hover{
                    <bold>true</bold>
                   </font>
                  </property>
+                 <property name="styleSheet">
+                  <string notr="true">color: rgb(255, 255, 255);</string>
+                 </property>
                  <property name="text">
                   <string>Decrease</string>
                  </property>
@@ -2404,22 +2558,55 @@ QToolButton::hover{
               </layout>
              </widget>
             </item>
-            <item>
+            <item alignment="Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignVCenter">
              <widget class="QWidget" name="widget_5" native="true">
               <layout class="QVBoxLayout" name="verticalLayout_10">
-               <item>
+               <property name="spacing">
+                <number>0</number>
+               </property>
+               <property name="leftMargin">
+                <number>0</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <item alignment="Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignVCenter">
                 <widget class="QToolButton" name="start_key">
                  <property name="minimumSize">
                   <size>
-                   <width>66</width>
-                   <height>60</height>
+                   <width>95</width>
+                   <height>70</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>95</width>
+                   <height>70</height>
                   </size>
                  </property>
                  <property name="styleSheet">
-                  <string notr="true">background-color: rgb(23, 154, 255);</string>
+                  <string notr="true">QToolButton{
+border:none;
+}</string>
                  </property>
                  <property name="text">
                   <string/>
+                 </property>
+                 <property name="icon">
+                  <iconset resource="src.qrc">
+                   <normaloff>:/icons/icons/icons8-start-button-64.png</normaloff>:/icons/icons/icons8-start-button-64.png</iconset>
+                 </property>
+                 <property name="iconSize">
+                  <size>
+                   <width>92</width>
+                   <height>67</height>
+                  </size>
                  </property>
                 </widget>
                </item>
@@ -2438,6 +2625,9 @@ QToolButton::hover{
                    <bold>true</bold>
                   </font>
                  </property>
+                 <property name="styleSheet">
+                  <string notr="true">color: rgb(255, 255, 255);</string>
+                 </property>
                  <property name="text">
                   <string>Start</string>
                  </property>
@@ -2449,22 +2639,139 @@ QToolButton::hover{
               </layout>
              </widget>
             </item>
-            <item>
-             <widget class="QWidget" name="widget_6" native="true">
-              <layout class="QVBoxLayout" name="verticalLayout_15">
-               <item>
-                <widget class="QToolButton" name="emgstop_key">
+            <item alignment="Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignVCenter">
+             <widget class="QWidget" name="widget_7" native="true">
+              <layout class="QVBoxLayout" name="verticalLayout_37">
+               <property name="spacing">
+                <number>0</number>
+               </property>
+               <property name="leftMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <item alignment="Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignVCenter">
+                <widget class="QToolButton" name="stop_key">
                  <property name="minimumSize">
                   <size>
-                   <width>66</width>
-                   <height>60</height>
+                   <width>95</width>
+                   <height>70</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>95</width>
+                   <height>70</height>
                   </size>
                  </property>
                  <property name="styleSheet">
-                  <string notr="true">background-color: rgb(192, 255, 227);</string>
+                  <string notr="true">QToolButton{
+border:none;
+}</string>
                  </property>
                  <property name="text">
                   <string/>
+                 </property>
+                 <property name="icon">
+                  <iconset resource="src.qrc">
+                   <normaloff>:/icons/icons/icons8-stop-button-67.png</normaloff>:/icons/icons/icons8-stop-button-67.png</iconset>
+                 </property>
+                 <property name="iconSize">
+                  <size>
+                   <width>45</width>
+                   <height>61</height>
+                  </size>
+                 </property>
+                </widget>
+               </item>
+               <item alignment="Qt::AlignmentFlag::AlignVCenter">
+                <widget class="QLabel" name="label_26">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>25</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>12</height>
+                  </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>IRANSansXFaNum</family>
+                   <pointsize>10</pointsize>
+                   <bold>true</bold>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color: rgb(255, 255, 255);</string>
+                 </property>
+                 <property name="text">
+                  <string>Stop</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignmentFlag::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item alignment="Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignVCenter">
+             <widget class="QWidget" name="widget_6" native="true">
+              <layout class="QVBoxLayout" name="verticalLayout_15">
+               <property name="spacing">
+                <number>0</number>
+               </property>
+               <property name="leftMargin">
+                <number>0</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <item alignment="Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignVCenter">
+                <widget class="QToolButton" name="emgstop_key">
+                 <property name="minimumSize">
+                  <size>
+                   <width>95</width>
+                   <height>70</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>95</width>
+                   <height>70</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QToolButton{
+border:none;
+}</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="icon">
+                  <iconset resource="src.qrc">
+                   <normaloff>:/icons/icons/icons8-stop-sign-60.png</normaloff>:/icons/icons/icons8-stop-sign-60.png</iconset>
+                 </property>
+                 <property name="iconSize">
+                  <size>
+                   <width>66</width>
+                   <height>80</height>
+                  </size>
                  </property>
                 </widget>
                </item>
@@ -2483,53 +2790,11 @@ QToolButton::hover{
                    <bold>true</bold>
                   </font>
                  </property>
+                 <property name="styleSheet">
+                  <string notr="true">color: rgb(255, 255, 255);</string>
+                 </property>
                  <property name="text">
                   <string>EMG Stop</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignmentFlag::AlignCenter</set>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </widget>
-            </item>
-            <item>
-             <widget class="QWidget" name="widget_7" native="true">
-              <layout class="QVBoxLayout" name="verticalLayout_37">
-               <item>
-                <widget class="QToolButton" name="stop_key">
-                 <property name="minimumSize">
-                  <size>
-                   <width>66</width>
-                   <height>60</height>
-                  </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true"/>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLabel" name="label_26">
-                 <property name="maximumSize">
-                  <size>
-                   <width>16777215</width>
-                   <height>12</height>
-                  </size>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <family>IRANSansXFaNum</family>
-                   <pointsize>10</pointsize>
-                   <bold>true</bold>
-                  </font>
-                 </property>
-                 <property name="text">
-                  <string>Stop</string>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignmentFlag::AlignCenter</set>
