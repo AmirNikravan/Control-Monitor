@@ -40,11 +40,11 @@ class UpdateWorker(QThread):
         self.ui.sea_water_temp_gauge.setValue(self.temperature['t7'])
         self.ui.oil_temp_gauge.setValue(self.temperature['t8'])
         self.ui.oil_ntc_temp_gauge.setValue(self.temperature['t9'])
-        self.ui.oil_pressure_gauge.setValue(self.pressure['p1'])
-        self.ui.oil_switch_pressure_gauge.setValue(self.pressure['p2'])
-        self.ui.airboost_pressure_gauge.setValue(self.pressure['p3'])
-        self.ui.sea_water_pressure_gauge.setValue(self.pressure['p4'])
-        self.ui.fuel_pressure_gauge.setValue(self.pressure['p5'])
+        self.ui.airboost_pressure_gauge.setValue(self.pressure['p1'])
+        self.ui.sea_water_pressure_gauge.setValue(self.pressure['p2'])
+        self.ui.fuel_pressure_gauge.setValue(self.pressure['p3'])
+        self.ui.oil_pressure_gauge.setValue(self.pressure['p4'])
+        self.ui.oil_switch_pressure_gauge.setValue(self.pressure['p5'])
 class WorkerData(QThread):
     values = Signal(int)
 
