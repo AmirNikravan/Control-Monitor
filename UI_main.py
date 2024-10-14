@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'main.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.7.1
+## Created by: Qt User Interface Compiler version 6.7.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -28,7 +28,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(905, 602)
+        MainWindow.resize(893, 549)
         MainWindow.setMinimumSize(QSize(255, 212))
         MainWindow.setMaximumSize(QSize(16777215, 16777215))
         font = QFont()
@@ -37,7 +37,7 @@ class Ui_MainWindow(object):
         font.setBold(True)
         MainWindow.setFont(font)
         MainWindow.setWindowOpacity(1.000000000000000)
-        MainWindow.setStyleSheet(u"background-color: rgb(243, 243, 243);")
+        MainWindow.setStyleSheet(u"background-color: #405D72")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.verticalLayout = QVBoxLayout(self.centralwidget)
@@ -48,7 +48,7 @@ class Ui_MainWindow(object):
         self.up_label = QWidget(self.centralwidget)
         self.up_label.setObjectName(u"up_label")
         self.up_label.setMinimumSize(QSize(0, 39))
-        self.up_label.setStyleSheet(u"background-color: rgb(241, 242, 243);")
+        self.up_label.setStyleSheet(u"background-color: #405D72")
         self.horizontalLayout_8 = QHBoxLayout(self.up_label)
         self.horizontalLayout_8.setObjectName(u"horizontalLayout_8")
         self.horizontalLayout_8.setContentsMargins(0, 0, 0, -1)
@@ -59,6 +59,7 @@ class Ui_MainWindow(object):
         font1.setFamilies([u"IRANSansXFaNum"])
         font1.setBold(True)
         self.label_time.setFont(font1)
+        self.label_time.setStyleSheet(u"color: rgb(255, 255, 255);")
         self.label_time.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.horizontalLayout_8.addWidget(self.label_time)
@@ -74,12 +75,14 @@ class Ui_MainWindow(object):
         font2.setPointSize(12)
         font2.setBold(True)
         self.label_engine_name.setFont(font2)
+        self.label_engine_name.setStyleSheet(u"color: rgb(255, 255, 255);")
 
         self.horizontalLayout_8.addWidget(self.label_engine_name)
 
         self.label_3 = QLabel(self.up_label)
         self.label_3.setObjectName(u"label_3")
         self.label_3.setFont(font2)
+        self.label_3.setStyleSheet(u"color: rgb(255, 255, 255);")
 
         self.horizontalLayout_8.addWidget(self.label_3)
 
@@ -94,12 +97,14 @@ class Ui_MainWindow(object):
         font3.setPointSize(11)
         font3.setBold(True)
         self.label_2.setFont(font3)
+        self.label_2.setStyleSheet(u"color: rgb(255, 255, 255);")
 
         self.horizontalLayout_8.addWidget(self.label_2)
 
         self.label = QLabel(self.up_label)
         self.label.setObjectName(u"label")
         self.label.setFont(font2)
+        self.label.setStyleSheet(u"color: rgb(255, 255, 255);")
 
         self.horizontalLayout_8.addWidget(self.label)
 
@@ -111,7 +116,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.stackedWidget = QStackedWidget(self.centralwidget)
         self.stackedWidget.setObjectName(u"stackedWidget")
-        self.stackedWidget.setStyleSheet(u"background-color: rgb(221, 221, 221);")
+        self.stackedWidget.setStyleSheet(u"background-color: #758694")
         self.stackedWidget.setLineWidth(0)
         self.shaft = QWidget()
         self.shaft.setObjectName(u"shaft")
@@ -463,7 +468,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_40.addLayout(self.horizontalLayout_10)
 
-        self.verticalSpacer_2 = QSpacerItem(20, 153, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Minimum)
+        self.verticalSpacer_2 = QSpacerItem(20, 153, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Maximum)
 
         self.verticalLayout_40.addItem(self.verticalSpacer_2)
 
@@ -556,7 +561,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_20.addLayout(self.horizontalLayout_11)
 
-        self.verticalSpacer = QSpacerItem(10, 153, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Minimum)
+        self.verticalSpacer = QSpacerItem(10, 153, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Maximum)
 
         self.verticalLayout_20.addItem(self.verticalSpacer)
 
@@ -756,7 +761,7 @@ class Ui_MainWindow(object):
 "	background-color: rgb(215, 255, 218);\n"
 "}")
         icon = QIcon()
-        icon.addFile(u":/icons/icons/icons8-back-arrow-100.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon.addFile(u":/icons/icons/icons8-back-arrow-100.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.toolButton_previouspage_sensors.setIcon(icon)
         self.toolButton_previouspage_sensors.setIconSize(QSize(47, 39))
         self.toolButton_previouspage_sensors.setToolButtonStyle(Qt.ToolButtonStyle.ToolButtonTextUnderIcon)
@@ -780,7 +785,7 @@ class Ui_MainWindow(object):
 "	background-color: rgb(215, 255, 218);\n"
 "}")
         icon1 = QIcon()
-        icon1.addFile(u":/icons/icons/icons8-forward-button-100.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon1.addFile(u":/icons/icons/icons8-forward-button-100.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.toolButton_nextpage_sensors.setIcon(icon1)
         self.toolButton_nextpage_sensors.setIconSize(QSize(47, 39))
         self.toolButton_nextpage_sensors.setToolButtonStyle(Qt.ToolButtonStyle.ToolButtonTextUnderIcon)
@@ -800,7 +805,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 793, 541))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 781, 488))
         self.verticalLayout_44 = QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_44.setSpacing(0)
         self.verticalLayout_44.setObjectName(u"verticalLayout_44")
@@ -959,10 +964,16 @@ class Ui_MainWindow(object):
         self.tableWidget_data.setItem(13, 4, __qtablewidgetitem57)
         self.tableWidget_data.setObjectName(u"tableWidget_data")
         self.tableWidget_data.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
-        self.tableWidget_data.setStyleSheet(u"background-color: rgb(255, 255, 255);")
+        self.tableWidget_data.setStyleSheet(u"    QTableWidget::item {\n"
+"        background-color: #FFFFFF;\n"
+"    }\n"
+"    QTableWidget::item:alternate {\n"
+"        background-color: #F0F0F0;\n"
+"    }")
         self.tableWidget_data.setFrameShape(QFrame.Shape.Box)
         self.tableWidget_data.setSizeAdjustPolicy(QAbstractScrollArea.SizeAdjustPolicy.AdjustToContents)
         self.tableWidget_data.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
+        self.tableWidget_data.setAlternatingRowColors(True)
         self.tableWidget_data.setShowGrid(True)
         self.tableWidget_data.setGridStyle(Qt.PenStyle.SolidLine)
         self.tableWidget_data.setSortingEnabled(False)
@@ -1255,7 +1266,7 @@ class Ui_MainWindow(object):
         self.frame = QFrame(self.centralwidget)
         self.frame.setObjectName(u"frame")
         self.frame.setMinimumSize(QSize(10, 0))
-        self.frame.setStyleSheet(u"background-color: rgb(31, 68, 141);")
+        self.frame.setStyleSheet(u"background-color: #F7E7DC")
         self.frame.setFrameShape(QFrame.Shape.StyledPanel)
         self.frame.setFrameShadow(QFrame.Shadow.Raised)
         self.frame.setLineWidth(0)
@@ -1266,8 +1277,8 @@ class Ui_MainWindow(object):
         self.right_menu.setObjectName(u"right_menu")
         self.right_menu.setMinimumSize(QSize(80, 0))
         self.right_menu.setStyleSheet(u"QToolButton{\n"
-"border:none\n"
-"\n"
+"border:none;\n"
+"color: rgb(255, 255, 255);\n"
 "}\n"
 "QToolButton::hover{\n"
 "	background-color: rgb(183, 183, 183);\n"
@@ -1399,7 +1410,7 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
 
         self.stackedWidget.setCurrentIndex(2)
-        self.stackedWidget_sensosr.setCurrentIndex(3)
+        self.stackedWidget_sensosr.setCurrentIndex(4)
 
 
         QMetaObject.connectSlotsByName(MainWindow)

@@ -1,5 +1,10 @@
 <RCC>
   <qresource prefix="icons">
+    <file>icons/icons8-add-64.png</file>
+    <file>icons/icons8-remove-100.png</file>
+    <file>icons/icons8-start-button-64.png</file>
+    <file>icons/icons8-stop-button-67.png</file>
+    <file>icons/icons8-stop-sign-60.png</file>
     <file>icons/icons8-back-arrow-100.png</file>
     <file>icons/icons8-forward-button-100.png</file>
   </qresource>
