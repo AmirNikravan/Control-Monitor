@@ -274,12 +274,12 @@ class WorkerArduino(QThread):
                         data = self.serial_port.readline().decode('utf-8').strip()
                         # self.data_received.emit(data)
                         data_json = json.loads(data)
-                        print(data_json)
+                        # print(data_json)
                         self.temperature = data_json['t']
-                        # self.pressure = data_json['p']
+                        self.pressure = data_json['p']
                         # self.keys = data_json['k']
                         # self.lamps = data_json['l']
-                        # self.update_current_page_gauges()
+                        self.update_current_page_gauges()
                         # self.update_table()
                     else:
                         self.send_command('3')  # Send '3' if no data is available
@@ -309,7 +309,8 @@ class WorkerArduino(QThread):
         # except Exception as e:
         #     print(e)
     def update_gauges_page_0(self):
-        print('page0')
+        # print('************************************************************************************************************')
+        # p
         self.ui.airboost_bank_a_temp_gauge.updateValue(self.temperature['t1'])
         # self.ui.airboost_bank_a_temp_gauge.setEnabled(False)
         self.ui.exhuast_bank_b_temp_gauge.updateValue(self.temperature['t2'])
@@ -328,29 +329,48 @@ class WorkerArduino(QThread):
     def update_gauges_page_3(self):
         # print(self.time_check)
         
-        duration = time.time()-self.time_check
-        # print(duration)
-        minutes = int(duration // 60)
-        seconds = duration % 60
-        print(f'page 3 {minutes}: {seconds}')
-        self.ui.oil_pressure_gauge.updateValue(self.pressure['p1'])
-        self.ui.oil_switch_pressure_gauge.updateValue(self.pressure['p2'])
-        self.ui.airboost_pressure_gauge.updateValue(self.pressure['p3'])
+        # duration = time.time()-self.time_check
+        # # print(duration)
+        # minutes = int(duration // 60)
+        # seconds = duration % 60
+        # print(f'page 3 {minutes}: {seconds}')
+        self.ui.oil_pressure_gauge.updateValue(float(self.pressure['p1']))
+        self.ui.oil_switch_pressure_gauge.updateValue(float(self.pressure['p2']))
+        self.ui.airboost_pressure_gauge.updateValue(float(self.pressure['p3']))
     def update_gauges_page_4(self):
         print('page4')
-        self.ui.sea_water_pressure_gauge.updateValue(self.pressure['p4'])
-        self.ui.fuel_pressure_gauge.updateValue(self.pressure['p5'])
+        self.ui.sea_water_pressure_gauge.updateValue(float(self.pressure['p4']))
+        self.ui.fuel_pressure_gauge.updateValue(float(self.pressure['p5']))
     # Add more methods for other pages...
-
+    def update_table(self):
+        # self.ui.tableWidget_data.clear()
+        self.ui.tableWidget_data.setItem(0,1,QTableWidgetItem(str(self.temperature['t1'])))
+        self.ui.tableWidget_data.setItem(1,1,QTableWidgetItem(str(self.temperature['t2'])))
+        self.ui.tableWidget_data.setItem(2,1,QTableWidgetItem(str(self.temperature['t3'])))
+        self.ui.tableWidget_data.setItem(3,1,QTableWidgetItem(str(self.temperature['t4'])))
+        self.ui.tableWidget_data.setItem(4,1,QTableWidgetItem(str(self.temperature['t5'])))
+        self.ui.tableWidget_data.setItem(5,1,QTableWidgetItem(str(self.temperature['t6'])))
+        self.ui.tableWidget_data.setItem(6,1,QTableWidgetItem(str(self.temperature['t7'])))
+        self.ui.tableWidget_data.setItem(7,1,QTableWidgetItem(str(self.temperature['t8'])))
+        self.ui.tableWidget_data.setItem(8,1,QTableWidgetItem(str(self.temperature['t9'])))
+        self.ui.tableWidget_data.setItem(9,1,QTableWidgetItem(str(self.pressure['p1'])))
+        self.ui.tableWidget_data.setItem(10,1,QTableWidgetItem(str(self.pressure['p2'])))
+        self.ui.tableWidget_data.setItem(11,1,QTableWidgetItem(str(self.pressure['p3'])))
+        self.ui.tableWidget_data.setItem(12,1,QTableWidgetItem(str(self.pressure['p4'])))
+        self.ui.tableWidget_data.setItem(13,1,QTableWidgetItem(str(self.pressure['p5'])))
+            
     def update_current_page_gauges(self):
-        current_page = self.ui.stackedWidget_sensosr.currentIndex()
-        if current_page == 0:
+        current_page_sensor = self.ui.stackedWidget_sensosr.currentIndex()
+        if current_page_sensor == 0:
             self.update_gauges_page_0()
-        elif current_page == 1:
+        elif current_page_sensor == 1:
             self.update_gauges_page_1()
-        elif current_page == 2 :
+        elif current_page_sensor == 2 :
             self.update_gauges_page_2()
-        elif current_page == 3 :
+        elif current_page_sensor == 3 :
             self.update_gauges_page_3()
-        elif current_page == 4 :
+        elif current_page_sensor == 4 :
             self.update_gauges_page_4()
+        current_page_main = self.ui.stackedWidget.currentIndex()
+        if current_page_main == 2:
+            self.update_table()

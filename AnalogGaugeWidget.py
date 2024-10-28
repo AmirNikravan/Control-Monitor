@@ -250,10 +250,10 @@ class AnalogGaugeWidget(QWidget):
     # SET SCALE FONT FAMILY
     ################################################################################################
     def setValue(self,value):
-        if isinstance(value, (int, float)) and not None:
+        if isinstance(value, (float, float)) and not None:
             self.value = value
         else:
-            self.value = 0
+            self.value = 0.0
         self.repaint()
     def setScaleFontFamily(self, font):
         self.scale_fontname = str(font)
@@ -796,7 +796,7 @@ class AnalogGaugeWidget(QWidget):
         else:
             self.value = value
         # self.paintEvent("")
-        self.valueChanged.emit(int(value))
+        self.valueChanged.emit(float(value))
 
         # ohne timer: aktiviere self.update()
         if not self.use_timer_event:

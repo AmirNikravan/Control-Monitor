@@ -40,8 +40,8 @@ class App(QMainWindow):
         self.ui.toolButton_temperature.clicked.connect(
             lambda: self.change_page("temperature")
         )
-        self.ui.toolButton_pressure.clicked.connect(
-            lambda: self.change_page("pressure")
+        self.ui.toolButton_table.clicked.connect(
+            lambda: self.change_page("table")
         )
         self.ui.toolButton_keys.clicked.connect(lambda: self.change_page("keys"))
         self.ui.toolButton_nextpage_sensors.clicked.connect(
@@ -51,8 +51,8 @@ class App(QMainWindow):
         # design
         self.ui.stackedWidget.setCurrentIndex(0)
         self.design_gauges()
-
-        self.worker_arduino = WorkerArduino(self.ui,'/dev/ttyACM0')
+        self.worker_arduino = WorkerArduino(self.ui,'COM11')
+        # self.worker_arduino = WorkerArduino(self.ui,'/dev/ttyACM0')
         # self.worker_arduino.data_received.connect(self.process_serial_data)
         self.worker_arduino.start()
         # self.update_worker = UpdateWorker(self.ui)
@@ -121,7 +121,7 @@ class App(QMainWindow):
 
         elif page == "temperature":
             self.ui.stackedWidget.setCurrentIndex(1)
-        elif page == "pressure":
+        elif page == "table":
             self.ui.stackedWidget.setCurrentIndex(2)
         elif page == "keys":
             self.worker_arduino.send_command("3")
