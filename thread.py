@@ -274,12 +274,13 @@ class WorkerArduino(QThread):
                         data = self.serial_port.readline().decode('utf-8').strip()
                         # self.data_received.emit(data)
                         data_json = json.loads(data)
-                        self.temperature = data_json['t']
-                        self.pressure = data_json['p']
-                        self.keys = data_json['k']
-                        self.lamps = data_json['l']
-                        self.update_current_page_gauges()
-                        self.update_table()
+                        print(data_json)
+                        # self.temperature = data_json['t']
+                        # self.pressure = data_json['p']
+                        # self.keys = data_json['k']
+                        # self.lamps = data_json['l']
+                        # self.update_current_page_gauges()
+                        # self.update_table()
                     else:
                         self.send_command('3')  # Send '3' if no data is available
                 time.sleep(0.1)
