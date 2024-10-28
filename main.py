@@ -52,7 +52,7 @@ class App(QMainWindow):
         self.ui.stackedWidget.setCurrentIndex(0)
         self.design_gauges()
 
-        self.worker_arduino = WorkerArduino(self.ui,'COM3')
+        self.worker_arduino = WorkerArduino(self.ui,'/dev/ttyACM0')
         # self.worker_arduino.data_received.connect(self.process_serial_data)
         self.worker_arduino.start()
         # self.update_worker = UpdateWorker(self.ui)
