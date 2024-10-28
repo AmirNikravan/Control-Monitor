@@ -1,1 +1,1 @@
-table
+design_gauges

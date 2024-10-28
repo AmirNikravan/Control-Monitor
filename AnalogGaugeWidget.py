@@ -250,7 +250,7 @@ class AnalogGaugeWidget(QWidget):
     # SET SCALE FONT FAMILY
     ################################################################################################
     def setValue(self,value):
-        if isinstance(value, (float, float)) and not None:
+        if isinstance(value, (int, float)) and not None:
             self.value = value
         else:
             self.value = 0.0
@@ -795,6 +795,8 @@ class AnalogGaugeWidget(QWidget):
             self.value = self.maxValue
         else:
             self.value = value
+        print(self.maxValue)
+        # print(self.value)
         # self.paintEvent("")
         self.valueChanged.emit(float(value))
 
@@ -982,7 +984,7 @@ class AnalogGaugeWidget(QWidget):
             self.maxValue = self.minValue + 1
         else:
             self.maxValue = max
-
+        # print(self.maxValue)
         if not self.use_timer_event:
             self.update()
 
@@ -1271,7 +1273,7 @@ class AnalogGaugeWidget(QWidget):
 
         # angle_distance = (float(self.scale_angle_size) / float(self.scalaCount))
         # for i in range(self.scalaCount + 1):
-        text = str(int(self.value))
+        text = str(float(self.value))
         w = fm.width(text) + 1
         h = fm.height()
         painter.setFont(QFont(self.value_fontname, self.value_fontsize, QFont.Bold))

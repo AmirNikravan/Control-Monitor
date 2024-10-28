@@ -203,7 +203,11 @@ class App(QMainWindow):
         self.ui.sea_water_temp_gauge.setMouseTracking(False)
         self.ui.freshwater_beforethermo_temp_gauge.setMouseTracking(False)
         self.ui.freshwater_afterthermo_temp_gauge.setMouseTracking(False)
-
+        self.ui.oil_press_shaft_gauge.setMaxValue = 5
+        self.ui.oil_pressure_gauge.setMaxValue = 5
+        self.ui.fuel_pressure_gauge.setMaxValue = 5
+        self.ui.airboost_pressure_gauge.setMaxValue = 5
+        self.ui.oil_switch_pressure_gauge.setMaxValue = 5
         # print(i)\
         # time.sleep(1)
         # self.ui.speed_gauge.repaint()
