@@ -275,7 +275,7 @@ class WorkerArduino(QThread):
                         # self.data_received.emit(data)
                         data_json = json.loads(data)
                         print(data_json)
-                        # self.temperature = data_json['t']
+                        self.temperature = data_json['t']
                         # self.pressure = data_json['p']
                         # self.keys = data_json['k']
                         # self.lamps = data_json['l']
