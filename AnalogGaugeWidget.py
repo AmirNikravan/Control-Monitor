@@ -19,6 +19,7 @@
 import os
 import math
 import time
+
 ########################################################################
 ## MODULE UPDATED TO USE QTPY
 ########################################################################
@@ -249,12 +250,13 @@ class AnalogGaugeWidget(QWidget):
     ################################################################################################
     # SET SCALE FONT FAMILY
     ################################################################################################
-    def setValue(self,value):
+    def setValue(self, value):
         if isinstance(value, (int, float)) and not None:
             self.value = value
         else:
             self.value = 0.0
         self.repaint()
+
     def setScaleFontFamily(self, font):
         self.scale_fontname = str(font)
 
@@ -372,216 +374,28 @@ class AnalogGaugeWidget(QWidget):
             self.bigScaleMarker = Qt.black
             self.fineScaleColor = Qt.black
 
-        elif Theme == 4:
-            self.set_scale_polygon_colors([[1, Qt.black]])
-
-            self.needle_center_bg = [
-                [0, Qt.black],
-            ]
-
-            self.outer_circle_bg = [
-                [0, Qt.black],
-            ]
-
-            self.bigScaleMarker = Qt.white
-            self.fineScaleColor = Qt.white
-
-        elif Theme == 5:
-            self.set_scale_polygon_colors([[1, QColor("#029CDE")]])
-
-            self.needle_center_bg = [
-                [0, QColor("#029CDE")],
-            ]
-
-            self.outer_circle_bg = [
-                [0, QColor("#029CDE")],
-            ]
-
-        elif Theme == 6:
+        elif Theme == 4:  # airboost_bank_temp_gauge
             self.set_scale_polygon_colors(
                 [
-                    [0.75, QColor("#01ADEF")],
-                    [0.5, QColor("#0086BF")],
-                    [0.25, QColor("#005275")],
+                    [0.047, Qt.red],
+                    [0.055, '#FFA500'],
+                    [0.39, Qt.green],
+                    [0.66, '#FFA500'],
+                    [0.71, Qt.red],
+                    # [1, Qt.transparent],
                 ]
             )
 
             self.needle_center_bg = [
-                [0, QColor(0, 46, 61, 255)],
-                [0.322581, QColor(1, 173, 239, 255)],
-                [0.571429, QColor(0, 73, 99, 255)],
-                [1, QColor(0, 46, 61, 255)],
+                [0, Qt.white],
             ]
 
             self.outer_circle_bg = [
-                [0.0645161, QColor(0, 85, 116, 255)],
-                [0.37788, QColor(1, 173, 239, 255)],
-                [1, QColor(0, 69, 94, 255)],
+                [0, Qt.white],
             ]
 
             self.bigScaleMarker = Qt.black
             self.fineScaleColor = Qt.black
-
-        elif Theme == 7:
-            self.set_scale_polygon_colors(
-                [
-                    [0.25, QColor("#01ADEF")],
-                    [0.5, QColor("#0086BF")],
-                    [0.75, QColor("#005275")],
-                ]
-            )
-
-            self.needle_center_bg = [
-                [0, QColor(0, 46, 61, 255)],
-                [0.322581, QColor(1, 173, 239, 255)],
-                [0.571429, QColor(0, 73, 99, 255)],
-                [1, QColor(0, 46, 61, 255)],
-            ]
-
-            self.outer_circle_bg = [
-                [0.0645161, QColor(0, 85, 116, 255)],
-                [0.37788, QColor(1, 173, 239, 255)],
-                [1, QColor(0, 69, 94, 255)],
-            ]
-
-            self.bigScaleMarker = Qt.black
-            self.fineScaleColor = Qt.black
-
-        elif Theme == 8:
-            self.setCustomGaugeTheme(
-                color1="#ffaa00", color2="#7d5300", color3="#3e2900"
-            )
-
-            self.bigScaleMarker = Qt.black
-            self.fineScaleColor = Qt.black
-
-        elif Theme == 9:
-            self.setCustomGaugeTheme(
-                color1="#3e2900", color2="#7d5300", color3="#ffaa00"
-            )
-
-            self.bigScaleMarker = Qt.white
-            self.fineScaleColor = Qt.white
-
-        elif Theme == 10:
-            self.setCustomGaugeTheme(
-                color1="#ff007f", color2="#aa0055", color3="#830042"
-            )
-
-            self.bigScaleMarker = Qt.black
-            self.fineScaleColor = Qt.black
-
-        elif Theme == 11:
-            self.setCustomGaugeTheme(
-                color1="#830042", color2="#aa0055", color3="#ff007f"
-            )
-
-            self.bigScaleMarker = Qt.white
-            self.fineScaleColor = Qt.white
-
-        elif Theme == 12:
-            self.setCustomGaugeTheme(
-                color1="#ffe75d", color2="#896c1a", color3="#232803"
-            )
-
-            self.bigScaleMarker = Qt.black
-            self.fineScaleColor = Qt.black
-
-        elif Theme == 13:
-            self.setCustomGaugeTheme(
-                color1="#ffe75d", color2="#896c1a", color3="#232803"
-            )
-
-            self.bigScaleMarker = Qt.black
-            self.fineScaleColor = Qt.black
-
-        elif Theme == 14:
-            self.setCustomGaugeTheme(
-                color1="#232803", color2="#821600", color3="#ffe75d"
-            )
-
-            self.bigScaleMarker = Qt.white
-            self.fineScaleColor = Qt.white
-
-        elif Theme == 15:
-            self.setCustomGaugeTheme(
-                color1="#00FF11", color2="#00990A", color3="#002603"
-            )
-
-            self.bigScaleMarker = Qt.black
-            self.fineScaleColor = Qt.black
-
-        elif Theme == 16:
-            self.setCustomGaugeTheme(
-                color1="#002603", color2="#00990A", color3="#00FF11"
-            )
-
-            self.bigScaleMarker = Qt.white
-            self.fineScaleColor = Qt.white
-
-        elif Theme == 17:
-            self.setCustomGaugeTheme(
-                color1="#00FFCC", color2="#00876C", color3="#00211B"
-            )
-
-            self.bigScaleMarker = Qt.black
-            self.fineScaleColor = Qt.black
-
-        elif Theme == 18:
-            self.setCustomGaugeTheme(
-                color1="#00211B", color2="#00876C", color3="#00FFCC"
-            )
-
-            self.bigScaleMarker = Qt.white
-            self.fineScaleColor = Qt.white
-
-        elif Theme == 19:
-            self.setCustomGaugeTheme(
-                color1="#001EFF", color2="#001299", color3="#000426"
-            )
-
-            self.bigScaleMarker = Qt.black
-            self.fineScaleColor = Qt.black
-
-        elif Theme == 20:
-            self.setCustomGaugeTheme(
-                color1="#000426", color2="#001299", color3="#001EFF"
-            )
-
-            self.bigScaleMarker = Qt.white
-            self.fineScaleColor = Qt.white
-
-        elif Theme == 21:
-            self.setCustomGaugeTheme(
-                color1="#F200FF", color2="#85008C", color3="#240026"
-            )
-
-            self.bigScaleMarker = Qt.black
-            self.fineScaleColor = Qt.black
-
-        elif Theme == 22:
-            self.setCustomGaugeTheme(
-                color1="#240026", color2="#85008C", color3="#F200FF"
-            )
-
-            self.bigScaleMarker = Qt.white
-            self.fineScaleColor = Qt.white
-
-        elif Theme == 23:
-            self.setCustomGaugeTheme(
-                color1="#FF0022", color2="#080001", color3="#009991"
-            )
-
-            self.bigScaleMarker = Qt.white
-            self.fineScaleColor = Qt.white
-
-        elif Theme == 24:
-            self.setCustomGaugeTheme(
-                color1="#009991", color2="#080001", color3="#FF0022"
-            )
-
-            self.bigScaleMarker = Qt.white
-            self.fineScaleColor = Qt.white
 
     ################################################################################################
     # SET CUSTOM GAUGE THEME
@@ -787,7 +601,7 @@ class AnalogGaugeWidget(QWidget):
         #
         # if mouse_controlled:
         #     self.valueChanged.emit(int(value))
-        if value== None or self.minValue == None:
+        if value == None or self.minValue == None:
             return
         if value <= self.minValue:
             self.value = self.minValue

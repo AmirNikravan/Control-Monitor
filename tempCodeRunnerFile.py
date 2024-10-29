@@ -1,1 +1,1 @@
-design_gauges
+airboost_bank_b_temp_gauge

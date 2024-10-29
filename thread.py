@@ -311,6 +311,7 @@ class WorkerArduino(QThread):
     def update_gauges_page_0(self):
         # print('************************************************************************************************************')
         # p
+        
         self.ui.airboost_bank_a_temp_gauge.updateValue(self.temperature['t1'])
         # self.ui.airboost_bank_a_temp_gauge.setEnabled(False)
         self.ui.exhuast_bank_b_temp_gauge.updateValue(self.temperature['t2'])

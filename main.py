@@ -2,6 +2,7 @@
 from UI_main import Ui_MainWindow
 from PySide6.QtWidgets import *
 import sys
+
 # from arduino import ArduinoHandler
 from PySide6.QtCore import QTimer
 import time
@@ -17,16 +18,16 @@ class App(QMainWindow):
         super().__init__(parent)
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-        
+
         # self.arduino = ArduinoHandler(
         #     "COM3",
         # )
         # self.ui.tableWidget_data.resizeColumnsToContents()
-        self.ui.tableWidget_data.setColumnWidth(0,300)
-        self.ui.tableWidget_data.setColumnWidth(1,100)
-        self.ui.tableWidget_data.setColumnWidth(2,100)
-        self.ui.tableWidget_data.setColumnWidth(3,150)
-        self.ui.tableWidget_data.setColumnWidth(4,100)
+        self.ui.tableWidget_data.setColumnWidth(0, 300)
+        self.ui.tableWidget_data.setColumnWidth(1, 100)
+        self.ui.tableWidget_data.setColumnWidth(2, 100)
+        self.ui.tableWidget_data.setColumnWidth(3, 150)
+        self.ui.tableWidget_data.setColumnWidth(4, 100)
         # print(self.ui.right_menu.children())
         self.ui.increase_key.clicked.connect(lambda: self.handle_button_click("6"))
         self.ui.decrease_key.clicked.connect(lambda: self.handle_button_click("7"))
@@ -40,19 +41,19 @@ class App(QMainWindow):
         self.ui.toolButton_temperature.clicked.connect(
             lambda: self.change_page("temperature")
         )
-        self.ui.toolButton_table.clicked.connect(
-            lambda: self.change_page("table")
-        )
+        self.ui.toolButton_table.clicked.connect(lambda: self.change_page("table"))
         self.ui.toolButton_keys.clicked.connect(lambda: self.change_page("keys"))
         self.ui.toolButton_nextpage_sensors.clicked.connect(
             lambda: self.change_page_sensors("next")
         )
-        self.ui.toolButton_previouspage_sensors.clicked.connect(lambda:self.change_page_sensors('previous'))
+        self.ui.toolButton_previouspage_sensors.clicked.connect(
+            lambda: self.change_page_sensors("previous")
+        )
         # design
         self.ui.stackedWidget.setCurrentIndex(0)
         self.design_gauges()
         # self.worker_arduino = WorkerArduino(self.ui,'COM11')
-        self.worker_arduino = WorkerArduino(self.ui,'/dev/ttyACM0')
+        self.worker_arduino = WorkerArduino(self.ui, "/dev/ttyACM0")
         # self.worker_arduino.data_received.connect(self.process_serial_data)
         self.worker_arduino.start()
         # self.update_worker = UpdateWorker(self.ui)
@@ -65,20 +66,22 @@ class App(QMainWindow):
         self.timer.start(1000)  # 1000 ms = 1 second
         # Call update_time once at startup to set the initial time
         self.update_time()
+
     def check_table(self):
         print(self.ui.tableWidget_data.setColumnCount(5))
         self.ui.tableWidget_data.setRowCount(14)
-        self.ui.tableWidget_data.setItem(1,1,QTableWidgetItem(34))
+        self.ui.tableWidget_data.setItem(1, 1, QTableWidgetItem(34))
         self.ui.tableWidget_data.repaint()
         # for i in range(0,10):
         #     self.ui.tableWidget_data.setItem(i,1,QTableWidgetItem(2))
         # for i in range(10,15):
         #     self.ui.tableWidget_data.setItem(i,1,QTableWidgetItem(2))
-        
-    def process_serial_data(self,value):
+
+    def process_serial_data(self, value):
         # print(value)
         pass
         # self.update_worker.update_values(value)
+
     def update_time(self):
 
         # Update the label with the current time
@@ -91,13 +94,15 @@ class App(QMainWindow):
         # # self.ui.airboost_bank_a_temp_gauge.neede
         # self.ui.speed_gauge.setGaugeTheme(val)
         # self.ui.speed_gauge.repaint()
+
     def test(self):
         while True:
-            for i in range(0,5):
+            for i in range(0, 5):
                 self.ui.stackedWidget_sensosr.setCurrentIndex(i)
                 time.sleep(1)
+
     def change_page_sensors(self, page):
-        
+
         min = 0
         max = 4
         current = self.ui.stackedWidget_sensosr.currentIndex()
@@ -110,10 +115,11 @@ class App(QMainWindow):
             if current == max:
                 self.ui.stackedWidget_sensosr.setCurrentIndex(min)
             else:
-                
+
                 self.ui.stackedWidget_sensosr.setCurrentIndex(current + 1)
         # time.sleep(0.8)
         # time.sleep(0.6)
+
     def change_page(self, page):
 
         if page == "shaft":
@@ -156,7 +162,7 @@ class App(QMainWindow):
         pass
 
     def design_gauges(self):
-        
+
         self.ui.airboost_bank_a_temp_gauge.setNeedleColor(245, 66, 93)
         self.ui.exhuast_bank_a_temp_gauge.setNeedleColor(245, 66, 93)
         self.ui.exhuast_bank_b_temp_gauge.setNeedleColor(245, 66, 93)
@@ -166,8 +172,8 @@ class App(QMainWindow):
         self.ui.freshwater_beforethermo_temp_gauge.setNeedleColor(245, 66, 93)
         self.ui.freshwater_afterthermo_temp_gauge.setNeedleColor(245, 66, 93)
         self.ui.sea_water_temp_gauge.setNeedleColor(245, 66, 93)
-        self.ui.airboost_bank_a_temp_gauge.setGaugeTheme(3)
-        self.ui.airboost_bank_b_temp_gauge.setGaugeTheme(3)
+        self.ui.airboost_bank_a_temp_gauge.setGaugeTheme(4)
+        self.ui.airboost_bank_b_temp_gauge.setGaugeTheme(4)
         self.ui.exhuast_bank_a_temp_gauge.setGaugeTheme(3)
         self.ui.exhuast_bank_b_temp_gauge.setGaugeTheme(3)
         self.ui.oil_ntc_temp_gauge.setGaugeTheme(3)
@@ -203,11 +209,15 @@ class App(QMainWindow):
         self.ui.sea_water_temp_gauge.setMouseTracking(False)
         self.ui.freshwater_beforethermo_temp_gauge.setMouseTracking(False)
         self.ui.freshwater_afterthermo_temp_gauge.setMouseTracking(False)
-        self.ui.oil_press_shaft_gauge.setMaxValue = 5
-        self.ui.oil_pressure_gauge.setMaxValue = 5
-        self.ui.fuel_pressure_gauge.setMaxValue = 5
-        self.ui.airboost_pressure_gauge.setMaxValue = 5
-        self.ui.oil_switch_pressure_gauge.setMaxValue = 5
+        self.ui.airboost_bank_a_temp_gauge.setMaxValue(80)
+        self.ui.airboost_bank_b_temp_gauge.setMaxValue(80)
+        self.ui.airboost_bank_a_temp_gauge.setMinValue(-20)
+        self.ui.airboost_bank_b_temp_gauge.setMinValue(-20)
+        # self.ui.oil_press_shaft_gauge.setMaxValue = 5
+        # self.ui.oil_pressure_gauge.setMaxValue = 5
+        # self.ui.fuel_pressure_gauge.setMaxValue = 5
+        # self.ui.airboost_pressure_gauge.setMaxValue = 5
+        # self.ui.oil_switch_pressure_gauge.setMaxValue = 5
         # print(i)\
         # time.sleep(1)
         # self.ui.speed_gauge.repaint()
