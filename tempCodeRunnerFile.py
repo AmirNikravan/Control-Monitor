@@ -1,1 +1,1 @@
-airboost_bank_b_temp_gauge
+airboost_bank_a_temp_gauge

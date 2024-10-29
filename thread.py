@@ -279,6 +279,11 @@ class WorkerArduino(QThread):
                         self.pressure = data_json['p']
                         # self.keys = data_json['k']
                         # self.lamps = data_json['l']
+                        with open ('log.txt','w') as file:
+                            file.write(datetime.datetime.now())
+                            file.write(' :  ')
+                            file.write(data_json)
+                            file.write('\n***********************************************************************************\n')
                         self.update_current_page_gauges()
                         # self.update_table()
                     else:

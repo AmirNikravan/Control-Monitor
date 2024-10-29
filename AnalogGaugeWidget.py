@@ -377,11 +377,129 @@ class AnalogGaugeWidget(QWidget):
         elif Theme == 4:  # airboost_bank_temp_gauge
             self.set_scale_polygon_colors(
                 [
-                    [0.047, Qt.red],
-                    [0.055, '#FFA500'],
+                    [0.056, Qt.red],
+                    [0.063, "#FFA500"],
                     [0.39, Qt.green],
-                    [0.66, '#FFA500'],
+                    [0.66, "#FFA500"],
                     [0.71, Qt.red],
+                    # [1, Qt.transparent],
+                ]
+            )
+
+            self.needle_center_bg = [
+                [0, Qt.white],
+            ]
+
+            self.outer_circle_bg = [
+                [0, Qt.white],
+            ]
+
+            self.bigScaleMarker = Qt.black
+            self.fineScaleColor = Qt.black
+        elif Theme == 5:  # exhuast:
+            self.set_scale_polygon_colors(
+                [
+                    [0.047, Qt.red],
+                    [0.055, "#FFA500"],
+                    [0.49, Qt.green],
+                    # [0.80, '#FFA500'],
+                    # [0.76, Qt.red],
+                    # [1, Qt.transparent],
+                ]
+            )
+
+            self.needle_center_bg = [
+                [0, Qt.white],
+            ]
+
+            self.outer_circle_bg = [
+                [0, Qt.white],
+            ]
+
+            self.bigScaleMarker = Qt.black
+            self.fineScaleColor = Qt.black
+        elif Theme == 6:  # fresh water
+            self.set_scale_polygon_colors(
+                [
+                    # [0.5, Qt.red],
+                    [0.02, Qt.red],  # شروع با قرمز در 0٪
+                    [0.04, QColor("#FFA500")],  # تغییر به نارنجی در 10٪
+                    [0.40, Qt.green],  # تغییر به سبز در 40٪
+                    # [0.6, Qt.green],  # ادامه سبز در 60٪
+                    [0.50, QColor("#FFA500")],
+                    [0.9, Qt.red]
+                    # [1, Qt.transparent],
+                ]
+            )
+
+            self.needle_center_bg = [
+                [0, Qt.white],
+            ]
+
+            self.outer_circle_bg = [
+                [0, Qt.white],
+            ]
+
+            self.bigScaleMarker = Qt.black
+            self.fineScaleColor = Qt.black
+        elif Theme == 7:  # oil temp
+            self.set_scale_polygon_colors(
+                [
+                    # [0.5, Qt.red],
+                    [0.01, Qt.red],  # شروع با قرمز در 0٪
+                    [0.019, QColor("#FFA500")],  # تغییر به نارنجی در 10٪
+                    [0.60, Qt.green],  # تغییر به سبز در 40٪
+                    # [0.6, Qt.green],  # ادامه سبز در 60٪
+                    [0.69, QColor("#FFA500")],
+                    [0.85, Qt.red]
+                    # [1, Qt.transparent],
+                ]
+            )
+
+            self.needle_center_bg = [
+                [0, Qt.white],
+            ]
+
+            self.outer_circle_bg = [
+                [0, Qt.white],
+            ]
+
+            self.bigScaleMarker = Qt.black
+            self.fineScaleColor = Qt.black
+        elif Theme == 8:  # sea water pressure
+            self.set_scale_polygon_colors(
+                [
+                    # [0.5, Qt.red],
+                    [0.1, Qt.red],  # شروع با قرمز در 0٪
+                    [0.2, QColor("#FFA500")],  # تغییر به نارنجی در 10٪
+                    [0.60, Qt.green],  # تغییر به سبز در 40٪
+                    # [0.6, Qt.green],  # ادامه سبز در 60٪
+                    [0.69, QColor("#FFA500")],
+                    [0.85, Qt.red]
+                    # [1, Qt.transparent],
+                ]
+            )
+
+            self.needle_center_bg = [
+                [0, Qt.white],
+            ]
+
+            self.outer_circle_bg = [
+                [0, Qt.white],
+            ]
+
+            self.bigScaleMarker = Qt.black
+            self.fineScaleColor = Qt.black
+        elif Theme == 9:  # fuel pressure
+            self.set_scale_polygon_colors(
+                [
+                    # [0.5, Qt.red],
+                    [0.06, Qt.red],  # شروع با قرمز در 0٪
+                    [0.1, QColor("#FFA500")],  # تغییر به نارنجی در 10٪
+                    [0.40, Qt.green],  # تغییر به سبز در 40٪
+                    # [0.6, Qt.green],  # ادامه سبز در 60٪
+                    [0.6, QColor("#FFA500")],
+                    [0.85, Qt.red]
                     # [1, Qt.transparent],
                 ]
             )

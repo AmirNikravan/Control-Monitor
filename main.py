@@ -174,17 +174,17 @@ class App(QMainWindow):
         self.ui.sea_water_temp_gauge.setNeedleColor(245, 66, 93)
         self.ui.airboost_bank_a_temp_gauge.setGaugeTheme(4)
         self.ui.airboost_bank_b_temp_gauge.setGaugeTheme(4)
-        self.ui.exhuast_bank_a_temp_gauge.setGaugeTheme(3)
-        self.ui.exhuast_bank_b_temp_gauge.setGaugeTheme(3)
-        self.ui.oil_ntc_temp_gauge.setGaugeTheme(3)
-        self.ui.oil_temp_gauge.setGaugeTheme(3)
-        self.ui.freshwater_afterthermo_temp_gauge.setGaugeTheme(3)
-        self.ui.freshwater_beforethermo_temp_gauge.setGaugeTheme(3)
+        self.ui.exhuast_bank_a_temp_gauge.setGaugeTheme(5)
+        self.ui.exhuast_bank_b_temp_gauge.setGaugeTheme(5)
+        self.ui.oil_ntc_temp_gauge.setGaugeTheme(7)
+        self.ui.oil_temp_gauge.setGaugeTheme(7)
+        self.ui.freshwater_afterthermo_temp_gauge.setGaugeTheme(6)
+        self.ui.freshwater_beforethermo_temp_gauge.setGaugeTheme(6)
         self.ui.sea_water_temp_gauge.setGaugeTheme(3)
         self.ui.oil_pressure_gauge.setGaugeTheme(3)
-        self.ui.fuel_pressure_gauge.setGaugeTheme(3)
+        self.ui.fuel_pressure_gauge.setGaugeTheme(9)
         self.ui.airboost_pressure_gauge.setGaugeTheme(3)
-        self.ui.sea_water_pressure_gauge.setGaugeTheme(3)
+        self.ui.sea_water_pressure_gauge.setGaugeTheme(8)
         self.ui.oil_switch_pressure_gauge.setGaugeTheme(3)
         self.ui.oil_temp_shaft_gauge.setGaugeTheme(3)
         self.ui.oil_press_shaft_gauge.setGaugeTheme(3)
@@ -219,8 +219,8 @@ class App(QMainWindow):
         self.ui.freshwater_beforethermo_temp_gauge.setMinValue(-6)
         self.ui.exhuast_bank_a_temp_gauge.setMaxValue(798)
         self.ui.exhuast_bank_b_temp_gauge.setMaxValue(798)
-        self.ui.exhuast_bank_a_temp_gauge.setMinValue(-14)
-        self.ui.exhuast_bank_b_temp_gauge.setMinValue(-14)
+        self.ui.exhuast_bank_a_temp_gauge.setMinValue(0)
+        self.ui.exhuast_bank_b_temp_gauge.setMinValue(0)
         self.ui.sea_water_temp_gauge.setMaxValue(48)
         self.ui.sea_water_temp_gauge.setMinValue(-3)
         self.ui.oil_temp_gauge.setMaxValue(99)
@@ -256,6 +256,7 @@ class App(QMainWindow):
         self.ui.sea_water_pressure_gauge.units = 'bar'
         self.ui.oil_switch_pressure_gauge.units = 'bar'
         self.ui.oil_pressure_gauge.units = 'bar'
+        print(datetime.datetime.now().strftime('%H:%M:%S'))
         # self.ui.oil_press_shaft_gauge.setMaxValue = 5
         # self.ui.oil_pressure_gauge.setMaxValue = 5
         # self.ui.fuel_pressure_gauge.setMaxValue = 5
