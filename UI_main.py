@@ -819,8 +819,8 @@ class Ui_MainWindow(object):
         self.verticalLayout_44.setObjectName(u"verticalLayout_44")
         self.verticalLayout_44.setContentsMargins(0, 0, 0, 0)
         self.tableWidget_data = QTableWidget(self.scrollAreaWidgetContents)
-        if (self.tableWidget_data.columnCount() < 5):
-            self.tableWidget_data.setColumnCount(5)
+        if (self.tableWidget_data.columnCount() < 7):
+            self.tableWidget_data.setColumnCount(7)
         __qtablewidgetitem = QTableWidgetItem()
         __qtablewidgetitem.setFont(font);
         self.tableWidget_data.setHorizontalHeaderItem(0, __qtablewidgetitem)
@@ -830,170 +830,204 @@ class Ui_MainWindow(object):
         __qtablewidgetitem2 = QTableWidgetItem()
         __qtablewidgetitem2.setFont(font);
         self.tableWidget_data.setHorizontalHeaderItem(2, __qtablewidgetitem2)
-        font7 = QFont()
-        font7.setFamilies([u"IRANSansXFaNum"])
-        font7.setPointSize(10)
         __qtablewidgetitem3 = QTableWidgetItem()
-        __qtablewidgetitem3.setFont(font7);
+        __qtablewidgetitem3.setFont(font);
         self.tableWidget_data.setHorizontalHeaderItem(3, __qtablewidgetitem3)
         __qtablewidgetitem4 = QTableWidgetItem()
         __qtablewidgetitem4.setFont(font);
         self.tableWidget_data.setHorizontalHeaderItem(4, __qtablewidgetitem4)
+        font7 = QFont()
+        font7.setFamilies([u"IRANSansXFaNum"])
+        font7.setPointSize(10)
+        __qtablewidgetitem5 = QTableWidgetItem()
+        __qtablewidgetitem5.setFont(font7);
+        self.tableWidget_data.setHorizontalHeaderItem(5, __qtablewidgetitem5)
+        __qtablewidgetitem6 = QTableWidgetItem()
+        __qtablewidgetitem6.setFont(font);
+        self.tableWidget_data.setHorizontalHeaderItem(6, __qtablewidgetitem6)
         if (self.tableWidget_data.rowCount() < 14):
             self.tableWidget_data.setRowCount(14)
-        __qtablewidgetitem5 = QTableWidgetItem()
-        self.tableWidget_data.setVerticalHeaderItem(0, __qtablewidgetitem5)
-        __qtablewidgetitem6 = QTableWidgetItem()
-        self.tableWidget_data.setVerticalHeaderItem(1, __qtablewidgetitem6)
         __qtablewidgetitem7 = QTableWidgetItem()
-        self.tableWidget_data.setVerticalHeaderItem(2, __qtablewidgetitem7)
+        self.tableWidget_data.setVerticalHeaderItem(0, __qtablewidgetitem7)
         __qtablewidgetitem8 = QTableWidgetItem()
-        self.tableWidget_data.setVerticalHeaderItem(3, __qtablewidgetitem8)
+        self.tableWidget_data.setVerticalHeaderItem(1, __qtablewidgetitem8)
         __qtablewidgetitem9 = QTableWidgetItem()
-        self.tableWidget_data.setVerticalHeaderItem(4, __qtablewidgetitem9)
+        self.tableWidget_data.setVerticalHeaderItem(2, __qtablewidgetitem9)
         __qtablewidgetitem10 = QTableWidgetItem()
-        self.tableWidget_data.setVerticalHeaderItem(5, __qtablewidgetitem10)
+        self.tableWidget_data.setVerticalHeaderItem(3, __qtablewidgetitem10)
         __qtablewidgetitem11 = QTableWidgetItem()
-        self.tableWidget_data.setVerticalHeaderItem(6, __qtablewidgetitem11)
+        self.tableWidget_data.setVerticalHeaderItem(4, __qtablewidgetitem11)
         __qtablewidgetitem12 = QTableWidgetItem()
-        self.tableWidget_data.setVerticalHeaderItem(7, __qtablewidgetitem12)
+        self.tableWidget_data.setVerticalHeaderItem(5, __qtablewidgetitem12)
         __qtablewidgetitem13 = QTableWidgetItem()
-        self.tableWidget_data.setVerticalHeaderItem(8, __qtablewidgetitem13)
+        self.tableWidget_data.setVerticalHeaderItem(6, __qtablewidgetitem13)
         __qtablewidgetitem14 = QTableWidgetItem()
-        self.tableWidget_data.setVerticalHeaderItem(9, __qtablewidgetitem14)
+        self.tableWidget_data.setVerticalHeaderItem(7, __qtablewidgetitem14)
         __qtablewidgetitem15 = QTableWidgetItem()
-        self.tableWidget_data.setVerticalHeaderItem(10, __qtablewidgetitem15)
+        self.tableWidget_data.setVerticalHeaderItem(8, __qtablewidgetitem15)
         __qtablewidgetitem16 = QTableWidgetItem()
-        self.tableWidget_data.setVerticalHeaderItem(11, __qtablewidgetitem16)
+        self.tableWidget_data.setVerticalHeaderItem(9, __qtablewidgetitem16)
         __qtablewidgetitem17 = QTableWidgetItem()
-        self.tableWidget_data.setVerticalHeaderItem(12, __qtablewidgetitem17)
+        self.tableWidget_data.setVerticalHeaderItem(10, __qtablewidgetitem17)
         __qtablewidgetitem18 = QTableWidgetItem()
-        self.tableWidget_data.setVerticalHeaderItem(13, __qtablewidgetitem18)
+        self.tableWidget_data.setVerticalHeaderItem(11, __qtablewidgetitem18)
         __qtablewidgetitem19 = QTableWidgetItem()
-        self.tableWidget_data.setItem(0, 0, __qtablewidgetitem19)
+        self.tableWidget_data.setVerticalHeaderItem(12, __qtablewidgetitem19)
         __qtablewidgetitem20 = QTableWidgetItem()
-        self.tableWidget_data.setItem(0, 1, __qtablewidgetitem20)
+        self.tableWidget_data.setVerticalHeaderItem(13, __qtablewidgetitem20)
         __qtablewidgetitem21 = QTableWidgetItem()
-        __qtablewidgetitem21.setTextAlignment(Qt.AlignCenter);
-        self.tableWidget_data.setItem(0, 2, __qtablewidgetitem21)
+        self.tableWidget_data.setItem(0, 0, __qtablewidgetitem21)
         __qtablewidgetitem22 = QTableWidgetItem()
-        self.tableWidget_data.setItem(0, 3, __qtablewidgetitem22)
+        self.tableWidget_data.setItem(0, 1, __qtablewidgetitem22)
         __qtablewidgetitem23 = QTableWidgetItem()
-        __qtablewidgetitem23.setTextAlignment(Qt.AlignCenter);
-        self.tableWidget_data.setItem(0, 4, __qtablewidgetitem23)
+        self.tableWidget_data.setItem(0, 3, __qtablewidgetitem23)
         __qtablewidgetitem24 = QTableWidgetItem()
-        self.tableWidget_data.setItem(1, 0, __qtablewidgetitem24)
+        __qtablewidgetitem24.setTextAlignment(Qt.AlignCenter);
+        self.tableWidget_data.setItem(0, 4, __qtablewidgetitem24)
         __qtablewidgetitem25 = QTableWidgetItem()
-        __qtablewidgetitem25.setTextAlignment(Qt.AlignCenter);
-        self.tableWidget_data.setItem(1, 2, __qtablewidgetitem25)
+        self.tableWidget_data.setItem(0, 5, __qtablewidgetitem25)
         __qtablewidgetitem26 = QTableWidgetItem()
-        self.tableWidget_data.setItem(1, 3, __qtablewidgetitem26)
+        __qtablewidgetitem26.setTextAlignment(Qt.AlignCenter);
+        self.tableWidget_data.setItem(0, 6, __qtablewidgetitem26)
         __qtablewidgetitem27 = QTableWidgetItem()
-        __qtablewidgetitem27.setTextAlignment(Qt.AlignCenter);
-        self.tableWidget_data.setItem(1, 4, __qtablewidgetitem27)
+        self.tableWidget_data.setItem(1, 0, __qtablewidgetitem27)
         __qtablewidgetitem28 = QTableWidgetItem()
-        self.tableWidget_data.setItem(2, 0, __qtablewidgetitem28)
+        self.tableWidget_data.setItem(1, 1, __qtablewidgetitem28)
         __qtablewidgetitem29 = QTableWidgetItem()
         __qtablewidgetitem29.setTextAlignment(Qt.AlignCenter);
-        self.tableWidget_data.setItem(2, 2, __qtablewidgetitem29)
+        self.tableWidget_data.setItem(1, 4, __qtablewidgetitem29)
         __qtablewidgetitem30 = QTableWidgetItem()
-        self.tableWidget_data.setItem(2, 3, __qtablewidgetitem30)
+        self.tableWidget_data.setItem(1, 5, __qtablewidgetitem30)
         __qtablewidgetitem31 = QTableWidgetItem()
         __qtablewidgetitem31.setTextAlignment(Qt.AlignCenter);
-        self.tableWidget_data.setItem(2, 4, __qtablewidgetitem31)
+        self.tableWidget_data.setItem(1, 6, __qtablewidgetitem31)
         __qtablewidgetitem32 = QTableWidgetItem()
-        self.tableWidget_data.setItem(3, 0, __qtablewidgetitem32)
+        self.tableWidget_data.setItem(2, 0, __qtablewidgetitem32)
         __qtablewidgetitem33 = QTableWidgetItem()
-        __qtablewidgetitem33.setTextAlignment(Qt.AlignCenter);
-        self.tableWidget_data.setItem(3, 2, __qtablewidgetitem33)
+        self.tableWidget_data.setItem(2, 1, __qtablewidgetitem33)
         __qtablewidgetitem34 = QTableWidgetItem()
-        self.tableWidget_data.setItem(3, 3, __qtablewidgetitem34)
+        __qtablewidgetitem34.setTextAlignment(Qt.AlignCenter);
+        self.tableWidget_data.setItem(2, 4, __qtablewidgetitem34)
         __qtablewidgetitem35 = QTableWidgetItem()
-        __qtablewidgetitem35.setTextAlignment(Qt.AlignCenter);
-        self.tableWidget_data.setItem(3, 4, __qtablewidgetitem35)
+        self.tableWidget_data.setItem(2, 5, __qtablewidgetitem35)
         __qtablewidgetitem36 = QTableWidgetItem()
-        self.tableWidget_data.setItem(4, 0, __qtablewidgetitem36)
+        __qtablewidgetitem36.setTextAlignment(Qt.AlignCenter);
+        self.tableWidget_data.setItem(2, 6, __qtablewidgetitem36)
         __qtablewidgetitem37 = QTableWidgetItem()
-        __qtablewidgetitem37.setTextAlignment(Qt.AlignCenter);
-        self.tableWidget_data.setItem(4, 2, __qtablewidgetitem37)
+        self.tableWidget_data.setItem(3, 0, __qtablewidgetitem37)
         __qtablewidgetitem38 = QTableWidgetItem()
-        self.tableWidget_data.setItem(4, 3, __qtablewidgetitem38)
+        self.tableWidget_data.setItem(3, 1, __qtablewidgetitem38)
         __qtablewidgetitem39 = QTableWidgetItem()
         __qtablewidgetitem39.setTextAlignment(Qt.AlignCenter);
-        self.tableWidget_data.setItem(4, 4, __qtablewidgetitem39)
+        self.tableWidget_data.setItem(3, 4, __qtablewidgetitem39)
         __qtablewidgetitem40 = QTableWidgetItem()
-        self.tableWidget_data.setItem(5, 0, __qtablewidgetitem40)
+        self.tableWidget_data.setItem(3, 5, __qtablewidgetitem40)
         __qtablewidgetitem41 = QTableWidgetItem()
         __qtablewidgetitem41.setTextAlignment(Qt.AlignCenter);
-        self.tableWidget_data.setItem(5, 2, __qtablewidgetitem41)
+        self.tableWidget_data.setItem(3, 6, __qtablewidgetitem41)
         __qtablewidgetitem42 = QTableWidgetItem()
-        self.tableWidget_data.setItem(5, 3, __qtablewidgetitem42)
+        self.tableWidget_data.setItem(4, 0, __qtablewidgetitem42)
         __qtablewidgetitem43 = QTableWidgetItem()
-        __qtablewidgetitem43.setTextAlignment(Qt.AlignCenter);
-        self.tableWidget_data.setItem(5, 4, __qtablewidgetitem43)
+        self.tableWidget_data.setItem(4, 1, __qtablewidgetitem43)
         __qtablewidgetitem44 = QTableWidgetItem()
-        self.tableWidget_data.setItem(6, 0, __qtablewidgetitem44)
+        __qtablewidgetitem44.setTextAlignment(Qt.AlignCenter);
+        self.tableWidget_data.setItem(4, 4, __qtablewidgetitem44)
         __qtablewidgetitem45 = QTableWidgetItem()
-        __qtablewidgetitem45.setTextAlignment(Qt.AlignCenter);
-        self.tableWidget_data.setItem(6, 2, __qtablewidgetitem45)
+        self.tableWidget_data.setItem(4, 5, __qtablewidgetitem45)
         __qtablewidgetitem46 = QTableWidgetItem()
-        self.tableWidget_data.setItem(6, 3, __qtablewidgetitem46)
+        __qtablewidgetitem46.setTextAlignment(Qt.AlignCenter);
+        self.tableWidget_data.setItem(4, 6, __qtablewidgetitem46)
         __qtablewidgetitem47 = QTableWidgetItem()
-        __qtablewidgetitem47.setTextAlignment(Qt.AlignCenter);
-        self.tableWidget_data.setItem(6, 4, __qtablewidgetitem47)
+        self.tableWidget_data.setItem(5, 0, __qtablewidgetitem47)
         __qtablewidgetitem48 = QTableWidgetItem()
-        self.tableWidget_data.setItem(7, 0, __qtablewidgetitem48)
+        self.tableWidget_data.setItem(5, 1, __qtablewidgetitem48)
         __qtablewidgetitem49 = QTableWidgetItem()
         __qtablewidgetitem49.setTextAlignment(Qt.AlignCenter);
-        self.tableWidget_data.setItem(7, 2, __qtablewidgetitem49)
+        self.tableWidget_data.setItem(5, 4, __qtablewidgetitem49)
         __qtablewidgetitem50 = QTableWidgetItem()
-        self.tableWidget_data.setItem(7, 3, __qtablewidgetitem50)
+        self.tableWidget_data.setItem(5, 5, __qtablewidgetitem50)
         __qtablewidgetitem51 = QTableWidgetItem()
         __qtablewidgetitem51.setTextAlignment(Qt.AlignCenter);
-        self.tableWidget_data.setItem(7, 4, __qtablewidgetitem51)
+        self.tableWidget_data.setItem(5, 6, __qtablewidgetitem51)
         __qtablewidgetitem52 = QTableWidgetItem()
-        self.tableWidget_data.setItem(8, 0, __qtablewidgetitem52)
+        self.tableWidget_data.setItem(6, 0, __qtablewidgetitem52)
         __qtablewidgetitem53 = QTableWidgetItem()
-        __qtablewidgetitem53.setTextAlignment(Qt.AlignCenter);
-        self.tableWidget_data.setItem(8, 2, __qtablewidgetitem53)
+        self.tableWidget_data.setItem(6, 1, __qtablewidgetitem53)
         __qtablewidgetitem54 = QTableWidgetItem()
-        self.tableWidget_data.setItem(8, 3, __qtablewidgetitem54)
+        __qtablewidgetitem54.setTextAlignment(Qt.AlignCenter);
+        self.tableWidget_data.setItem(6, 4, __qtablewidgetitem54)
         __qtablewidgetitem55 = QTableWidgetItem()
-        __qtablewidgetitem55.setTextAlignment(Qt.AlignCenter);
-        self.tableWidget_data.setItem(8, 4, __qtablewidgetitem55)
+        self.tableWidget_data.setItem(6, 5, __qtablewidgetitem55)
         __qtablewidgetitem56 = QTableWidgetItem()
-        self.tableWidget_data.setItem(9, 0, __qtablewidgetitem56)
+        __qtablewidgetitem56.setTextAlignment(Qt.AlignCenter);
+        self.tableWidget_data.setItem(6, 6, __qtablewidgetitem56)
         __qtablewidgetitem57 = QTableWidgetItem()
-        self.tableWidget_data.setItem(9, 3, __qtablewidgetitem57)
+        self.tableWidget_data.setItem(7, 0, __qtablewidgetitem57)
         __qtablewidgetitem58 = QTableWidgetItem()
-        __qtablewidgetitem58.setTextAlignment(Qt.AlignCenter);
-        self.tableWidget_data.setItem(9, 4, __qtablewidgetitem58)
+        self.tableWidget_data.setItem(7, 1, __qtablewidgetitem58)
         __qtablewidgetitem59 = QTableWidgetItem()
-        self.tableWidget_data.setItem(10, 0, __qtablewidgetitem59)
+        __qtablewidgetitem59.setTextAlignment(Qt.AlignCenter);
+        self.tableWidget_data.setItem(7, 4, __qtablewidgetitem59)
         __qtablewidgetitem60 = QTableWidgetItem()
-        self.tableWidget_data.setItem(10, 3, __qtablewidgetitem60)
+        self.tableWidget_data.setItem(7, 5, __qtablewidgetitem60)
         __qtablewidgetitem61 = QTableWidgetItem()
         __qtablewidgetitem61.setTextAlignment(Qt.AlignCenter);
-        self.tableWidget_data.setItem(10, 4, __qtablewidgetitem61)
+        self.tableWidget_data.setItem(7, 6, __qtablewidgetitem61)
         __qtablewidgetitem62 = QTableWidgetItem()
-        self.tableWidget_data.setItem(11, 0, __qtablewidgetitem62)
+        self.tableWidget_data.setItem(8, 0, __qtablewidgetitem62)
         __qtablewidgetitem63 = QTableWidgetItem()
-        self.tableWidget_data.setItem(11, 3, __qtablewidgetitem63)
+        self.tableWidget_data.setItem(8, 1, __qtablewidgetitem63)
         __qtablewidgetitem64 = QTableWidgetItem()
         __qtablewidgetitem64.setTextAlignment(Qt.AlignCenter);
-        self.tableWidget_data.setItem(11, 4, __qtablewidgetitem64)
+        self.tableWidget_data.setItem(8, 4, __qtablewidgetitem64)
         __qtablewidgetitem65 = QTableWidgetItem()
-        self.tableWidget_data.setItem(12, 0, __qtablewidgetitem65)
+        self.tableWidget_data.setItem(8, 5, __qtablewidgetitem65)
         __qtablewidgetitem66 = QTableWidgetItem()
         __qtablewidgetitem66.setTextAlignment(Qt.AlignCenter);
-        self.tableWidget_data.setItem(12, 4, __qtablewidgetitem66)
+        self.tableWidget_data.setItem(8, 6, __qtablewidgetitem66)
         __qtablewidgetitem67 = QTableWidgetItem()
-        self.tableWidget_data.setItem(13, 0, __qtablewidgetitem67)
+        self.tableWidget_data.setItem(9, 0, __qtablewidgetitem67)
         __qtablewidgetitem68 = QTableWidgetItem()
-        self.tableWidget_data.setItem(13, 1, __qtablewidgetitem68)
+        self.tableWidget_data.setItem(9, 1, __qtablewidgetitem68)
         __qtablewidgetitem69 = QTableWidgetItem()
-        __qtablewidgetitem69.setTextAlignment(Qt.AlignCenter);
-        self.tableWidget_data.setItem(13, 4, __qtablewidgetitem69)
+        self.tableWidget_data.setItem(9, 5, __qtablewidgetitem69)
+        __qtablewidgetitem70 = QTableWidgetItem()
+        __qtablewidgetitem70.setTextAlignment(Qt.AlignCenter);
+        self.tableWidget_data.setItem(9, 6, __qtablewidgetitem70)
+        __qtablewidgetitem71 = QTableWidgetItem()
+        self.tableWidget_data.setItem(10, 0, __qtablewidgetitem71)
+        __qtablewidgetitem72 = QTableWidgetItem()
+        self.tableWidget_data.setItem(10, 1, __qtablewidgetitem72)
+        __qtablewidgetitem73 = QTableWidgetItem()
+        self.tableWidget_data.setItem(10, 5, __qtablewidgetitem73)
+        __qtablewidgetitem74 = QTableWidgetItem()
+        __qtablewidgetitem74.setTextAlignment(Qt.AlignCenter);
+        self.tableWidget_data.setItem(10, 6, __qtablewidgetitem74)
+        __qtablewidgetitem75 = QTableWidgetItem()
+        self.tableWidget_data.setItem(11, 0, __qtablewidgetitem75)
+        __qtablewidgetitem76 = QTableWidgetItem()
+        self.tableWidget_data.setItem(11, 1, __qtablewidgetitem76)
+        __qtablewidgetitem77 = QTableWidgetItem()
+        self.tableWidget_data.setItem(11, 5, __qtablewidgetitem77)
+        __qtablewidgetitem78 = QTableWidgetItem()
+        __qtablewidgetitem78.setTextAlignment(Qt.AlignCenter);
+        self.tableWidget_data.setItem(11, 6, __qtablewidgetitem78)
+        __qtablewidgetitem79 = QTableWidgetItem()
+        self.tableWidget_data.setItem(12, 0, __qtablewidgetitem79)
+        __qtablewidgetitem80 = QTableWidgetItem()
+        self.tableWidget_data.setItem(12, 1, __qtablewidgetitem80)
+        __qtablewidgetitem81 = QTableWidgetItem()
+        __qtablewidgetitem81.setTextAlignment(Qt.AlignCenter);
+        self.tableWidget_data.setItem(12, 6, __qtablewidgetitem81)
+        __qtablewidgetitem82 = QTableWidgetItem()
+        self.tableWidget_data.setItem(13, 0, __qtablewidgetitem82)
+        __qtablewidgetitem83 = QTableWidgetItem()
+        self.tableWidget_data.setItem(13, 1, __qtablewidgetitem83)
+        __qtablewidgetitem84 = QTableWidgetItem()
+        self.tableWidget_data.setItem(13, 3, __qtablewidgetitem84)
+        __qtablewidgetitem85 = QTableWidgetItem()
+        __qtablewidgetitem85.setTextAlignment(Qt.AlignCenter);
+        self.tableWidget_data.setItem(13, 6, __qtablewidgetitem85)
         self.tableWidget_data.setObjectName(u"tableWidget_data")
         self.tableWidget_data.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
         self.tableWidget_data.setStyleSheet(u"    QTableWidget::item {\n"
@@ -1523,7 +1557,7 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"\u062f\u0631\u0641\u0634", None))
         self.label_time.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
-        self.label_engine_name.setText(QCoreApplication.translate("MainWindow", u"\u0634\u0645\u0627\u0631\u0647 \u06f1", None))
+        self.label_engine_name.setText(QCoreApplication.translate("MainWindow", u"\u0634\u0645\u0627\u0631\u0647 2", None))
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u062a\u0648\u0631:", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0627\u0645\u0648\u0634", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u" \u0648\u0636\u0639\u06cc\u062a \u0645\u0648\u062a\u0648\u0631 :", None))
@@ -1557,98 +1591,130 @@ class Ui_MainWindow(object):
         self.toolButton_previouspage_sensors.setText(QCoreApplication.translate("MainWindow", u"\u0635\u0641\u062d\u0647 \u0642\u0628\u0644", None))
         self.toolButton_nextpage_sensors.setText(QCoreApplication.translate("MainWindow", u"\u0635\u0641\u062d\u0647 \u0628\u0639\u062f", None))
         ___qtablewidgetitem = self.tableWidget_data.horizontalHeaderItem(0)
-        ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"\u0646\u0627\u0645 \u0633\u0646\u0633\u0648\u0631", None));
+        ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"\u0631\u062f\u06cc\u0641", None));
         ___qtablewidgetitem1 = self.tableWidget_data.horizontalHeaderItem(1)
-        ___qtablewidgetitem1.setText(QCoreApplication.translate("MainWindow", u"\u0645\u0642\u062f\u0627\u0631", None));
+        ___qtablewidgetitem1.setText(QCoreApplication.translate("MainWindow", u"\u0646\u0627\u0645 \u0633\u0646\u0633\u0648\u0631", None));
         ___qtablewidgetitem2 = self.tableWidget_data.horizontalHeaderItem(2)
-        ___qtablewidgetitem2.setText(QCoreApplication.translate("MainWindow", u"\u0648\u0636\u0639\u06cc\u062a", None));
+        ___qtablewidgetitem2.setText(QCoreApplication.translate("MainWindow", u"\u062c\u0631\u06cc\u0627\u0646", None));
         ___qtablewidgetitem3 = self.tableWidget_data.horizontalHeaderItem(3)
-        ___qtablewidgetitem3.setText(QCoreApplication.translate("MainWindow", u"\u0628\u0627\u0632\u0647", None));
+        ___qtablewidgetitem3.setText(QCoreApplication.translate("MainWindow", u"\u0645\u0642\u062f\u0627\u0631", None));
         ___qtablewidgetitem4 = self.tableWidget_data.horizontalHeaderItem(4)
-        ___qtablewidgetitem4.setText(QCoreApplication.translate("MainWindow", u"\u06cc\u06a9\u0627", None));
+        ___qtablewidgetitem4.setText(QCoreApplication.translate("MainWindow", u"\u0648\u0636\u0639\u06cc\u062a", None));
+        ___qtablewidgetitem5 = self.tableWidget_data.horizontalHeaderItem(5)
+        ___qtablewidgetitem5.setText(QCoreApplication.translate("MainWindow", u"\u0628\u0627\u0632\u0647", None));
+        ___qtablewidgetitem6 = self.tableWidget_data.horizontalHeaderItem(6)
+        ___qtablewidgetitem6.setText(QCoreApplication.translate("MainWindow", u"\u06cc\u06a9\u0627", None));
 
         __sortingEnabled = self.tableWidget_data.isSortingEnabled()
         self.tableWidget_data.setSortingEnabled(False)
-        ___qtablewidgetitem5 = self.tableWidget_data.item(0, 0)
-        ___qtablewidgetitem5.setText(QCoreApplication.translate("MainWindow", u"Air Boost Bank A Temperature", None));
-        ___qtablewidgetitem6 = self.tableWidget_data.item(0, 3)
-        ___qtablewidgetitem6.setText(QCoreApplication.translate("MainWindow", u"-14 - 74", None));
-        ___qtablewidgetitem7 = self.tableWidget_data.item(0, 4)
-        ___qtablewidgetitem7.setText(QCoreApplication.translate("MainWindow", u"centigrade", None));
-        ___qtablewidgetitem8 = self.tableWidget_data.item(1, 0)
-        ___qtablewidgetitem8.setText(QCoreApplication.translate("MainWindow", u"Air Boost Bank B Temperature", None));
-        ___qtablewidgetitem9 = self.tableWidget_data.item(1, 3)
+        ___qtablewidgetitem7 = self.tableWidget_data.item(0, 0)
+        ___qtablewidgetitem7.setText(QCoreApplication.translate("MainWindow", u"1", None));
+        ___qtablewidgetitem8 = self.tableWidget_data.item(0, 1)
+        ___qtablewidgetitem8.setText(QCoreApplication.translate("MainWindow", u"Air Boost Bank A Temperature", None));
+        ___qtablewidgetitem9 = self.tableWidget_data.item(0, 5)
         ___qtablewidgetitem9.setText(QCoreApplication.translate("MainWindow", u"-14 - 74", None));
-        ___qtablewidgetitem10 = self.tableWidget_data.item(1, 4)
+        ___qtablewidgetitem10 = self.tableWidget_data.item(0, 6)
         ___qtablewidgetitem10.setText(QCoreApplication.translate("MainWindow", u"centigrade", None));
-        ___qtablewidgetitem11 = self.tableWidget_data.item(2, 0)
-        ___qtablewidgetitem11.setText(QCoreApplication.translate("MainWindow", u"Fresh Water before Thermostat Temperature", None));
-        ___qtablewidgetitem12 = self.tableWidget_data.item(2, 3)
-        ___qtablewidgetitem12.setText(QCoreApplication.translate("MainWindow", u"1 - 87", None));
-        ___qtablewidgetitem13 = self.tableWidget_data.item(2, 4)
-        ___qtablewidgetitem13.setText(QCoreApplication.translate("MainWindow", u"centigrade", None));
-        ___qtablewidgetitem14 = self.tableWidget_data.item(3, 0)
-        ___qtablewidgetitem14.setText(QCoreApplication.translate("MainWindow", u"Fresh Water after Thermostat Temperature ", None));
-        ___qtablewidgetitem15 = self.tableWidget_data.item(3, 3)
-        ___qtablewidgetitem15.setText(QCoreApplication.translate("MainWindow", u"1 - 87", None));
-        ___qtablewidgetitem16 = self.tableWidget_data.item(3, 4)
-        ___qtablewidgetitem16.setText(QCoreApplication.translate("MainWindow", u"centigrade", None));
-        ___qtablewidgetitem17 = self.tableWidget_data.item(4, 0)
-        ___qtablewidgetitem17.setText(QCoreApplication.translate("MainWindow", u"Exhuast Bank A Temperature", None));
-        ___qtablewidgetitem18 = self.tableWidget_data.item(4, 3)
-        ___qtablewidgetitem18.setText(QCoreApplication.translate("MainWindow", u"-14 - 745", None));
-        ___qtablewidgetitem19 = self.tableWidget_data.item(4, 4)
-        ___qtablewidgetitem19.setText(QCoreApplication.translate("MainWindow", u"centigrade", None));
-        ___qtablewidgetitem20 = self.tableWidget_data.item(5, 0)
-        ___qtablewidgetitem20.setText(QCoreApplication.translate("MainWindow", u"Exhuast Bank B Temperature", None));
-        ___qtablewidgetitem21 = self.tableWidget_data.item(5, 3)
-        ___qtablewidgetitem21.setText(QCoreApplication.translate("MainWindow", u"-14 - 745", None));
-        ___qtablewidgetitem22 = self.tableWidget_data.item(5, 4)
+        ___qtablewidgetitem11 = self.tableWidget_data.item(1, 0)
+        ___qtablewidgetitem11.setText(QCoreApplication.translate("MainWindow", u"2", None));
+        ___qtablewidgetitem12 = self.tableWidget_data.item(1, 1)
+        ___qtablewidgetitem12.setText(QCoreApplication.translate("MainWindow", u"Air Boost Bank B Temperature", None));
+        ___qtablewidgetitem13 = self.tableWidget_data.item(1, 5)
+        ___qtablewidgetitem13.setText(QCoreApplication.translate("MainWindow", u"-14 - 74", None));
+        ___qtablewidgetitem14 = self.tableWidget_data.item(1, 6)
+        ___qtablewidgetitem14.setText(QCoreApplication.translate("MainWindow", u"centigrade", None));
+        ___qtablewidgetitem15 = self.tableWidget_data.item(2, 0)
+        ___qtablewidgetitem15.setText(QCoreApplication.translate("MainWindow", u"3", None));
+        ___qtablewidgetitem16 = self.tableWidget_data.item(2, 1)
+        ___qtablewidgetitem16.setText(QCoreApplication.translate("MainWindow", u"Fresh Water before Thermostat Temperature", None));
+        ___qtablewidgetitem17 = self.tableWidget_data.item(2, 5)
+        ___qtablewidgetitem17.setText(QCoreApplication.translate("MainWindow", u"1 - 87", None));
+        ___qtablewidgetitem18 = self.tableWidget_data.item(2, 6)
+        ___qtablewidgetitem18.setText(QCoreApplication.translate("MainWindow", u"centigrade", None));
+        ___qtablewidgetitem19 = self.tableWidget_data.item(3, 0)
+        ___qtablewidgetitem19.setText(QCoreApplication.translate("MainWindow", u"4", None));
+        ___qtablewidgetitem20 = self.tableWidget_data.item(3, 1)
+        ___qtablewidgetitem20.setText(QCoreApplication.translate("MainWindow", u"Fresh Water after Thermostat Temperature ", None));
+        ___qtablewidgetitem21 = self.tableWidget_data.item(3, 5)
+        ___qtablewidgetitem21.setText(QCoreApplication.translate("MainWindow", u"1 - 87", None));
+        ___qtablewidgetitem22 = self.tableWidget_data.item(3, 6)
         ___qtablewidgetitem22.setText(QCoreApplication.translate("MainWindow", u"centigrade", None));
-        ___qtablewidgetitem23 = self.tableWidget_data.item(6, 0)
-        ___qtablewidgetitem23.setText(QCoreApplication.translate("MainWindow", u"Sea Water Temperature", None));
-        ___qtablewidgetitem24 = self.tableWidget_data.item(6, 3)
-        ___qtablewidgetitem24.setText(QCoreApplication.translate("MainWindow", u"1- 43", None));
-        ___qtablewidgetitem25 = self.tableWidget_data.item(6, 4)
-        ___qtablewidgetitem25.setText(QCoreApplication.translate("MainWindow", u"centigrade", None));
-        ___qtablewidgetitem26 = self.tableWidget_data.item(7, 0)
-        ___qtablewidgetitem26.setText(QCoreApplication.translate("MainWindow", u"Oil Temperature", None));
-        ___qtablewidgetitem27 = self.tableWidget_data.item(7, 3)
-        ___qtablewidgetitem27.setText(QCoreApplication.translate("MainWindow", u"6 - 103", None));
-        ___qtablewidgetitem28 = self.tableWidget_data.item(7, 4)
-        ___qtablewidgetitem28.setText(QCoreApplication.translate("MainWindow", u"centigrade", None));
-        ___qtablewidgetitem29 = self.tableWidget_data.item(8, 0)
-        ___qtablewidgetitem29.setText(QCoreApplication.translate("MainWindow", u"Oil NTC Temperature", None));
-        ___qtablewidgetitem30 = self.tableWidget_data.item(8, 3)
-        ___qtablewidgetitem30.setText(QCoreApplication.translate("MainWindow", u"6 - 103", None));
-        ___qtablewidgetitem31 = self.tableWidget_data.item(8, 4)
-        ___qtablewidgetitem31.setText(QCoreApplication.translate("MainWindow", u"centigrade", None));
-        ___qtablewidgetitem32 = self.tableWidget_data.item(9, 0)
-        ___qtablewidgetitem32.setText(QCoreApplication.translate("MainWindow", u"Air Boost Pressure", None));
-        ___qtablewidgetitem33 = self.tableWidget_data.item(9, 3)
-        ___qtablewidgetitem33.setText(QCoreApplication.translate("MainWindow", u"0 - 3.8", None));
-        ___qtablewidgetitem34 = self.tableWidget_data.item(9, 4)
-        ___qtablewidgetitem34.setText(QCoreApplication.translate("MainWindow", u"bar", None));
-        ___qtablewidgetitem35 = self.tableWidget_data.item(10, 0)
-        ___qtablewidgetitem35.setText(QCoreApplication.translate("MainWindow", u"Sea Water Pressure", None));
-        ___qtablewidgetitem36 = self.tableWidget_data.item(10, 3)
-        ___qtablewidgetitem36.setText(QCoreApplication.translate("MainWindow", u"0.22 -3.8", None));
-        ___qtablewidgetitem37 = self.tableWidget_data.item(10, 4)
-        ___qtablewidgetitem37.setText(QCoreApplication.translate("MainWindow", u"bar", None));
-        ___qtablewidgetitem38 = self.tableWidget_data.item(11, 0)
-        ___qtablewidgetitem38.setText(QCoreApplication.translate("MainWindow", u"Fuel Pressure", None));
-        ___qtablewidgetitem39 = self.tableWidget_data.item(11, 3)
-        ___qtablewidgetitem39.setText(QCoreApplication.translate("MainWindow", u"0.55 - 3.8", None));
-        ___qtablewidgetitem40 = self.tableWidget_data.item(11, 4)
-        ___qtablewidgetitem40.setText(QCoreApplication.translate("MainWindow", u"bar", None));
-        ___qtablewidgetitem41 = self.tableWidget_data.item(12, 0)
-        ___qtablewidgetitem41.setText(QCoreApplication.translate("MainWindow", u"Oil Switch Pressure", None));
-        ___qtablewidgetitem42 = self.tableWidget_data.item(12, 4)
-        ___qtablewidgetitem42.setText(QCoreApplication.translate("MainWindow", u"bar", None));
-        ___qtablewidgetitem43 = self.tableWidget_data.item(13, 0)
-        ___qtablewidgetitem43.setText(QCoreApplication.translate("MainWindow", u"Oil Pressure", None));
-        ___qtablewidgetitem44 = self.tableWidget_data.item(13, 4)
-        ___qtablewidgetitem44.setText(QCoreApplication.translate("MainWindow", u"bar", None));
+        ___qtablewidgetitem23 = self.tableWidget_data.item(4, 0)
+        ___qtablewidgetitem23.setText(QCoreApplication.translate("MainWindow", u"5", None));
+        ___qtablewidgetitem24 = self.tableWidget_data.item(4, 1)
+        ___qtablewidgetitem24.setText(QCoreApplication.translate("MainWindow", u"Exhuast Bank A Temperature", None));
+        ___qtablewidgetitem25 = self.tableWidget_data.item(4, 5)
+        ___qtablewidgetitem25.setText(QCoreApplication.translate("MainWindow", u"-14 - 745", None));
+        ___qtablewidgetitem26 = self.tableWidget_data.item(4, 6)
+        ___qtablewidgetitem26.setText(QCoreApplication.translate("MainWindow", u"centigrade", None));
+        ___qtablewidgetitem27 = self.tableWidget_data.item(5, 0)
+        ___qtablewidgetitem27.setText(QCoreApplication.translate("MainWindow", u"6", None));
+        ___qtablewidgetitem28 = self.tableWidget_data.item(5, 1)
+        ___qtablewidgetitem28.setText(QCoreApplication.translate("MainWindow", u"Exhuast Bank B Temperature", None));
+        ___qtablewidgetitem29 = self.tableWidget_data.item(5, 5)
+        ___qtablewidgetitem29.setText(QCoreApplication.translate("MainWindow", u"-14 - 745", None));
+        ___qtablewidgetitem30 = self.tableWidget_data.item(5, 6)
+        ___qtablewidgetitem30.setText(QCoreApplication.translate("MainWindow", u"centigrade", None));
+        ___qtablewidgetitem31 = self.tableWidget_data.item(6, 0)
+        ___qtablewidgetitem31.setText(QCoreApplication.translate("MainWindow", u"7", None));
+        ___qtablewidgetitem32 = self.tableWidget_data.item(6, 1)
+        ___qtablewidgetitem32.setText(QCoreApplication.translate("MainWindow", u"Sea Water Temperature", None));
+        ___qtablewidgetitem33 = self.tableWidget_data.item(6, 5)
+        ___qtablewidgetitem33.setText(QCoreApplication.translate("MainWindow", u"1- 43", None));
+        ___qtablewidgetitem34 = self.tableWidget_data.item(6, 6)
+        ___qtablewidgetitem34.setText(QCoreApplication.translate("MainWindow", u"centigrade", None));
+        ___qtablewidgetitem35 = self.tableWidget_data.item(7, 0)
+        ___qtablewidgetitem35.setText(QCoreApplication.translate("MainWindow", u"8", None));
+        ___qtablewidgetitem36 = self.tableWidget_data.item(7, 1)
+        ___qtablewidgetitem36.setText(QCoreApplication.translate("MainWindow", u"Oil Temperature", None));
+        ___qtablewidgetitem37 = self.tableWidget_data.item(7, 5)
+        ___qtablewidgetitem37.setText(QCoreApplication.translate("MainWindow", u"6 - 103", None));
+        ___qtablewidgetitem38 = self.tableWidget_data.item(7, 6)
+        ___qtablewidgetitem38.setText(QCoreApplication.translate("MainWindow", u"centigrade", None));
+        ___qtablewidgetitem39 = self.tableWidget_data.item(8, 0)
+        ___qtablewidgetitem39.setText(QCoreApplication.translate("MainWindow", u"9", None));
+        ___qtablewidgetitem40 = self.tableWidget_data.item(8, 1)
+        ___qtablewidgetitem40.setText(QCoreApplication.translate("MainWindow", u"Oil NTC Temperature", None));
+        ___qtablewidgetitem41 = self.tableWidget_data.item(8, 5)
+        ___qtablewidgetitem41.setText(QCoreApplication.translate("MainWindow", u"6 - 103", None));
+        ___qtablewidgetitem42 = self.tableWidget_data.item(8, 6)
+        ___qtablewidgetitem42.setText(QCoreApplication.translate("MainWindow", u"centigrade", None));
+        ___qtablewidgetitem43 = self.tableWidget_data.item(9, 0)
+        ___qtablewidgetitem43.setText(QCoreApplication.translate("MainWindow", u"10", None));
+        ___qtablewidgetitem44 = self.tableWidget_data.item(9, 1)
+        ___qtablewidgetitem44.setText(QCoreApplication.translate("MainWindow", u"Air Boost Pressure", None));
+        ___qtablewidgetitem45 = self.tableWidget_data.item(9, 5)
+        ___qtablewidgetitem45.setText(QCoreApplication.translate("MainWindow", u"0 - 3.8", None));
+        ___qtablewidgetitem46 = self.tableWidget_data.item(9, 6)
+        ___qtablewidgetitem46.setText(QCoreApplication.translate("MainWindow", u"bar", None));
+        ___qtablewidgetitem47 = self.tableWidget_data.item(10, 0)
+        ___qtablewidgetitem47.setText(QCoreApplication.translate("MainWindow", u"11", None));
+        ___qtablewidgetitem48 = self.tableWidget_data.item(10, 1)
+        ___qtablewidgetitem48.setText(QCoreApplication.translate("MainWindow", u"Sea Water Pressure", None));
+        ___qtablewidgetitem49 = self.tableWidget_data.item(10, 5)
+        ___qtablewidgetitem49.setText(QCoreApplication.translate("MainWindow", u"0.22 -3.8", None));
+        ___qtablewidgetitem50 = self.tableWidget_data.item(10, 6)
+        ___qtablewidgetitem50.setText(QCoreApplication.translate("MainWindow", u"bar", None));
+        ___qtablewidgetitem51 = self.tableWidget_data.item(11, 0)
+        ___qtablewidgetitem51.setText(QCoreApplication.translate("MainWindow", u"12", None));
+        ___qtablewidgetitem52 = self.tableWidget_data.item(11, 1)
+        ___qtablewidgetitem52.setText(QCoreApplication.translate("MainWindow", u"Fuel Pressure", None));
+        ___qtablewidgetitem53 = self.tableWidget_data.item(11, 5)
+        ___qtablewidgetitem53.setText(QCoreApplication.translate("MainWindow", u"0.55 - 3.8", None));
+        ___qtablewidgetitem54 = self.tableWidget_data.item(11, 6)
+        ___qtablewidgetitem54.setText(QCoreApplication.translate("MainWindow", u"bar", None));
+        ___qtablewidgetitem55 = self.tableWidget_data.item(12, 0)
+        ___qtablewidgetitem55.setText(QCoreApplication.translate("MainWindow", u"13", None));
+        ___qtablewidgetitem56 = self.tableWidget_data.item(12, 1)
+        ___qtablewidgetitem56.setText(QCoreApplication.translate("MainWindow", u"Oil Switch Pressure", None));
+        ___qtablewidgetitem57 = self.tableWidget_data.item(12, 6)
+        ___qtablewidgetitem57.setText(QCoreApplication.translate("MainWindow", u"bar", None));
+        ___qtablewidgetitem58 = self.tableWidget_data.item(13, 0)
+        ___qtablewidgetitem58.setText(QCoreApplication.translate("MainWindow", u"14", None));
+        ___qtablewidgetitem59 = self.tableWidget_data.item(13, 1)
+        ___qtablewidgetitem59.setText(QCoreApplication.translate("MainWindow", u"Oil Pressure", None));
+        ___qtablewidgetitem60 = self.tableWidget_data.item(13, 6)
+        ___qtablewidgetitem60.setText(QCoreApplication.translate("MainWindow", u"bar", None));
         self.tableWidget_data.setSortingEnabled(__sortingEnabled)
 
         self.label_7.setText(QCoreApplication.translate("MainWindow", u"\u06a9\u0644\u06cc\u062f \u0647\u0627", None))

@@ -23,8 +23,8 @@ class App(QMainWindow):
         #     "COM3",
         # )
         # self.ui.tableWidget_data.resizeColumnsToContents()
-        self.ui.tableWidget_data.setColumnWidth(0, 300)
-        self.ui.tableWidget_data.setColumnWidth(1, 100)
+        self.ui.tableWidget_data.setColumnWidth(0, 30)
+        self.ui.tableWidget_data.setColumnWidth(1, 300)
         self.ui.tableWidget_data.setColumnWidth(2, 100)
         self.ui.tableWidget_data.setColumnWidth(3, 150)
         self.ui.tableWidget_data.setColumnWidth(4, 100)
@@ -52,8 +52,8 @@ class App(QMainWindow):
         # design
         self.ui.stackedWidget.setCurrentIndex(0)
         self.design_gauges()
-        # self.worker_arduino = WorkerArduino(self.ui,'COM11')
-        self.worker_arduino = WorkerArduino(self.ui, "/dev/ttyACM0")
+        self.worker_arduino = WorkerArduino(self.ui,'COM11')
+        # self.worker_arduino = WorkerArduino(self.ui, "/dev/ttyACM0")
         # self.worker_arduino.data_received.connect(self.process_serial_data)
         self.worker_arduino.start()
         # self.update_worker = UpdateWorker(self.ui)

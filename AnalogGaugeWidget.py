@@ -727,7 +727,7 @@ class AnalogGaugeWidget(QWidget):
             self.value = self.maxValue
         else:
             self.value = value
-        print(self.maxValue)
+        print('update value')
         # print(self.value)
         # self.paintEvent("")
         self.valueChanged.emit(float(value))
