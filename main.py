@@ -29,6 +29,9 @@ class App(QMainWindow):
         self.ui.tableWidget_data.setColumnWidth(3, 150)
         self.ui.tableWidget_data.setColumnWidth(4, 100)
         # print(self.ui.right_menu.children())
+        
+        
+        
         self.ui.increase_key.clicked.connect(lambda: self.handle_button_click("6"))
         self.ui.decrease_key.clicked.connect(lambda: self.handle_button_click("7"))
         self.ui.start_key.clicked.connect(
@@ -50,10 +53,13 @@ class App(QMainWindow):
             lambda: self.change_page_sensors("previous")
         )
         # design
+        
+        
         self.ui.stackedWidget.setCurrentIndex(0)
         self.design_gauges()
-        self.worker_arduino = WorkerArduino(self.ui,'COM11')
-        # self.worker_arduino = WorkerArduino(self.ui, "/dev/ttyACM0")
+        # print('i am here')
+        # self.worker_arduino = WorkerArduino(self.ui,'COM14')
+        self.worker_arduino = WorkerArduino(self.ui, "/dev/ttyACM0")
         # self.worker_arduino.data_received.connect(self.process_serial_data)
         self.worker_arduino.start()
         # self.update_worker = UpdateWorker(self.ui)

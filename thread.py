@@ -9,6 +9,7 @@ class UpdateWorker(QThread):
         super().__init__()
         self.ui = ui
         self.data = None
+        
     def update_values(self, data):
         """Receive JSON data and update internal state for gauges."""
         try:
@@ -249,19 +250,21 @@ class WorkerArduino(QThread):
 
     def __init__(self,ui, port, baud_rate=115200):
         super().__init__()
+        
         self.ui = ui
         self.port = port
         self.baud_rate = baud_rate
         self.running = True
         self.serial_port = None
         self.time_check = time.time()
+        # self.temperature = None
         self.establish_connection()
         # self.serial_port.write('3'.encode('utf-8'))
 
     def establish_connection(self):
         try:
             self.serial_port = serial.Serial(self.port, self.baud_rate)
-            time.sleep(1)
+            time.sleep(0.2)
             print(f"Connected to Arduino on {self.port}")
         except serial.SerialException as e:
             print(f"Error connecting to Arduino: {e}")
@@ -269,7 +272,8 @@ class WorkerArduino(QThread):
     def run(self):
         while self.running:
             try:
-                self.update_current_page_gauges()
+                
+                # self.update_current_page_gauges()
                 if self.serial_port:
                     if self.serial_port.in_waiting > 0:  # Check if there is data available
                         data = self.serial_port.readline().decode('utf-8').strip()
@@ -353,7 +357,7 @@ class WorkerArduino(QThread):
     def current_to_pressure(self,current, I_min=4.0, I_max=20.0, P_min=0.0, P_max=10.0):
         # تبدیل جریان به فشار با استفاده از فرمول خطی
         pressure = ((current - I_min) / (I_max - I_min)) * (P_max - P_min) + P_min
-        return pressure
+        return str(pressure)
     def update_table(self):
         # Mili Amper
         # self.ui.tableWidget_data.clear()
@@ -372,21 +376,11 @@ class WorkerArduino(QThread):
         self.ui.tableWidget_data.setItem(12,2,QTableWidgetItem(str(self.pressure['p4'])))
         self.ui.tableWidget_data.setItem(13,2,QTableWidgetItem(str(self.pressure['p5'])))
         #calculate pressure 
-        self.ui.tableWidget_data.setItem(0,3,QTableWidgetItem(str(self.current_to_pressure(float(self.temperature['t1'])))))
-        self.ui.tableWidget_data.setItem(1,3,QTableWidgetItem(str(self.current_to_pressure(float(self.temperature['t1'])))))
-        self.ui.tableWidget_data.setItem(2,3,QTableWidgetItem(str(self.current_to_pressure(float(self.temperature['t1'])))))
-        self.ui.tableWidget_data.setItem(3,3,QTableWidgetItem(str(self.current_to_pressure(float(self.temperature['t1'])))))
-        self.ui.tableWidget_data.setItem(4,3,QTableWidgetItem(str(self.current_to_pressure(float(self.temperature['t1'])))))
-        self.ui.tableWidget_data.setItem(5,3,QTableWidgetItem(str(self.current_to_pressure(float(self.temperature['t1'])))))
-        self.ui.tableWidget_data.setItem(6,3,QTableWidgetItem(str(self.current_to_pressure(float(self.temperature['t1'])))))
-        self.ui.tableWidget_data.setItem(7,3,QTableWidgetItem(str(self.current_to_pressure(float(self.temperature['t1'])))))
-        self.ui.tableWidget_data.setItem(8,3,QTableWidgetItem(str(self.current_to_pressure(float(self.temperature['t1'])))))
-        self.ui.tableWidget_data.setItem(9,3,QTableWidgetItem(str(self.current_to_pressure(float(self.temperature['t1'])))))
-        self.ui.tableWidget_data.setItem(10,3,QTableWidgetItem(str(self.current_to_pressure(float(self.temperature['t1'])))))
-        self.ui.tableWidget_data.setItem(11,3,QTableWidgetItem(str(self.current_to_pressure(float(self.temperature['t1'])))))
-        self.ui.tableWidget_data.setItem(12,3,QTableWidgetItem(str(self.current_to_pressure(float(self.temperature['t1'])))))
-        self.ui.tableWidget_data.setItem(13,3,QTableWidgetItem(str(self.current_to_pressure(float(self.temperature['t1'])))))
-            
+        self.ui.tableWidget_data.setItem(9,3,QTableWidgetItem(self.current_to_pressure(float(self.pressure['p1']))))
+        self.ui.tableWidget_data.setItem(10,3,QTableWidgetItem(self.current_to_pressure(float(self.pressure['p2']))))
+        self.ui.tableWidget_data.setItem(11,3,QTableWidgetItem(self.current_to_pressure(float(self.pressure['p3']))))
+        self.ui.tableWidget_data.setItem(12,3,QTableWidgetItem(self.current_to_pressure(float(self.pressure['p4']))))
+        self.ui.tableWidget_data.setItem(13,3,QTableWidgetItem(self.current_to_pressure(float(self.pressure['p5']))))            
     def update_current_page_gauges(self):
         current_page_sensor = self.ui.stackedWidget_sensosr.currentIndex()
         if current_page_sensor == 0:
